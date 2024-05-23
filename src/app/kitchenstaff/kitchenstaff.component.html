@@ -1,0 +1,33 @@
+<body>
+  <header>
+    <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
+    <div class="weathertime">
+      <div class="weather">Weerbericht: 20°C</div>
+      <div class="datetime">22 mei 2024 - 10:00</div>
+    </div>
+  </header>
+
+  <div class="orders-container">
+    <div class="order">
+      <div class="orderheader">
+        <div class="ordertype">
+          <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>Pick up</p>
+        </div>
+        <p>#1234</p>
+      </div>
+      <hr>
+      <div class="orderbody">
+        <p>ewa</p>
+        <p>aw</p>
+        <p></p>
+      </div>
+      <hr>
+      <button class="buttonprepared">
+        Mark as prepared
+      </button>
+    </div>
+
+    <div class="sidebar">Sidebar</div>
+  </div>
+</body>
