@@ -80,7 +80,6 @@ export class KitchenstaffComponent {
         { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1, prepared: false },
         { name: 'Fanta', option: '', quantity: 1, prepared: false },
         { name: 'Pepsi Regular', option: '', quantity: 1, prepared: false },
-
       ]
     },
   ];
@@ -91,17 +90,18 @@ export class KitchenstaffComponent {
   }
 
   // mark order as done + timeout effect
-  markOrderAsPrepared() {
-    if (this.orders.length > 0) {
-      const order = document.querySelector('.order')
-
+  markOrderAsPrepared(index: number) {
+    if (index < this.orders.length && index > 0) {
+      const order = document.querySelectorAll('.order')[index];
+  
       if (order) {
-        order.classList.add('fade-out')
+        order.classList.add('fade-out');
       }
+  
+      setTimeout(() => {
+        this.orders.splice(index, 1);
+      }, 2000);
     }
-    setTimeout(() => {
-      this.orders.splice(0, 1);
-    }, 2000);
   }
 
   // date time

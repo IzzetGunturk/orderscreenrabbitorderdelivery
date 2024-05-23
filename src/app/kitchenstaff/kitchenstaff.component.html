@@ -37,7 +37,7 @@
         </div>
       </div>
       <hr>
-      <button (click)="markOrderAsPrepared()">
+      <button (click)="markOrderAsPrepared(i)">
         <div class="buttontext">
           <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
           <p>Mark as prepared</p>
@@ -47,10 +47,15 @@
 
     <div class="sidebar">
       <p class="title">Coming soon...</p>
-      <div class="comingorders">
-        <div class="comingamountdishes">
-          <p>1x </p>
-          <p>ewa</p>
+      <div class="comingorderscontainer">
+        <div class="comingorders" *ngFor="let order of orders.slice(4,6)">
+          <div class="comingamountdishes" *ngFor="let dish of order.dishes">
+            <p>{{ dish.quantity }}x </p>
+            <div class="dishnameoption">
+              <p>{{ dish.name }}</p>
+              <span *ngIf="dish.option">- {{ dish.option }}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

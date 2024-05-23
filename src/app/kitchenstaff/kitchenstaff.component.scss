@@ -164,22 +164,37 @@ header {
     font-weight: 600;
   }
 
-  .comingorders {
+  .comingorderscontainer {
     background-color: $white;
     padding: 24px;
     width: calc(100% - 32px);
     height: calc(100% - 32px);
-    color: $dark-500;
     border-radius: 10px;
     font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+
+    .comingorders {
+      display: flex;
+      flex-direction: column;
+      color: $dark-500;
+      gap: 12px;
+    }
 
     .comingamountdishes {
       display: flex;
       flex-direction: row;
       gap: 10px;
+
+      .dishnameoption {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        span {
+          font-size: 16px;
+          font-weight: normal;
+          color: $secondary-300;
+        }
+      }
     }
   }
 }
