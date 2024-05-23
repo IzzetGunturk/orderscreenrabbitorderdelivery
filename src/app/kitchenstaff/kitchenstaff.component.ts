@@ -91,7 +91,7 @@ export class KitchenstaffComponent {
 
   // mark order as done + timeout effect
   markOrderAsPrepared(index: number) {
-    if (index < this.orders.length && index > 0) {
+    if (index < this.orders.length && index > -1) {
       const order = document.querySelectorAll('.order')[index];
   
       if (order) {
