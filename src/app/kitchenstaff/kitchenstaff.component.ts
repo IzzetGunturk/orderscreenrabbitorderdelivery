@@ -5,6 +5,7 @@ interface Order {
   icon: string;
   id: number;
   type: string;
+  comment: string;
   dishes: Dish[];
 }
 
@@ -22,9 +23,10 @@ interface Dish {
 export class KitchenstaffComponent {
   orders: Order[] = [
     {
-      icon: 'check',
+      icon: 'pickup',
       id: 1234,
-      type: 'pickup',
+      type: 'Pick up',
+      comment: '',
       dishes: [
         { name: 'Wrap Crispy Chicken', quantity: 1, prepared: false },
         { name: '5Kitchens Salade', quantity: 1, prepared: false },
@@ -33,7 +35,15 @@ export class KitchenstaffComponent {
     },
   ];
 
+  // toggle checkbox
   togglePreparedStatus(dishes: Dish) {
     dishes.prepared = !dishes.prepared;
+  }
+
+  // date time
+  currentDateTime: Date;
+  
+  constructor() {
+    this.currentDateTime.toLocaleString('en-US', { hour12: false });
   }
 }

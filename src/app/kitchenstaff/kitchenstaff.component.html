@@ -2,8 +2,8 @@
   <header>
     <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
     <div class="weathertime">
-      <div class="weather">Weerbericht: 20°C</div>
-      <div class="datetime">22 mei 2024 - 10:00</div>
+      <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
+      <div class="datetime">{{ currentDateTime | date:"MMM dd, yyyy 'at' hh:mm a" }}</div>
     </div>
   </header>
 
@@ -12,12 +12,13 @@
       <div class="orderheader">
         <div class="ordertype">
           <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#FAA419'"></app-svgicons>
-          <p>{{ order.type | titlecase }}</p>
+          <p>{{ order.type }}</p>
         </div>
         <p>#{{ order.id }}</p>
       </div>
       <hr>
       <div class="orderbody">
+        <div class="comment" *ngIf="order.comment">{{ order.comment }}</div>
         <div class="dishes" *ngFor="let dish of order.dishes">
           <input type="checkbox" [checked]="dish.prepared" (change)="togglePreparedStatus(dish)" />
           <div class="amountdishes" [ngClass]="{'strikethrough': dish.prepared}" (click)="togglePreparedStatus(dish)">
