@@ -1,8 +1,10 @@
 $primary-500: #FAA419;
 $secondary-500: #54565A;
+$secondary-300: #87898C;
 $success-border: #4CAF50;
 $info-border: #2196F3;
 $white: #fff;
+$dark-500: #1C1B20;
 
 body {
   margin: 0;
@@ -42,13 +44,15 @@ header {
 }
 
 .order {
-  width: calc(25% - 16px); /* responsiveness / gap */
+  width: calc(25% - 16px);
+  /* responsiveness / gap */
   padding: 20px;
   border: 1px solid $primary-500;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: $dark-500;
 
   hr {
     border: none;
@@ -92,11 +96,28 @@ header {
       display: flex;
       flex-direction: row;
       gap: 10px;
+      font-weight: 500;
+      align-items: flex-start;
+
+      .checkbox {
+        margin-top: 4px;
+      }
 
       .amountdishes {
         display: flex;
         flex-direction: row;
         gap: 10px;
+
+        .dishnameoption {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          span {
+            font-size: 16px;
+            color: $secondary-300;
+          }
+        }
       }
     }
   }
@@ -129,6 +150,34 @@ header {
   height: 100vh;
   padding: 20px;
   width: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  .title {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .comingorders {
+    background-color: $white;
+    padding: 24px;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    color: $dark-500;
+    border-radius: 10px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .comingamountdishes {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
 }
 
 .strikethrough {

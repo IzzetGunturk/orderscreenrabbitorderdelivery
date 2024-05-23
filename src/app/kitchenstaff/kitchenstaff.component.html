@@ -6,7 +6,7 @@
         <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
         <p>12°C</p>
       </div>
-      <div class="datetime">{{ currentDateTime | date:"M-d-yyyy hh:mm" }}</div>
+      <div class="datetime">{{ currentDateTime | date:"d-M-yyyy HH:mm" }}</div>
     </div>
   </header>
 
@@ -26,10 +26,13 @@
           <p>{{ order.comment }}</p>
         </div>
         <div class="dishes" *ngFor="let dish of order.dishes">
-          <input type="checkbox" [checked]="dish.prepared" (change)="togglePreparedStatus(dish)" />
+          <input type="checkbox" class="checkbox" [checked]="dish.prepared" (change)="togglePreparedStatus(dish)" />
           <div class="amountdishes" [ngClass]="{'strikethrough': dish.prepared}" (click)="togglePreparedStatus(dish)">
             <p>{{ dish.quantity }}x </p>
-            <p>{{ dish.name }}</p>
+            <div class="dishnameoption">
+              <p>{{ dish.name }}</p>
+              <span *ngIf="dish.option">- {{ dish.option }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -42,6 +45,14 @@
       </button>
     </div>
 
-    <div class="sidebar">Sidebar</div>
+    <div class="sidebar">
+      <p class="title">Coming soon...</p>
+      <div class="comingorders">
+        <div class="comingamountdishes">
+          <p>1x </p>
+          <p>ewa</p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>

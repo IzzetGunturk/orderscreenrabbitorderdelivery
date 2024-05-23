@@ -11,6 +11,7 @@ interface Order {
 
 interface Dish {
   name: string;
+  option: string;
   quantity: number;
   prepared: boolean;
 }
@@ -28,9 +29,9 @@ export class KitchenstaffComponent {
       type: 'Pick up',
       comment: '',
       dishes: [
-        { name: 'Wrap Crispy Chicken', quantity: 1, prepared: false },
-        { name: '5Kitchens Salade', quantity: 1, prepared: false },
-        { name: 'Fanta', quantity: 1, prepared: false }
+        { name: 'Wrap Crispy Chicken', option: '', quantity: 1, prepared: false },
+        { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
+        { name: 'Fanta', quantity: 1, option: '', prepared: false }
       ]
     },
   ];
