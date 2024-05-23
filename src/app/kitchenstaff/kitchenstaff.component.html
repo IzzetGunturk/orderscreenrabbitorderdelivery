@@ -2,8 +2,11 @@
   <header>
     <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
     <div class="weathertime">
-      <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
-      <div class="datetime">{{ currentDateTime | date:"MMM dd, yyyy 'at' hh:mm a" }}</div>
+      <div class="weather">
+        <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
+        <p>12°C</p>
+      </div>
+      <div class="datetime">{{ currentDateTime | date:"M-d-yyyy hh:mm" }}</div>
     </div>
   </header>
 
@@ -18,7 +21,10 @@
       </div>
       <hr>
       <div class="orderbody">
-        <div class="comment" *ngIf="order.comment">{{ order.comment }}</div>
+        <div class="comment" *ngIf="order.comment">
+          <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
+          <p>{{ order.comment }}</p>
+        </div>
         <div class="dishes" *ngFor="let dish of order.dishes">
           <input type="checkbox" [checked]="dish.prepared" (change)="togglePreparedStatus(dish)" />
           <div class="amountdishes" [ngClass]="{'strikethrough': dish.prepared}" (click)="togglePreparedStatus(dish)">
@@ -28,8 +34,11 @@
         </div>
       </div>
       <hr>
-      <button class="buttonprepared">
-        Mark as prepared
+      <button>
+        <div class="buttontext">
+          <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
+          <p>Mark as prepared</p>
+        </div>
       </button>
     </div>
 

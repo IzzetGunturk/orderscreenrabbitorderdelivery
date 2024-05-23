@@ -1,4 +1,8 @@
-$primary-color: #FAA419;
+$primary-500: #FAA419;
+$secondary-500: #54565A;
+$success-border: #4CAF50;
+$info-border: #2196F3;
+$white: #fff;
 
 body {
   margin: 0;
@@ -17,6 +21,16 @@ header {
   .weathertime {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $secondary-500;
+
+    .weather {
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
+    }
   }
 }
 
@@ -30,7 +44,7 @@ header {
 .order {
   width: calc(25% - 16px); /* responsiveness / gap */
   padding: 20px;
-  border: 1px solid $primary-color;
+  border: 1px solid $primary-500;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -38,7 +52,7 @@ header {
 
   hr {
     border: none;
-    border-top: 1px solid $primary-color;
+    border-top: 1px solid $primary-500;
   }
 
   .orderheader {
@@ -62,6 +76,18 @@ header {
     flex-grow: 1;
     gap: 16px;
 
+    .comment {
+      background-color: $info-border;
+      border-radius: 5px;
+      padding: 10px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
     .dishes {
       display: flex;
       flex-direction: row;
@@ -76,18 +102,26 @@ header {
   }
 
   button {
-    background-color: #4CAF50;
+    background-color: $success-border;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     height: 50px;
+
+    .buttontext {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
   }
 }
 
 .sidebar {
-  background-color: $primary-color;
+  background-color: $primary-500;
   color: #fff;
   position: fixed;
   top: 0;

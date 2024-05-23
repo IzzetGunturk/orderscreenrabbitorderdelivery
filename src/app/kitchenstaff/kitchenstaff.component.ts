@@ -44,6 +44,6 @@ export class KitchenstaffComponent {
   currentDateTime: Date;
   
   constructor() {
-    this.currentDateTime.toLocaleString('en-US', { hour12: false });
+    this.currentDateTime = new Date();
   }
 }
