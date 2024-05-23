@@ -11,10 +11,10 @@
   </header>
 
   <div class="orders-container">
-    <div class="order" *ngFor="let order of orders">
+    <div class="order" *ngFor="let order of orders.slice(0, 4); let i = index">
       <div class="orderheader">
         <div class="ordertype">
-          <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#FAA419'"></app-svgicons>
+          <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#1C1B20'"></app-svgicons>
           <p>{{ order.type }}</p>
         </div>
         <p>#{{ order.id }}</p>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <hr>
-      <button>
+      <button (click)="markOrderAsPrepared()">
         <div class="buttontext">
           <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
           <p>Mark as prepared</p>
