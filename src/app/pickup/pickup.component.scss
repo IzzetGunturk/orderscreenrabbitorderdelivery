@@ -1,0 +1,178 @@
+$primary-500: #FAA419;
+$secondary-500: #54565A;
+$secondary-300: #87898C;
+$success-border: #4CAF50;
+$info-border: #2196F3;
+$white: #fff;
+$dark-500: #1C1B20;
+
+body {
+  margin: 0;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 10px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  .weathertime {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $secondary-500;
+
+    .weather {
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
+    }
+  }
+}
+
+.orderscheme {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .titletypeorder {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-size: 25px;
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 2px dotted $primary-500;
+  }
+}
+
+.orders-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.order {
+  width: calc(20% - 16px);
+  /* responsiveness / gap */
+  height: 230px;
+  padding: 20px;
+  border: 1px solid $primary-500;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: $dark-500;
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-500;
+  }
+
+  .orderheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+
+    .ordertype {
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      align-items: center;
+    }
+  }
+
+  .orderbody {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    flex-grow: 1;
+    gap: 16px;
+
+    .comment {
+      background-color: $info-border;
+      border-radius: 5px;
+      padding: 10px;
+      color: $white;
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    .dishes {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      font-weight: 500;
+      align-items: flex-start;
+
+      .checkbox {
+        margin-top: 4px;
+      }
+
+      .amountdishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .dishnameoption {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          span {
+            font-size: 16px;
+            font-weight: normal;
+            color: $secondary-300;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: $success-border;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+
+    .buttontext {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
