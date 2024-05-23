@@ -54,6 +54,20 @@ header {
     display: flex;
     flex-direction: column;
     font-size: 16px;
+    flex-grow: 1;
+    gap: 16px;
+
+    .dishes {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      .amountdishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
   }
 
   button {
@@ -76,4 +90,8 @@ header {
   height: 100vh;
   padding: 20px;
   width: 18%;
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }

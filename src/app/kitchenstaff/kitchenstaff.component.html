@@ -8,19 +8,23 @@
   </header>
 
   <div class="orders-container">
-    <div class="order">
+    <div class="order" *ngFor="let order of orders">
       <div class="orderheader">
         <div class="ordertype">
-          <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#FAA419'"></app-svgicons>
-          <p>Pick up</p>
+          <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>{{ order.type | titlecase }}</p>
         </div>
-        <p>#1234</p>
+        <p>#{{ order.id }}</p>
       </div>
       <hr>
       <div class="orderbody">
-        <p>ewa</p>
-        <p>aw</p>
-        <p></p>
+        <div class="dishes" *ngFor="let dish of order.dishes">
+          <input type="checkbox" [checked]="dish.prepared" (change)="togglePreparedStatus(dish)" />
+          <div class="amountdishes" [ngClass]="{'strikethrough': dish.prepared}" (click)="togglePreparedStatus(dish)">
+            <p>{{ dish.quantity }}x </p>
+            <p>{{ dish.name }}</p>
+          </div>
+        </div>
       </div>
       <hr>
       <button class="buttonprepared">
