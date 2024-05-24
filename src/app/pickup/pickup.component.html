@@ -10,6 +10,7 @@
     </div>
   </header>
 
+  <!-- Delivery -->
   <div class="orderscheme">
     <div class="titletypeorder">
       <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
@@ -17,34 +18,77 @@
       <hr>
     </div>
     <div class="orders-container">
-      <div class="order" *ngFor="let order of orders.slice(0, 6); let i = index">
-        <div class="orderheader">
-          <div class="ordertype">
-            <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#1C1B20'"></app-svgicons>
-            <p>{{ order.type }}</p>
-          </div>
-          <p>#{{ order.id }}</p>
+      <div class="ordersready">
+        <div class="titletypeorder">
+          <p>Ready for pick up</p>
         </div>
-        <hr>
-        <div class="orderbody">
-          <div class="comment" *ngIf="order.comment">
-            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
-            <p>{{ order.comment }}</p>
-          </div>
-          <div class="dishes" *ngFor="let dish of order.dishes">
-            <div class="amountdishes">
-              <p>{{ dish.quantity }}x </p>
-              <div class="dishnameoption">
-                <p>{{ dish.name }}</p>
-                <span *ngIf="dish.option">- {{ dish.option }}</span>
+        <div class="orders">
+          <div class="order" *ngFor="let order of deliveryOrdersReady; let i = index">
+            <div class="orderheader">
+              <div class="ordertype">
+                <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#1C1B20'"></app-svgicons>
+                <p>{{ order.type }}</p>
+              </div>
+              <p>#{{ order.id }}</p>
+            </div>
+            <hr>
+            <div class="orderbody">
+              <div class="comment" *ngIf="order.comment">
+                <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'"></app-svgicons>
+                <p>{{ order.comment }}</p>
+              </div>
+              <div class="dishes" *ngFor="let dish of order.dishes">
+                <div class="amountdishes">
+                  <p>{{ dish.quantity }}x </p>
+                  <div class="dishnameoption">
+                    <p>{{ dish.name }}</p>
+                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Repeat order elements as needed -->
+        </div>
+      </div>
+
+      <div class="orderspreparation">
+        <div class="titletypeorder">
+          <p>In preparation</p>
+        </div>
+        <div class="orders">
+          <div class="order" *ngFor="let order of deliveryOrdersPreparation; let i = index">
+            <div class="orderheader">
+              <div class="ordertype">
+                <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#1C1B20'"></app-svgicons>
+                <p>{{ order.type }}</p>
+              </div>
+              <p>#{{ order.id }}</p>
+            </div>
+            <hr>
+            <div class="orderbody">
+              <div class="comment" *ngIf="order.comment">
+                <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
+                <p>{{ order.comment }}</p>
+              </div>
+              <div class="dishes" *ngFor="let dish of order.dishes">
+                <div class="amountdishes">
+                  <p>{{ dish.quantity }}x </p>
+                  <div class="dishnameoption">
+                    <p>{{ dish.name }}</p>
+                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat order elements as needed -->
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Pick up -->
   <div class="orderscheme">
     <div class="titletypeorder">
       <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#FAA419'"></app-svgicons>
@@ -52,29 +96,71 @@
       <hr>
     </div>
     <div class="orders-container">
-      <div class="order" *ngFor="let order of orders.slice(0, 6); let i = index">
-        <div class="orderheader">
-          <div class="ordertype">
-            <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#1C1B20'"></app-svgicons>
-            <p>{{ order.type }}</p>
-          </div>
-          <p>#{{ order.id }}</p>
+      <div class="ordersready">
+        <div class="titletypeorder">
+          <p>Ready for pick up</p>
         </div>
-        <hr>
-        <div class="orderbody">
-          <div class="comment" *ngIf="order.comment">
-            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
-            <p>{{ order.comment }}</p>
-          </div>
-          <div class="dishes" *ngFor="let dish of order.dishes">
-            <div class="amountdishes">
-              <p>{{ dish.quantity }}x </p>
-              <div class="dishnameoption">
-                <p>{{ dish.name }}</p>
-                <span *ngIf="dish.option">- {{ dish.option }}</span>
+        <div class="orders">
+          <div class="order" *ngFor="let order of pickUpOrdersReady; let i = index">
+            <div class="orderheader">
+              <div class="ordertype">
+                <app-svgicons [selectedSvg]="order.icon" [fillColor]="'#1C1B20'"></app-svgicons>
+                <p>{{ order.type }}</p>
+              </div>
+              <p>#{{ order.id }}</p>
+            </div>
+            <hr>
+            <div class="orderbody">
+              <div class="comment" *ngIf="order.comment">
+                <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'"></app-svgicons>
+                <p>{{ order.comment }}</p>
+              </div>
+              <div class="dishes" *ngFor="let dish of order.dishes">
+                <div class="amountdishes">
+                  <p>{{ dish.quantity }}x </p>
+                  <div class="dishnameoption">
+                    <p>{{ dish.name }}</p>
+                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Repeat order elements as needed -->
+        </div>
+      </div>
+
+      <div class="orderspreparation">
+        <div class="titletypeorder">
+          <p>In preparation</p>
+        </div>
+        <div class="orders">
+          <div class="order" *ngFor="let order of pickUpOrdersPreparation; let i = index">
+            <div class="orderheader">
+              <div class="ordertype">
+                <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#1C1B20'"></app-svgicons>
+                <p>{{ order.type }}</p>
+              </div>
+              <p>#{{ order.id }}</p>
+            </div>
+            <hr>
+            <div class="orderbody">
+              <div class="comment" *ngIf="order.comment">
+                <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
+                <p>{{ order.comment }}</p>
+              </div>
+              <div class="dishes" *ngFor="let dish of order.dishes">
+                <div class="amountdishes">
+                  <p>{{ dish.quantity }}x </p>
+                  <div class="dishnameoption">
+                    <p>{{ dish.name }}</p>
+                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat order elements as needed -->
         </div>
       </div>
     </div>

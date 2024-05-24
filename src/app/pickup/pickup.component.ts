@@ -5,6 +5,7 @@ interface Order {
   id: number;
   type: string;
   comment: string;
+  prepared: boolean;
   dishes: Dish[];
 }
 
@@ -12,14 +13,13 @@ interface Dish {
   name: string;
   option: string;
   quantity: number;
-  prepared: boolean;
 }
+
 @Component({
   selector: 'app-pickup',
   templateUrl: './pickup.component.html',
-  styleUrl: './pickup.component.scss'
+  styleUrls: ['./pickup.component.scss']
 })
-
 export class PickupComponent {
   orders: Order[] = [
     {
@@ -27,75 +27,77 @@ export class PickupComponent {
       id: 1238,
       type: 'Pick up',
       comment: '',
+      prepared: true,
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: '', quantity: 1, prepared: false },
-        { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
-        { name: 'Fanta', quantity: 1, option: '', prepared: false }
+        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
+        { name: '5Kitchens Salade', option: '', quantity: 1 },
+        { name: 'Fanta', option: '', quantity: 1 }
       ]
     },
+
     {
-      icon: 'table',
-      id: 1239,
-      type: '3',
+      icon: 'pickup',
+      id: 1238,
+      type: 'Pick up',
       comment: '',
+      prepared: false,
       dishes: [
-        { name: 'Pasta Bolognese', option: 'Penne', quantity: 1, prepared: false },
-        { name: 'Pepsi Regular', option: '', quantity: 1, prepared: false },
-      ]
-    },
-    {
-      icon: 'table',
-      id: 1240,
-      type: '6',
-      comment: '',
-      dishes: [
-        { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1, prepared: false },
-        { name: "Fanta", option: '', quantity: 1, prepared: false },
+        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
+        { name: '5Kitchens Salade', option: '', quantity: 1 },
+        { name: 'Fanta', option: '', quantity: 1 }
       ]
     },
     {
       icon: 'pickup',
-      id: 1241,
-      type: 'Pick up',
-      comment: 'Pizza niet snijden',
+      id: 1238,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
       dishes: [
-        { name: 'Pizza Tonno', option: '', quantity: 1, prepared: false },
-        { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1, prepared: false },
+        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
+        { name: '5Kitchens Salade', option: '', quantity: 1 },
+        { name: 'Fanta', option: '', quantity: 1 }
       ]
     },
     {
-      icon: 'delivery',
-      id: 1242,
+      icon: 'pickup',
+      id: 1238,
       type: 'Delivery',
-      comment: 'Graag rietjes erbij',
+      comment: '',
+      prepared: true,
       dishes: [
-        { name: 'Zalmfilet', option: 'Witte Wijnsaus', quantity: 1, prepared: false },
-        { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
-        { name: 'Classic Burger', option: '', quantity: 1, prepared: false },
-      ]
-    },
-    {
-      icon: 'delivery',
-      id: 1242,
-      type: 'Delivery',
-      comment: 'Graag rietjes erbij',
-      dishes: [
-        { name: 'Zalmfilet', option: 'Witte Wijnsaus', quantity: 1, prepared: false },
-        { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
-        { name: 'Classic Burger', option: '', quantity: 1, prepared: false },
+        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
+        { name: '5Kitchens Salade', option: '', quantity: 1 },
+        { name: 'Fanta', option: '', quantity: 1 }
       ]
     },
   ];
-  
+
+  get deliveryOrdersReady() {
+    return this.orders.filter(order => order.type === 'Delivery' && order.dishes.every(dish => order.prepared));
+  }
+
+  get deliveryOrdersPreparation() {
+    return this.orders.filter(order => order.type === 'Delivery' && order.dishes.some(dish => !order.prepared));
+  }
+
+  get pickUpOrdersReady() {
+    return this.orders.filter(order => order.type === 'Pick up' && order.dishes.every(dish => order.prepared));
+  }
+
+  get pickUpOrdersPreparation() {
+    return this.orders.filter(order => order.type === 'Pick up' && order.dishes.some(dish => !order.prepared));
+  }
+
   // mark order as done + timeout effect
   markOrderAsPrepared(index: number) {
     if (index < this.orders.length && index > -1) {
       const order = document.querySelectorAll('.order')[index];
-  
+
       if (order) {
         order.classList.add('fade-out');
       }
-  
+
       setTimeout(() => {
         this.orders.splice(index, 1);
       }, 2000);
@@ -104,7 +106,7 @@ export class PickupComponent {
 
   // date time
   currentDateTime: Date;
-  
+
   constructor() {
     this.currentDateTime = new Date();
   }

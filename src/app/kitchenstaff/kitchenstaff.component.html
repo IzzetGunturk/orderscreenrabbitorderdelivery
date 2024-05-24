@@ -22,7 +22,7 @@
       <hr>
       <div class="orderbody">
         <div class="comment" *ngIf="order.comment">
-          <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'"></app-svgicons>
+          <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgWidth]="'20px'" [svgHeight]="'20px'"></app-svgicons>
           <p>{{ order.comment }}</p>
         </div>
         <div class="dishes" *ngFor="let dish of order.dishes">

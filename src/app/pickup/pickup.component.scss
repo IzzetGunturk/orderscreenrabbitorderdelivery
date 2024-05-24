@@ -60,11 +60,22 @@ header {
   display: flex;
   flex-direction: row;
   gap: 16px;
+
+  .ordersready .orderpreparation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .orders {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
 }
 
 .order {
-  width: calc(20% - 16px);
-  /* responsiveness / gap */
+  width: 260px;
   height: 230px;
   padding: 20px;
   border: 1px solid $primary-500;
@@ -104,9 +115,9 @@ header {
     .comment {
       background-color: $info-border;
       border-radius: 5px;
-      padding: 10px;
+      padding: 7px;
       color: $white;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
       display: flex;
       flex-direction: row;

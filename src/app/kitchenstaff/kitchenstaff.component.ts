@@ -31,7 +31,7 @@ export class KitchenstaffComponent {
       dishes: [
         { name: 'Wrap Crispy Chicken', option: '', quantity: 1, prepared: false },
         { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
-        { name: 'Fanta', quantity: 1, option: '', prepared: false }
+        { name: 'Fanta', option: '', quantity: 1, prepared: false }
       ]
     },
     {
