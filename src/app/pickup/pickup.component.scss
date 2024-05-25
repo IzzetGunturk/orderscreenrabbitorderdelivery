@@ -11,7 +11,7 @@ body {
   padding-left: 32px;
   padding-right: 32px;
   padding-top: 10px;
-  gap: 32px;
+  gap: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +39,7 @@ header {
 .orderscheme {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 8px;
 
   .titletypeorder {
     display: flex;
@@ -59,12 +59,19 @@ header {
 .orders-container {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 290px;
 
-  .ordersready .orderpreparation {
+  .ordersready, .orderspreparation {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    .orderstatus {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+      gap: 5px;
+    }
 
     .orders {
       display: flex;
@@ -75,14 +82,14 @@ header {
 }
 
 .order {
-  width: 260px;
-  height: 230px;
+  width: 290px;
+  height: 260px;
   padding: 20px;
   border: 1px solid $primary-500;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   color: $dark-500;
 
   hr {
@@ -94,23 +101,47 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
+    align-items: center;
 
-    .ordertype {
+    .orderid {
       display: flex;
       flex-direction: row;
-      gap: 6px;
-      align-items: center;
+      gap: 5px;
+    }
+
+    .buttonHandle {
+      background-color: $success-border;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 7px 5px 7px;
+
+      .buttontext {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+      }
     }
   }
 
   .orderbody {
     display: flex;
     flex-direction: column;
-    font-size: 16px;
+    font-size: 14px;
     flex-grow: 1;
-    gap: 16px;
+    gap: 12px;
+    
+    .commentanddeliveryinformation {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
     .comment {
       background-color: $info-border;
@@ -122,6 +153,13 @@ header {
       display: flex;
       flex-direction: row;
       gap: 5px;
+    }
+
+    .deliveryinformation {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+      gap: 6px;
     }
 
     .dishes {
@@ -154,23 +192,24 @@ header {
       }
     }
   }
+}
 
-  button {
-    background-color: $success-border;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    height: 50px;
+.buttonRoute {
+  background-color: $primary-500;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 7px 5px 7px;
+  align-self: flex-end; 
 
-    .buttontext {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-    }
+  .buttontext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
   }
 }
 

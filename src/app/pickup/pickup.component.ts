@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 
-interface Order {
-  icon: string;
+interface DeliveryOrder {
+  deliverycompanyicon: string;
   id: number;
   type: string;
-  comment: string;
+  deliverycomment: string;
+  prepared: boolean;
+  address: string;
+  deliveryime: string;
+  deliveryduration: string;
+}
+
+interface PickupOrder {
+  id: number;
+  type: string;
+  deliverycomment: string;
   prepared: boolean;
   dishes: Dish[];
 }
@@ -21,87 +31,104 @@ interface Dish {
   styleUrls: ['./pickup.component.scss']
 })
 export class PickupComponent {
-  orders: Order[] = [
+  deliveryorders: DeliveryOrder[] =[
     {
-      icon: 'pickup',
-      id: 1238,
-      type: 'Pick up',
-      comment: '',
+      deliverycompanyicon: 'thuisbezorgd',
+      id: 1237,
+      type: 'Delivery',
+      deliverycomment: 'Kloppen aan de deur aub',
       prepared: true,
-      dishes: [
-        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 },
-        { name: 'Fanta', option: '', quantity: 1 }
-      ]
+      address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
+      deliveryime: 'Delivery time: 17:52',
+      deliveryduration: 'Delivery duration: 00:07',
     },
+    {
+      deliverycompanyicon: 'ubereats',
+      id: 1242,
+      type: 'Delivery',
+      deliverycomment: '',
+      prepared: false,
+      address: 'Aalsburg 3102, 6602 WS Wijchen',
+      deliveryime: 'Delivery time: 18:45',
+      deliveryduration: 'Delivery duration: 00:05',
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1243,
+      type: 'Delivery',
+      deliverycomment: '',
+      prepared: false,
+      address: 'Diepvoorde 1051, 6605 EA Wijchen',
+      deliveryime: 'Delivery time: 18:45',
+      deliveryduration: 'Delivery duration: 00:15',
+    },
+  ]
 
+  pickuporders: PickupOrder[] = [
     {
-      icon: 'pickup',
-      id: 1238,
+      id: 1242,
       type: 'Pick up',
-      comment: '',
+      deliverycomment: '',
       prepared: false,
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 },
-        { name: 'Fanta', option: '', quantity: 1 }
+        { name: 'Wrap Crispy Chicken', option: 'Witte Wijnsaus', quantity: 1},
+        { name: '5Kitchens Salade', option: '', quantity: 1},
       ]
     },
     {
-      icon: 'pickup',
-      id: 1238,
-      type: 'Delivery',
-      comment: '',
+      id: 1242,
+      type: 'Pick up',
+      deliverycomment: 'Pizza niet snijden',
       prepared: false,
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 },
-        { name: 'Fanta', option: '', quantity: 1 }
-      ]
-    },
-    {
-      icon: 'pickup',
-      id: 1238,
-      type: 'Delivery',
-      comment: '',
-      prepared: true,
-      dishes: [
-        { name: 'Wrap Crispy Chicken', option: '', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 },
-        { name: 'Fanta', option: '', quantity: 1 }
+        { name: 'Pizza Tonno', option: '', quantity: 1},
+        { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1},
+        { name: '5Kitchens Salade', option: '', quantity: 1},
+        { name: 'Sprite', option: '', quantity: 1},
+        { name: 'Spa blauw', option: '', quantity: 1},
       ]
     },
   ];
 
+  // filter orders
   get deliveryOrdersReady() {
-    return this.orders.filter(order => order.type === 'Delivery' && order.dishes.every(dish => order.prepared));
+    const deliveryOrders = this.deliveryorders.filter(order => order.type === 'Delivery');
+
+    const readyDeliveryOrders = deliveryOrders.filter(order => {
+      return order.prepared
+    });
+
+    return readyDeliveryOrders;
   }
 
   get deliveryOrdersPreparation() {
-    return this.orders.filter(order => order.type === 'Delivery' && order.dishes.some(dish => !order.prepared));
+    const deliveryOrders = this.deliveryorders.filter(order => order.type === 'Delivery');
+
+    const preparationDeliveryOrders = deliveryOrders.filter(order => {
+      return !order.prepared
+    });
+
+    return preparationDeliveryOrders;
   }
 
-  get pickUpOrdersReady() {
-    return this.orders.filter(order => order.type === 'Pick up' && order.dishes.every(dish => order.prepared));
+  get pickupOrdersReady () {
+    const pickupOrders = this.pickuporders.filter(order => order.type === "Pick up");
+
+    const readyPickupOrders = pickupOrders.filter(order => {
+      return order.prepared;
+    })
+
+    return readyPickupOrders;
   }
 
-  get pickUpOrdersPreparation() {
-    return this.orders.filter(order => order.type === 'Pick up' && order.dishes.some(dish => !order.prepared));
-  }
+  get pickupOrdersPreparation () {
+    const pickupOrders = this.pickuporders.filter(order => order.type === "Pick up");
 
-  // mark order as done + timeout effect
-  markOrderAsPrepared(index: number) {
-    if (index < this.orders.length && index > -1) {
-      const order = document.querySelectorAll('.order')[index];
+    const preparationPickupOrders = pickupOrders.filter(order => {
+      return !order.prepared;
+    })
 
-      if (order) {
-        order.classList.add('fade-out');
-      }
-
-      setTimeout(() => {
-        this.orders.splice(index, 1);
-      }, 2000);
-    }
+    return preparationPickupOrders;
   }
 
   // date time
