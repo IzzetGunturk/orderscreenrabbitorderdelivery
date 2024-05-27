@@ -30,6 +30,7 @@ interface Dish {
   templateUrl: './pickup.component.html',
   styleUrls: ['./pickup.component.scss']
 })
+
 export class PickupComponent {
   deliveryorders: DeliveryOrder[] =[
     {
@@ -136,5 +137,16 @@ export class PickupComponent {
 
   constructor() {
     this.currentDateTime = new Date();
+  }
+
+  // modal
+  modalVisible: any = null;
+
+  openModal(order: any) {
+    this.modalVisible = order;
+  }
+
+  closeModal() {
+    this.modalVisible = null;
   }
 }

@@ -26,7 +26,7 @@
           <p>Ready for pick up</p>
         </div>
         <div class="orders">
-          <div class="order" *ngFor="let order of deliveryOrdersReady; let i = index">
+          <div class="order ready-order" *ngFor="let order of deliveryOrdersReady; let i = index">
             <div class="orderheader">
               <div class="orderid">
                 <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
@@ -43,7 +43,7 @@
             </div>
             <hr>
             <div class="orderbody">
-              <div class="commentanddeliveryinformation">
+              <div class="commentandorderinformation">
                 <div class="comment" *ngIf="order.deliverycomment">
                   <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="17px" svgWidth="17px">
                   </app-svgicons>
@@ -90,7 +90,7 @@
             </div>
             <hr>
             <div class="orderbody">
-              <div class="commentanddeliveryinformation">
+              <div class="commentandorderinformation">
                 <div class="comment" *ngIf="order.deliverycomment">
                   <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="17px" svgWidth="17px">
                   </app-svgicons>
@@ -131,7 +131,7 @@
           <p>Ready for pick up</p>
         </div>
         <div class="orders">
-          <div class="order" *ngFor="let order of pickupOrdersReady; let i = index">
+          <div class="order ready-order" *ngFor="let order of pickupOrdersReady; let i = index">
             <div class="orderheader">
               <p>#{{ order.id }}</p>
               <button class="buttonHandle">
@@ -143,7 +143,7 @@
             </div>
             <hr>
             <div class="orderbody">
-              <div class="commentanddeliveryinformation">
+              <div class="commentandorderinformation">
                 <div class="comment" *ngIf="order.deliverycomment">
                   <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'">
                   </app-svgicons>
@@ -160,10 +160,10 @@
                 </div>
               </div>
             </div>
-            <button class="buttonRoute">
+            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <div class="buttontext">
-                <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
-                <p>Route</p>
+                <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+                <p>View more</p>
               </div>
             </button>
           </div>
@@ -189,7 +189,7 @@
             </div>
             <hr>
             <div class="orderbody">
-              <div class="commentanddeliveryinformation">
+              <div class="commentandorderinformation">
                 <div class="comment" *ngIf="order.deliverycomment">
                   <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'">
                   </app-svgicons>
@@ -203,10 +203,12 @@
                       <span *ngIf="dish.option">- {{ dish.option }}</span>
                     </div>
                   </div>
+                  <div class="overlay" *ngIf="order.dishes.length > 3"></div>
                 </div>
+                <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
             </div>
-            <button class="buttonRoute">
+            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <div class="buttontext">
                 <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
                 <p>View more</p>
@@ -217,4 +219,39 @@
       </div>
     </div>
   </div>
+
+  @if (modalVisible != null) {
+    <!-- Modal -->
+    <div class="modal">
+      <div class="modalcontent">
+        <div class="buttonclose">
+          <app-svgicons [selectedSvg]="'close'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'" 
+          (click)="closeModal()" class="closeIcon">
+          </app-svgicons>
+        </div>
+        <div class="modalheader">
+          <p>#{{ modalVisible.id }}</p>
+        </div>
+        <hr>
+        <div class="modalbody">
+          <div class="commentandorderinformation">
+            <div class="comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'">
+              </app-svgicons>
+              <p>{{ modalVisible.deliverycomment }}</p>
+            </div>
+            <div class="dishes" *ngFor="let dish of modalVisible.dishes">
+              <div class="amountdishes">
+                <p>{{ dish.quantity }}x</p>
+                <div class="dishnameoption">
+                  <p>{{ dish.name }}</p>
+                  <span>{{ dish.option }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
 </body>
