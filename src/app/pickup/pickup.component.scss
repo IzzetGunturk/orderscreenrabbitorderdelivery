@@ -110,11 +110,22 @@ header {
     font-size: 14px;
     font-weight: 500;
     align-items: center;
+    height: 30px;
 
     .orderid {
       display: flex;
       flex-direction: row;
       gap: 5px;
+    }
+
+    .id-name {
+      display: flex;
+      flex-direction: column;
+
+      .namecustomer {
+        font-size: 10px;
+        color: $secondary-300;
+      }
     }
 
     .buttonHandle {
@@ -277,6 +288,12 @@ header {
     height: 50%;
     font-size: 18px;
     gap: 12px;
+
+    .namecustomer {
+      font-size: 14px;
+      color: $secondary-300;
+      font-weight: normal;
+    }
 
     .buttonclose {
       display: flex;

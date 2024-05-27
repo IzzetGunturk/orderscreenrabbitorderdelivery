@@ -16,6 +16,7 @@ interface PickupOrder {
   type: string;
   deliverycomment: string;
   prepared: boolean;
+  namecustomer: string;
   dishes: Dish[];
 }
 
@@ -70,7 +71,8 @@ export class PickupComponent {
       id: 1242,
       type: 'Pick up',
       deliverycomment: '',
-      prepared: false,
+      prepared: true,
+      namecustomer: 'Emma Jones',
       dishes: [
         { name: 'Wrap Crispy Chicken', option: 'Witte Wijnsaus', quantity: 1},
         { name: '5Kitchens Salade', option: '', quantity: 1},
@@ -81,6 +83,7 @@ export class PickupComponent {
       type: 'Pick up',
       deliverycomment: 'Pizza niet snijden',
       prepared: false,
+      namecustomer: 'Max van der Meer',
       dishes: [
         { name: 'Pizza Tonno', option: '', quantity: 1},
         { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1},
@@ -148,5 +151,16 @@ export class PickupComponent {
 
   closeModal() {
     this.modalVisible = null;
+  }
+
+  // mark order done
+  handleOrdersDelivery(index: number) {
+    
+  }
+
+  handleOrdersPickup() {
+    setTimeout(() => {
+      this.pickuporders = this.pickuporders.filter(order => !order.prepared);
+    }, 2000)
   }
 }

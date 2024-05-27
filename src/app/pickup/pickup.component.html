@@ -34,7 +34,7 @@
                 </app-svgicons>
                 <p>#{{ order.id }}</p>
               </div>
-              <button class="buttonHandle">
+              <button class="buttonHandle" (click)="handleOrdersDelivery(i)">
                 <div class="buttontext">
                   <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
                   <p>Handle</p>
@@ -81,12 +81,6 @@
                 </app-svgicons>
                 <p>#{{ order.id }}</p>
               </div>
-              <button class="buttonHandle">
-                <div class="buttontext">
-                  <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
-                  <p>Handle</p>
-                </div>
-              </button>
             </div>
             <hr>
             <div class="orderbody">
@@ -133,8 +127,11 @@
         <div class="orders">
           <div class="order ready-order" *ngFor="let order of pickupOrdersReady; let i = index">
             <div class="orderheader">
-              <p>#{{ order.id }}</p>
-              <button class="buttonHandle">
+              <div class="id-name">
+                <p>#{{ order.id }}</p>
+                <p class="namecustomer">{{ order.namecustomer }}</p>
+              </div>
+              <button class="buttonHandle" (click)="handleOrdersPickup()">
                 <div class="buttontext">
                   <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
                   <p>Handle</p>
@@ -179,13 +176,10 @@
         <div class="orders">
           <div class="order" *ngFor="let order of pickupOrdersPreparation; let i = index">
             <div class="orderheader">
-              <p>#{{ order.id }}</p>
-              <button class="buttonHandle">
-                <div class="buttontext">
-                  <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
-                  <p>Handle</p>
-                </div>
-              </button>
+              <div class="id-name">
+                <p>#{{ order.id }}</p>
+                <p class="namecustomer">{{ order.namecustomer }}</p>
+              </div>
             </div>
             <hr>
             <div class="orderbody">
@@ -221,37 +215,38 @@
   </div>
 
   @if (modalVisible != null) {
-    <!-- Modal -->
-    <div class="modal">
-      <div class="modalcontent">
-        <div class="buttonclose">
-          <app-svgicons [selectedSvg]="'close'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'" 
+  <!-- Modal -->
+  <div class="modal">
+    <div class="modalcontent">
+      <div class="buttonclose">
+        <app-svgicons [selectedSvg]="'close'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'"
           (click)="closeModal()" class="closeIcon">
-          </app-svgicons>
-        </div>
-        <div class="modalheader">
-          <p>#{{ modalVisible.id }}</p>
-        </div>
-        <hr>
-        <div class="modalbody">
-          <div class="commentandorderinformation">
-            <div class="comment">
-              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'">
-              </app-svgicons>
-              <p>{{ modalVisible.deliverycomment }}</p>
-            </div>
-            <div class="dishes" *ngFor="let dish of modalVisible.dishes">
-              <div class="amountdishes">
-                <p>{{ dish.quantity }}x</p>
-                <div class="dishnameoption">
-                  <p>{{ dish.name }}</p>
-                  <span>{{ dish.option }}</span>
-                </div>
+        </app-svgicons>
+      </div>
+      <div class="modalheader">
+        <p>#{{ modalVisible.id }}</p>
+        <p class="namecustomer">{{ modalVisible.namecustomer }}</p>
+      </div>
+      <hr>
+      <div class="modalbody">
+        <div class="commentandorderinformation">
+          <div class="comment">
+            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'">
+            </app-svgicons>
+            <p>{{ modalVisible.deliverycomment }}</p>
+          </div>
+          <div class="dishes" *ngFor="let dish of modalVisible.dishes">
+            <div class="amountdishes">
+              <p>{{ dish.quantity }}x</p>
+              <div class="dishnameoption">
+                <p>{{ dish.name }}</p>
+                <span>{{ dish.option }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   }
 </body>
