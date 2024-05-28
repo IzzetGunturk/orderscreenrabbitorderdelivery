@@ -4,19 +4,27 @@ interface DeliveryOrder {
   deliverycompanyicon: string;
   id: number;
   type: string;
-  deliverycomment: string;
+  comment: string;
   prepared: boolean;
   address: string;
-  deliveryime: string;
+  deliverytime: string;
   deliveryduration: string;
 }
 
 interface PickupOrder {
   id: number;
   type: string;
-  deliverycomment: string;
+  comment: string;
   prepared: boolean;
   namecustomer: string;
+  dishes: Dish[];
+}
+
+interface RestaurantOrder {
+  tablenumber: number;
+  type: string;
+  comment: string;
+  prepared: boolean;
   dishes: Dish[];
 }
 
@@ -38,30 +46,30 @@ export class PickupComponent {
       deliverycompanyicon: 'thuisbezorgd',
       id: 1237,
       type: 'Delivery',
-      deliverycomment: 'Kloppen aan de deur aub',
+      comment: 'Kloppen aan de deur aub',
       prepared: true,
       address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
-      deliveryime: 'Delivery time: 17:52',
+      deliverytime: 'Delivery time: 17:52',
       deliveryduration: 'Delivery duration: 00:07',
     },
     {
       deliverycompanyicon: 'ubereats',
       id: 1242,
       type: 'Delivery',
-      deliverycomment: '',
+      comment: '',
       prepared: false,
       address: 'Aalsburg 3102, 6602 WS Wijchen',
-      deliveryime: 'Delivery time: 18:45',
+      deliverytime: 'Delivery time: 18:45',
       deliveryduration: 'Delivery duration: 00:05',
     },
     {
       deliverycompanyicon: '',
       id: 1243,
       type: 'Delivery',
-      deliverycomment: '',
+      comment: '',
       prepared: false,
       address: 'Diepvoorde 1051, 6605 EA Wijchen',
-      deliveryime: 'Delivery time: 18:45',
+      deliverytime: 'Delivery time: 18:45',
       deliveryduration: 'Delivery duration: 00:15',
     },
   ]
@@ -70,7 +78,7 @@ export class PickupComponent {
     {
       id: 1242,
       type: 'Pick up',
-      deliverycomment: '',
+      comment: '',
       prepared: true,
       namecustomer: 'Emma Jones',
       dishes: [
@@ -81,7 +89,7 @@ export class PickupComponent {
     {
       id: 1242,
       type: 'Pick up',
-      deliverycomment: 'Pizza niet snijden',
+      comment: 'Pizza niet snijden',
       prepared: false,
       namecustomer: 'Max van der Meer',
       dishes: [
@@ -94,47 +102,69 @@ export class PickupComponent {
     },
   ];
 
+  restaurantorders: RestaurantOrder[] = [
+    {
+      tablenumber: 3,
+      type: 'Restaurant',
+      comment: '',
+      prepared: false,
+      dishes: [
+        { name: 'Pasta Bolognese', option: 'Penne', quantity: 1},
+        { name: 'Pepsi Regular', option: '', quantity: 1},
+      ]
+    },
+    {
+      tablenumber: 6,
+      type: 'Restaurant',
+      comment: '',
+      prepared: false,
+      dishes: [
+        { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1},
+        { name: 'Fanta', option: '', quantity: 1},  
+        { name: 'Fanta', option: '', quantity: 1},        
+        { name: 'Fanta', option: '', quantity: 1},        
+
+      ]
+    }
+  ];
+
   // filter orders
-  get deliveryOrdersReady() {
-    const deliveryOrders = this.deliveryorders.filter(order => order.type === 'Delivery');
-
-    const readyDeliveryOrders = deliveryOrders.filter(order => {
-      return order.prepared
-    });
-
-    return readyDeliveryOrders;
+  deliveryOrders(prepared: boolean) {
+    return this.deliveryorders.filter(order => order.type === 'Delivery' && order.prepared == prepared)
   }
 
-  get deliveryOrdersPreparation() {
-    const deliveryOrders = this.deliveryorders.filter(order => order.type === 'Delivery');
-
-    const preparationDeliveryOrders = deliveryOrders.filter(order => {
-      return !order.prepared
-    });
-
-    return preparationDeliveryOrders;
+  deliveryOrdersReady() {
+    return this.deliveryOrders(true);
   }
 
-  get pickupOrdersReady () {
-    const pickupOrders = this.pickuporders.filter(order => order.type === "Pick up");
-
-    const readyPickupOrders = pickupOrders.filter(order => {
-      return order.prepared;
-    })
-
-    return readyPickupOrders;
+  deliveryOrdersPreparation() {
+    return this.deliveryOrders(false);
   }
 
-  get pickupOrdersPreparation () {
-    const pickupOrders = this.pickuporders.filter(order => order.type === "Pick up");
-
-    const preparationPickupOrders = pickupOrders.filter(order => {
-      return !order.prepared;
-    })
-
-    return preparationPickupOrders;
+  pickupOrders(prepared: boolean) {
+    return this.pickuporders.filter(order => order.type == 'Pick up' && order.prepared == prepared)
   }
 
+  pickupOrdersReady() {
+    return this.pickupOrders(true);
+  }
+
+  pickupOrdersPreparation() {
+    return this.pickupOrders(false);
+  }
+
+  restaurantOrders(prepared: boolean) {
+    return this.restaurantorders.filter(order => order.type == 'Restaurant' && order.prepared == prepared)
+  }
+
+  restaurantOrdersReady() {
+    return this.restaurantOrders(true);
+  }
+
+  restaurantOrdersPreparation() {
+    return this.restaurantOrders(false);
+  }
+  
   // date time
   currentDateTime: Date;
 
@@ -154,13 +184,45 @@ export class PickupComponent {
   }
 
   // mark order done
-  handleOrdersDelivery(index: number) {
-    
+  handleOrderDelivery(index: number) {
+    if (index < this.deliveryorders.length) {
+      const order = document.querySelectorAll('.order-delivery')[index];
+  
+      if (order) {
+        order.classList.add('fade-out');
+      }
+  
+      setTimeout(() => {
+        this.deliveryorders.splice(index, 1);
+      }, 2000);
+    }
   }
 
-  handleOrdersPickup() {
-    setTimeout(() => {
-      this.pickuporders = this.pickuporders.filter(order => !order.prepared);
-    }, 2000)
+  handleOrderPickup(index: number) {
+    if (index < this.pickuporders.length) {
+      const order = document.querySelectorAll('.order-pickup')[index];
+  
+      if (order) {
+        order.classList.add('fade-out');
+      }
+  
+      setTimeout(() => {
+        this.pickuporders.splice(index, 1);
+      }, 2000);
+    }
+  }
+
+  handleOrderRestaurant(index: number) {
+    if (index < this.restaurantorders.length) {
+      const order = document.querySelectorAll('.order.restaurant')[index];
+  
+      if (order) {
+        order.classList.add('fade-out');
+      }
+  
+      setTimeout(() => {
+        this.restaurantorders.splice(index, 1);
+      }, 2000);
+    }
   }
 }
