@@ -34,12 +34,10 @@
                 </app-svgicons>
                 <p>#{{ order.id }}</p>
               </div>
-              <button class="buttonHandle" (click)="handleOrderDelivery(i)">
-                <div class="buttontext">
-                  <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
-                  <p>Handle</p>
-                </div>
-              </button>
+              <div class="buttonHandle" (click)="handleOrderDelivery(i)">
+                <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
+                <p>Handle</p>
+              </div>
             </div>
             <hr>
             <div class="orderbody">
@@ -56,12 +54,10 @@
                 </div>
               </div>
             </div>
-            <button class="buttonRoute">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
-                <p>Route</p>
-              </div>
-            </button>
+            <div class="buttonRoute">
+              <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
+              <p>Route</p>
+            </div>
           </div>
         </div>
       </div>
@@ -97,12 +93,10 @@
                 </div>
               </div>
             </div>
-            <button class="buttonRoute">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
-                <p>Route</p>
-              </div>
-            </button>
+            <div class="buttonRoute">
+              <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
+              <p>Route</p>
+            </div>
           </div>
         </div>
       </div>
@@ -131,12 +125,10 @@
                 <p>#{{ order.id }}</p>
                 <p class="namecustomer">{{ order.namecustomer }}</p>
               </div>
-              <button class="buttonHandle" (click)="handleOrderPickup(i)">
-                <div class="buttontext">
-                  <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
-                  <p>Handle</p>
-                </div>
-              </button>
+              <div class="buttonHandle" (click)="handleOrderPickup(i)">
+                <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
+                <p>Handle</p>
+              </div>
             </div>
             <hr>
             <div class="orderbody">
@@ -157,12 +149,10 @@
                 </div>
               </div>
             </div>
-            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
-                <p>View more</p>
-              </div>
-            </button>
+            <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+              <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+              <p>View more</p>
+            </div>
           </div>
         </div>
       </div>
@@ -202,12 +192,10 @@
                 <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
             </div>
-            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
-                <p>View more</p>
-              </div>
-            </button>
+            <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+              <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+              <p>View more</p>
+            </div>
           </div>
         </div>
       </div>
@@ -219,7 +207,7 @@
     <div class="titletypeorder">
       <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#FAA419'"></app-svgicons>
       <p>Restaurant
-      <hr>
+        <hr>
     </div>
     <div class="orders-container">
 
@@ -236,12 +224,10 @@
                 <app-svgicons [selectedSvg]="'table'" [fillColor]="'#000'"></app-svgicons>
                 <p>#{{ order.tablenumber }}</p>
               </div>
-              <button class="buttonHandle" (click)="handleOrderRestaurant(i)">
-                <div class="buttontext">
-                  <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
-                  <p>Handle</p>
-                </div>
-              </button>
+              <div class="buttonHandle" (click)="handleOrderRestaurant(i)">
+                <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
+                <p>Handle</p>
+              </div>
             </div>
             <hr>
             <div class="orderbody">
@@ -262,12 +248,10 @@
                 </div>
               </div>
             </div>
-            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
-                <p>View more</p>
-              </div>
-            </button>
+            <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+              <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+              <p>View more</p>
+            </div>
           </div>
         </div>
       </div>
@@ -294,7 +278,8 @@
                   </app-svgicons>
                   <p>{{ order.comment }}</p>
                 </div>
-                <div class="dishes" *ngFor="let dish of (order.dishes.length > 0 && !order.comment ? order.dishes.slice(0, 4) : order.dishes.slice(0, 3))">
+                <div class="dishes"
+                  *ngFor="let dish of (order.dishes.length > 0 && !order.comment ? order.dishes.slice(0, 4) : order.dishes.slice(0, 3))">
                   <div class="amountdishes">
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
@@ -307,12 +292,10 @@
                 <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
             </div>
-            <button class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
-              <div class="buttontext">
-                <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
-                <p>View more</p>
-              </div>
-            </button>
+            <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+              <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+              <p>View more</p>
+            </div>
           </div>
         </div>
       </div>
@@ -332,7 +315,8 @@
         <p *ngIf="modalVisible.id">#{{ modalVisible.id }}</p>
         <p class="namecustomer" *ngIf="modalVisible.namecustomer">{{ modalVisible.namecustomer }}</p>
         <div class="table-number" *ngIf="modalVisible.tablenumber">
-          <app-svgicons [selectedSvg]="'table'" [fillColor]="'#000'" [svgHeight]="'30px'" [svgWidth]="'30px'"></app-svgicons>
+          <app-svgicons [selectedSvg]="'table'" [fillColor]="'#000'" [svgHeight]="'30px'" [svgWidth]="'30px'">
+          </app-svgicons>
           <p>{{ modalVisible.tablenumber}}</p>
         </div>
       </div>

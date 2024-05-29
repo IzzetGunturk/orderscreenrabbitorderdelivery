@@ -1,0 +1,393 @@
+$primary-500: #FAA419;
+$secondary-500: #54565A;
+$secondary-300: #87898C;
+$success-border: #4CAF50;
+$info-border: #2196F3;
+$white: #fff;
+$dark-500: #1C1B20;
+$order-ready: #4caf4f36;
+$navbar-color: #EBEBEB;
+
+body {
+  margin: 0;
+  padding: 10px 32px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    .button {
+      display: flex;
+      flex-direction: row;
+      border: none;
+      padding: 8px 10px;
+      background-color: $navbar-color;
+    }
+  }
+
+  .weathertime {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $secondary-500;
+
+    .weather {
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
+    }
+  }
+}
+
+.orderscheme {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .titletypeorder {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  .titletypeorder hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 2px dotted $primary-500;
+    margin: 0;
+  }
+}
+
+.orders-container {
+  display: flex;
+  flex-direction: row;
+  gap: 290px;
+
+  .ordersready,
+  .orderspreparation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .orders {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}
+
+.order-delivery, .order-pickup, .order-restaurant {
+  width: 290px;
+  height: 235px;
+  padding: 12px 16px;
+  border: 1px solid $primary-500;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: $dark-500;
+
+  &.ready-order {
+    background-color: $order-ready;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-500;
+  }
+
+  .orderheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+    align-items: center;
+    height: 30px;
+
+    .orderid {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    .id-name {
+      display: flex;
+      flex-direction: column;
+
+      .namecustomer {
+        font-size: 11px;
+        color: $secondary-300;
+      }
+    }
+
+    .table-number{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonHandle {
+      background-color: $success-border;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 7px 5px 7px;
+
+      .buttontext {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+      }
+    }
+  }
+
+  .orderbody {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    flex-grow: 1;
+    gap: 12px;
+    position: relative;
+
+    .commentandorderinformation {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+
+      .ellipses {
+        position: absolute;
+        top: 115px;
+        left: 119px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+      }
+
+      .comment {
+        background-color: $info-border;
+        border-radius: 5px;
+        padding: 7px;
+        color: $white;
+        font-size: 13px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+
+      .deliveryinformation {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        gap: 6px;
+      }
+
+      .dishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-weight: 500;
+        align-items: flex-start;
+
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 12%;
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.686), rgba(255, 255, 255, 0));
+          pointer-events: none;
+        }
+
+        .amountdishes {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+          .dishnameoption {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            span {
+              font-size: 13px;
+              font-weight: normal;
+              color: $secondary-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.buttonRoute,
+.buttonViewMore {
+  background-color: $primary-500;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 7px 5px 7px;
+  align-self: flex-end;
+
+  .buttontext {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .modalcontent {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 32px 24px;
+    background-color: $white;
+    border: 1px solid $primary-500;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 18px;
+    gap: 12px;
+
+    .table-number {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      font-size: 20px;
+    }
+
+    .namecustomer {
+      font-size: 14px;
+      color: $secondary-300;
+      font-weight: normal;
+    }
+
+    .buttonclose {
+      display: flex;
+      justify-content: flex-end;
+
+      .closeIcon {
+        cursor: pointer;
+      }
+    }
+
+    .commentandorderinformation {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+
+      .ellipses {
+        position: absolute;
+        top: 119px;
+        left: 119px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+      }
+
+      .comment {
+        background-color: $info-border;
+        border-radius: 5px;
+        padding: 7px;
+        color: $white;
+        font-size: 16px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+
+      .deliveryinformation {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        gap: 6px;
+      }
+
+      .dishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-weight: 500;
+        align-items: flex-start;
+
+        .amountdishes {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+          .dishnameoption {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            span {
+              font-size: 18px;
+              font-weight: normal;
+              color: $secondary-300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid $primary-500;
+  }
+}

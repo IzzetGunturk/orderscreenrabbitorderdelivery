@@ -83,7 +83,9 @@ header {
   }
 }
 
-.order-delivery, .order-pickup, .order-restaurant {
+.order-delivery,
+.order-pickup,
+.order-restaurant {
   width: 290px;
   height: 235px;
   padding: 12px 16px;
@@ -128,7 +130,7 @@ header {
       }
     }
 
-    .table-number{
+    .table-number {
       display: flex;
       flex-direction: row;
       gap: 10px;
@@ -142,14 +144,11 @@ header {
       cursor: pointer;
       font-size: 14px;
       padding: 5px 7px 5px 7px;
-
-      .buttontext {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
     }
   }
 
@@ -244,14 +243,11 @@ header {
   font-size: 14px;
   padding: 5px 7px 5px 7px;
   align-self: flex-end;
-
-  .buttontext {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
 }
 
 .strikethrough {
