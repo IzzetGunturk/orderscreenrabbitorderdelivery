@@ -46,12 +46,14 @@ header {
     gap: 10px;
     align-items: center;
     font-size: 25px;
+    width: 100%;
   }
 
-  hr {
-    width: 100%;
+  .titletypeorder hr {
+    flex-grow: 1;
     border: none;
     border-top: 2px dotted $primary-500;
+    margin: 0;
   }
 }
 
@@ -95,8 +97,6 @@ header {
   &.ready-order {
     background-color: $order-ready;
   }
-
-  
 
   hr {
     border: none;
@@ -294,6 +294,12 @@ header {
     font-size: 18px;
     gap: 12px;
 
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid $primary-500;
+    }
+
     .table-number {
       display: flex;
       flex-direction: row;
@@ -376,11 +382,5 @@ header {
         }
       }
     }
-  }
-
-  hr {
-    width: 100%;
-    border: none;
-    border-top: 1px solid $primary-500;
   }
 }
