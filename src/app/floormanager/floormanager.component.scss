@@ -155,17 +155,16 @@ header {
   width: 290px;
   height: 260px;
   padding: 16px;
-  border: 1px solid $primary-500;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   color: $dark-500;
-  background-color: $white;
+  border: 1px solid $delivery;
+  background-color: #892be215;
 
-  hr {
-    border: none;
-    border-top: 1px solid $primary-500;
+  &.transit {
+    gap: 8px;
   }
 
   .orderheader {
@@ -176,6 +175,10 @@ header {
     font-weight: 500;
     align-items: center;
     height: 30px;
+
+    &.transit {
+      height: 52px;
+    }
 
     .ordertype {
       display: flex;
@@ -192,6 +195,20 @@ header {
         font-size: 11px;
         color: $secondary-300;
       }
+
+      .address {
+        font-size: 11px;
+        color: $secondary-300;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 172px;
+      }
+
+      .returntime {
+        font-size: 11px;
+        color: $secondary-300;
+      }
     }
 
     .orderinformation {
@@ -203,9 +220,20 @@ header {
       .pickuptime {
         font-size: 11px;
         color: $white;
-        background-color: $pickup;
         padding: 2px 6px;
         border-radius: 15px;
+      }
+
+      .pickuptime-delivery {
+        background-color: $delivery;
+      }
+      
+      .pickuptime-pickup {
+        background-color: $pickup;
+      }
+      
+      .pickuptime-restaurant {
+        background-color: $restaurant;
       }
     }
 
@@ -213,21 +241,6 @@ header {
       display: flex;
       flex-direction: row;
       gap: 10px;
-    }
-
-    .buttonHandle {
-      background-color: $success-border;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 5px 7px 5px 7px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
     }
   }
 
@@ -259,7 +272,7 @@ header {
         border-radius: 5px;
         padding: 7px;
         color: $white;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 400;
         display: flex;
         flex-direction: row;
@@ -286,8 +299,19 @@ header {
           left: 0;
           right: 0;
           height: 12%;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.686), rgba(255, 255, 255, 0));
           pointer-events: none;
+        }
+
+        .overlay-delivery {
+          background: linear-gradient(to top, #f5eefdbb, rgba(255, 255, 255, 0));
+        }
+
+        .overlay-pickup {
+          background: linear-gradient(to top, #fdf9e7b8, rgba(255, 255, 255, 0));
+        }
+
+        .overlay-restaurant {
+          background: linear-gradient(to top, #EFF9FC, rgba(255, 255, 255, 0));
         }
 
         .amountdishes {
@@ -313,23 +337,33 @@ header {
 }
 
 .delivery-order {
-  background-color: #DDA0DD;
-}
+  background-color: #892be215;
+  border: 1px solid $delivery;
 
-.restaurant-order {
-  background-color: #FFD700;
+  hr {
+    border: none;
+    border-top: 1px solid $delivery
+  }
 }
 
 .pickup-order {
-  background-color: #ADD8E6;
+  background-color: #ebc40018;
+  border: 1px solid $pickup;
+
+  hr {
+    border: none;
+    border-top: 1px solid $pickup;
+  }
 }
 
-.namecustomer {
-  display: block;
-}
+.restaurant-order {
+  background-color: #16aad712;
+  border: 1px solid $restaurant;
 
-.delivery-order .namecustomer {
-  display: none;
+  hr {
+    border: none;
+    border-top: 1px solid $restaurant;
+  }
 }
 
 .buttonsOrder {
@@ -420,6 +454,12 @@ header {
     }
 
     .namecustomer {
+      font-size: 14px;
+      color: $secondary-300;
+      font-weight: normal;
+    }
+
+    .address {
       font-size: 14px;
       color: $secondary-300;
       font-weight: normal;

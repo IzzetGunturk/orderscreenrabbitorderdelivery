@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 
 interface Order {
+  deliverycompanyicon: string;
   id: number;
   type: string;
   comment: string;
   prepared: boolean;
-  namecustomer: string;
+  namecustomer?: string;
+  address?: string;
   tablenumber?: number;
+  pickuptime: string;
+  returntime?: string;
   dishes: Dish[];
 }
 
 interface Dish {
   name: string;
-  option: string;
+  option?: string[];
   quantity: number;
 }
 
@@ -24,102 +28,162 @@ interface Dish {
 export class FloormanagerComponent {
   inpreparationorders: Order[] = [
     {
-      id: 1242,
+      deliverycompanyicon: '',
+      id: 1238,
       type: 'Pick up',
       comment: '',
       prepared: true,
       namecustomer: 'Emma Jones',
+      pickuptime: '17:30',
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: 'Witte Wijnsaus', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 }
+        { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
       ]
     },
     {
-      id: 1243,
-      type: 'Delivery',
+      deliverycompanyicon: '',
+      id: 1239,
+      type: 'Restaurant',
       comment: '',
       prepared: true,
-      namecustomer: '',
+      pickuptime: 'ZSM',
+      tablenumber: 3,
       dishes: [
-        { name: 'Pizza Margherita', option: '', quantity: 2 },
-        { name: 'Cola', option: '', quantity: 2 }
+        { name: 'Pasta Bolognese', option: ['Penne'], quantity: 1 },
+        { name: 'Pepsi Regular', quantity: 1 }
       ]
     },
     {
-      id: 1244,
+      deliverycompanyicon: '',
+      id: 1240,
       type: 'Restaurant',
       comment: '',
       prepared: false,
-      tablenumber: 5,
-      namecustomer: '',
+      tablenumber: 6,
+      pickuptime: 'ZSM',
       dishes: [
-        { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1 },
-        { name: 'Sprite', option: '', quantity: 1 }
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+        { name: 'Fanta', quantity: 1 }
       ]
-    }
-    // Voeg hier meer orders toe
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1241,
+      type: 'Pick up',
+      comment: 'Pizza niet snijden',
+      prepared: false,
+      pickuptime: '18:30',
+      namecustomer: 'Max van der Meer',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 1 },
+        { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Sprite', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: 'ubereats',
+      id: 1242,
+      type: 'Delivery',
+      comment: 'Graag rietjes erbij',
+      prepared: false,
+      pickuptime: '18:45',
+      address: 'Aalsburg 3102, 6602 WS Wijchen',
+      dishes: [
+        { name: 'Zalmfilet', option: ['Witte Wijnsaus'], quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Classic Burger', quantity: 1 },
+        { name: 'Crispy Chicken Burger', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1243,
+      type: 'Delivery',
+      comment: 'Graag rietjes erbij',
+      prepared: false,
+      pickuptime: '18:45',
+      address: 'Diepvoorde 1051, 6605 EA Wijchen',
+      dishes: [
+        { name: 'Wrap Crispy Chicken', quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1241,
+      type: 'Pick up',
+      comment: '',
+      prepared: false,
+      pickuptime: '18:50',
+      namecustomer: 'Isabella Rodriguez',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 1 },
+        { name: 'Visburger Ravigotte', option: ['Tagliatelle'], quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
   ];
 
   readyforpickuporders: Order[] = [
     {
-      id: 1245,
-      type: 'Pick up',
-      comment: '',
-      prepared: true,
-      namecustomer: 'Emma Jones',
-      dishes: [
-        { name: 'Wrap Crispy Chicken', option: 'Witte Wijnsaus', quantity: 1 },
-        { name: '5Kitchens Salade', option: '', quantity: 1 }
-      ]
-    },
-    {
+      deliverycompanyicon: 'thuisbezorgd',
       id: 1246,
       type: 'Delivery',
       comment: 'Geen uien',
       prepared: false,
       namecustomer: 'Emma Jones',
+      pickuptime: '17:30',
+      address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
       dishes: [
-        { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1 },
-        { name: 'Sprite', option: '', quantity: 1 }
+        { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
+        { name: 'Sprite', quantity: 1 }
       ]
     }
-    // Voeg hier meer orders toe
   ];
 
   intransitorders: Order[] = [
     {
-      id: 1247,
-      type: 'Restaurant',
-      comment: '',
-      prepared: false,
-      tablenumber: 3,
-      namecustomer: 'Emma Jones',
-      dishes: [
-        { name: 'Pasta Bolognese', option: 'Penne', quantity: 1 },
-        { name: 'Pepsi Regular', option: '', quantity: 1 }
-      ]
-    },
-    {
-      id: 1248,
+      deliverycompanyicon: '',
+      id: 1236,
       type: 'Delivery',
       comment: '',
       prepared: false,
       namecustomer: 'Emma Jones',
+      pickuptime: '17:15',
+      returntime: '17:30',
+      address: 'Oud Ravensteinseweg 7, 6602 AC Wijchen',
       dishes: [
-        { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1 },
-        { name: 'Fanta', option: '', quantity: 1 }
+        { name: 'Rijst', option: ['Penne'], quantity: 1 },
+        { name: 'Steak', option: ['Medium rare', '2 Rode Wijnsaus'], quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1235,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
+      namecustomer: 'Emma Jones',
+      pickuptime: '17:10',
+      returntime: '17:20',
+      dishes: [
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+        { name: 'Fanta', quantity: 1 }
       ]
     }
-    // Voeg hier meer orders toe
   ];
 
+  // date time
   currentDateTime: Date;
-  showRecoverButton: boolean = false;
-  modalVisible: any = null;
-
+  
   constructor() {
     this.currentDateTime = new Date();
   }
+
+  // modal
+  modalVisible: any = null;
 
   openModal(order: any) {
     this.modalVisible = order;
@@ -129,16 +193,22 @@ export class FloormanagerComponent {
     this.modalVisible = null;
   }
 
-  getIcon(type: string): string {
-    switch (type) {
-      case 'Delivery':
-        return 'delivery';
-      case 'Pick up':
-        return 'pickup';
-      case 'Restaurant':
-        return 'restaurant';
-      default:
-        return 'default-icon'; // Fallback icon
+  // recover button
+  showRecoverButton: boolean = false;
+
+  // icon
+  getIcon(type: string) {
+    if (type === 'Delivery') {
+      return 'delivery';
+    }
+    if (type === 'Pick up') {
+      return 'pickup';
+    }
+    if (type === 'Restaurant') {
+      return 'table';
+    }
+    else {
+      return 'default-icon';
     }
   }
 }

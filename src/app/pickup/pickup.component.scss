@@ -209,8 +209,12 @@ header {
           left: 0;
           right: 0;
           height: 12%;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.686), rgba(255, 255, 255, 0));
+          background: linear-gradient(to top, rgba(255, 255, 255, 0.678), rgba(255, 255, 255, 0));
           pointer-events: none;
+
+          &.ready {
+            background: linear-gradient(to top, #d9eedab3, rgba(255, 255, 255, 0));
+          }
         }
 
         .amountdishes {
@@ -380,5 +384,9 @@ header {
         }
       }
     }
+  }
+  
+  .modalcontent-ready {
+    background-color: #D9EEDA;
   }
 }
