@@ -53,22 +53,20 @@
   <!-- In preparation -->
   <div class="orderscheme">
     <div class="titletypeorder">
-      <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
+      <app-svgicons [selectedSvg]="'hourglass'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'"></app-svgicons>
       <p>In preparation</p>
       <hr>
     </div>
     <div class="orders-container">
       <div class="ordersready">
         <div class="orders">
-          <div class="order-delivery card ready-order" *ngFor="let order of deliveryOrdersReady(); let i = index">
+          <div class="order-pickup ready-order" *ngFor="let order of pickupOrdersReady(); let i = index">
             <div class="orderheader">
-              <div class="orderid">
-                <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
-                  svgWidth="24px">
-                </app-svgicons>
+              <div class="id-name">
                 <p>#{{ order.id }}</p>
+                <p class="namecustomer">{{ order.namecustomer }}</p>
               </div>
-              <div class="buttonHandle" (click)="handleOrderDelivery(i)">
+              <div class="buttonHandle" (click)="handleOrderPickup(i)">
                 <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
                 <p>Handle</p>
               </div>
@@ -77,20 +75,24 @@
             <div class="orderbody">
               <div class="commentandorderinformation">
                 <div class="comment" *ngIf="order.comment">
-                  <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="17px" svgWidth="17px">
+                  <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'">
                   </app-svgicons>
                   <p>{{ order.comment }}</p>
                 </div>
-                <div class="deliveryinformation">
-                  <p>{{ order.address }}</p>
-                  <p>{{ order.deliverytime }}</p>
-                  <p>{{ order.deliveryduration }}</p>
+                <div class="dishes" *ngFor="let dish of order.dishes | slice:0:3">
+                  <div class="amountdishes">
+                    <p>{{ dish.quantity }}x </p>
+                    <div class="dishnameoption">
+                      <p>{{ dish.name }}</p>
+                      <span *ngIf="dish.option">- {{ dish.option }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="buttonRoute">
-              <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
-              <p>Route</p>
+            <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+              <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+              <p>View more</p>
             </div>
           </div>
         </div>
@@ -101,7 +103,7 @@
   <!-- Ready for pick up -->
   <div class="orderscheme">
     <div class="titletypeorder">
-      <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#FAA419'"></app-svgicons>
+      <app-svgicons [selectedSvg]="'check'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'"></app-svgicons>
       <p>Ready for pick up</p>
       <hr>
     </div>
@@ -151,7 +153,7 @@
   <!-- In transit -->
   <div class="orderscheme">
     <div class="titletypeorder">
-      <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#FAA419'"></app-svgicons>
+      <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'"></app-svgicons>
       <p>In transit</p>
       <hr>
     </div>
