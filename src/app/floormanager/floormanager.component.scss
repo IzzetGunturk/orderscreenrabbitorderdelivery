@@ -6,7 +6,10 @@ $info-border: #2196F3;
 $white: #fff;
 $dark-500: #1C1B20;
 $order-ready: #4caf4f36;
-$navbar-color: #EBEBEB;
+$greynavbar: #EBEBEB;
+$restaurant: #16A9D7;
+$pickup: #EBC500;
+$delivery: #8A2BE2;
 
 body {
   margin: 0;
@@ -18,21 +21,77 @@ body {
 
 header {
   display: flex;
+  justify-content: space-between;
+  gap: auto;
+  align-items: center;
 
-  .buttons {
+  .buttonsNavbar {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: $greynavbar;
 
-    .button {
+    .buttonCurrent, .buttonHistory, .buttonCouriers {
+      background-color: $greynavbar;
+      color: $primary-500;
       display: flex;
       flex-direction: row;
-      border: none;
+      gap: 3px;
       padding: 8px 10px;
-      background-color: $navbar-color;
+      font-weight: 500;
+      border-radius: 10px;
+      align-items: center;
+
+      &.active {
+        background-color: $primary-500;
+        color: $white;
+      }
     }
   }
 
+  .searchbar {
+    background-color: $greynavbar;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    width: 325px;
+  }
+
+  .buttonsFilter {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    color: $white;
+
+    .totalOrders, .filterRestaurant, .filterPickup, .filterDelivery {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+      padding: 8px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 30px;
+    }
+
+    .totalOrders {
+      background-color: $success-border;
+    }
+
+    .filterRestaurant {
+      background-color: $restaurant;
+    }
+
+    .filterPickup {
+      background-color: $pickup;
+    }
+
+    .filterDelivery {
+      background-color: $delivery;
+    }
+  }
+  
   .weathertime {
     display: flex;
     flex-direction: row;
@@ -53,6 +112,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 305x;
 
   .titletypeorder {
     display: flex;
@@ -82,6 +142,13 @@ header {
     flex-direction: column;
     gap: 10px;
 
+    .orderstatus {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+      gap: 5px;
+    }
+
     .orders {
       display: flex;
       flex-direction: row;
@@ -90,7 +157,9 @@ header {
   }
 }
 
-.order-delivery, .order-pickup, .order-restaurant {
+.order-delivery,
+.order-pickup,
+.order-restaurant {
   width: 290px;
   height: 235px;
   padding: 12px 16px;
@@ -100,10 +169,6 @@ header {
   flex-direction: column;
   gap: 10px;
   color: $dark-500;
-
-  &.ready-order {
-    background-color: $order-ready;
-  }
 
   hr {
     border: none;
@@ -135,7 +200,7 @@ header {
       }
     }
 
-    .table-number{
+    .table-number {
       display: flex;
       flex-direction: row;
       gap: 10px;
@@ -149,14 +214,11 @@ header {
       cursor: pointer;
       font-size: 14px;
       padding: 5px 7px 5px 7px;
-
-      .buttontext {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 3px;
-      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
     }
   }
 
@@ -251,14 +313,11 @@ header {
   font-size: 14px;
   padding: 5px 7px 5px 7px;
   align-self: flex-end;
-
-  .buttontext {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
 }
 
 .strikethrough {
@@ -300,6 +359,12 @@ header {
     width: 40%;
     font-size: 18px;
     gap: 12px;
+
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid $primary-500;
+    }
 
     .table-number {
       display: flex;
@@ -383,11 +448,5 @@ header {
         }
       }
     }
-  }
-
-  hr {
-    width: 100%;
-    border: none;
-    border-top: 1px solid $primary-500;
   }
 }

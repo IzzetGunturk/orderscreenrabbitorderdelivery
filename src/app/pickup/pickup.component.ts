@@ -90,7 +90,7 @@ export class PickupComponent {
       id: 1242,
       type: 'Pick up',
       comment: 'Pizza niet snijden',
-      prepared: false,
+      prepared: true,
       namecustomer: 'Max van der Meer',
       dishes: [
         { name: 'Pizza Tonno', option: '', quantity: 1},
