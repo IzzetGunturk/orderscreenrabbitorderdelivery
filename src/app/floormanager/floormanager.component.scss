@@ -10,6 +10,7 @@ $greynavbar: #EBEBEB;
 $restaurant: #16A9D7;
 $pickup: #EBC500;
 $delivery: #8A2BE2;
+$warning-border: #FF5722;
 
 body {
   margin: 0;
@@ -37,7 +38,7 @@ header {
       color: $primary-500;
       display: flex;
       flex-direction: row;
-      gap: 3px;
+      gap: 5px;
       padding: 8px 10px;
       font-weight: 500;
       border-radius: 10px;
@@ -134,13 +135,12 @@ header {
 .orders-container {
   display: flex;
   flex-direction: row;
-  gap: 290px;
+  gap: 16px;
 
-  .ordersready,
-  .orderspreparation {
+  .orders {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 16px;
 
     .orderstatus {
       display: flex;
@@ -148,27 +148,20 @@ header {
       font-size: 18px;
       gap: 5px;
     }
-
-    .orders {
-      display: flex;
-      flex-direction: row;
-      gap: 16px;
-    }
   }
 }
 
-.order-delivery,
-.order-pickup,
-.order-restaurant {
+.order {
   width: 290px;
-  height: 235px;
-  padding: 12px 16px;
+  height: 260px;
+  padding: 16px;
   border: 1px solid $primary-500;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   color: $dark-500;
+  background-color: $white;
 
   hr {
     border: none;
@@ -184,19 +177,35 @@ header {
     align-items: center;
     height: 30px;
 
-    .orderid {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-    }
-
-    .id-name {
+    .ordertype {
       display: flex;
       flex-direction: column;
+      gap: 2px;
+
+      .ordertype-icon {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
 
       .namecustomer {
         font-size: 11px;
         color: $secondary-300;
+      }
+    }
+
+    .orderinformation {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 2px;
+
+      .pickuptime {
+        font-size: 11px;
+        color: $white;
+        background-color: $pickup;
+        padding: 2px 6px;
+        border-radius: 15px;
       }
     }
 
@@ -303,21 +312,58 @@ header {
   }
 }
 
-.buttonRoute,
-.buttonViewMore {
-  background-color: $primary-500;
-  color: $white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 5px 7px 5px 7px;
-  align-self: flex-end;
+.delivery-order {
+  background-color: #DDA0DD;
+}
+
+.restaurant-order {
+  background-color: #FFD700;
+}
+
+.pickup-order {
+  background-color: #ADD8E6;
+}
+
+.namecustomer {
+  display: block;
+}
+
+.delivery-order .namecustomer {
+  display: none;
+}
+
+.buttonsOrder {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
+  justify-content: space-between;
+
+  .buttonRecover, .buttonViewMore {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 7px 5px 7px;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .buttonRecover {
+    background-color: $warning-border;
+    color: $white;
+  }
+
+  .buttonViewMore {
+    background-color: $primary-500;
+    color: $white;
+  }
+}
+
+.align-end {
+  justify-content: flex-end;
 }
 
 .strikethrough {

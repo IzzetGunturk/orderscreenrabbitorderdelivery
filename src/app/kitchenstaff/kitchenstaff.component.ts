@@ -5,7 +5,7 @@ interface Order {
   icon: string;
   id: number;
   type: string;
-  comment: string;
+  comment?: string;
   dishes: Dish[];
 }
 
@@ -27,7 +27,6 @@ export class KitchenstaffComponent {
       icon: 'pickup',
       id: 1238,
       type: 'Pick up',
-      comment: '',
       dishes: [
         { name: 'Wrap Crispy Chicken', option: '', quantity: 1, prepared: false },
         { name: '5Kitchens Salade', option: '', quantity: 1, prepared: false },
@@ -38,7 +37,6 @@ export class KitchenstaffComponent {
       icon: 'table',
       id: 1239,
       type: '3',
-      comment: '',
       dishes: [
         { name: 'Pasta Bolognese', option: 'Penne', quantity: 1, prepared: false },
         { name: 'Pepsi Regular', option: '', quantity: 1, prepared: false },
@@ -48,7 +46,6 @@ export class KitchenstaffComponent {
       icon: 'table',
       id: 1240,
       type: '6',
-      comment: '',
       dishes: [
         { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1, prepared: false },
         { name: "Fanta", option: '', quantity: 1, prepared: false },

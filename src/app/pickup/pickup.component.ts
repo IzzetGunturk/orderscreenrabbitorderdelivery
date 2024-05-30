@@ -4,7 +4,7 @@ interface DeliveryOrder {
   deliverycompanyicon: string;
   id: number;
   type: string;
-  comment: string;
+  comment?: string;
   prepared: boolean;
   address: string;
   deliverytime: string;
@@ -14,7 +14,7 @@ interface DeliveryOrder {
 interface PickupOrder {
   id: number;
   type: string;
-  comment: string;
+  comment?: string;
   prepared: boolean;
   namecustomer: string;
   dishes: Dish[];
@@ -23,7 +23,7 @@ interface PickupOrder {
 interface RestaurantOrder {
   tablenumber: number;
   type: string;
-  comment: string;
+  comment?: string;
   prepared: boolean;
   dishes: Dish[];
 }
@@ -56,7 +56,6 @@ export class PickupComponent {
       deliverycompanyicon: 'ubereats',
       id: 1242,
       type: 'Delivery',
-      comment: '',
       prepared: false,
       address: 'Aalsburg 3102, 6602 WS Wijchen',
       deliverytime: 'Delivery time: 18:45',
@@ -66,7 +65,6 @@ export class PickupComponent {
       deliverycompanyicon: '',
       id: 1243,
       type: 'Delivery',
-      comment: '',
       prepared: false,
       address: 'Diepvoorde 1051, 6605 EA Wijchen',
       deliverytime: 'Delivery time: 18:45',
@@ -78,7 +76,6 @@ export class PickupComponent {
     {
       id: 1242,
       type: 'Pick up',
-      comment: '',
       prepared: true,
       namecustomer: 'Emma Jones',
       dishes: [
@@ -106,7 +103,6 @@ export class PickupComponent {
     {
       tablenumber: 3,
       type: 'Restaurant',
-      comment: '',
       prepared: false,
       dishes: [
         { name: 'Pasta Bolognese', option: 'Penne', quantity: 1},
@@ -116,7 +112,6 @@ export class PickupComponent {
     {
       tablenumber: 6,
       type: 'Restaurant',
-      comment: '',
       prepared: false,
       dishes: [
         { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1},
