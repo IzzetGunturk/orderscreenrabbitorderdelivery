@@ -30,7 +30,7 @@ interface RestaurantOrder {
 
 interface Dish {
   name: string;
-  option: string;
+  option?: string[];
   quantity: number;
 }
 
@@ -74,27 +74,27 @@ export class PickupComponent {
 
   pickuporders: PickupOrder[] = [
     {
-      id: 1242,
+      id: 1238,
       type: 'Pick up',
-      prepared: true,
+      prepared: false,
       namecustomer: 'Emma Jones',
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: 'Witte Wijnsaus', quantity: 1},
-        { name: '5Kitchens Salade', option: '', quantity: 1},
+        { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1},
+        { name: '5Kitchens Salade', quantity: 1},
       ]
     },
     {
-      id: 1242,
+      id: 1241,
       type: 'Pick up',
       comment: 'Pizza niet snijden',
-      prepared: true,
+      prepared: false,
       namecustomer: 'Max van der Meer',
       dishes: [
-        { name: 'Pizza Tonno', option: '', quantity: 1},
-        { name: 'Pasta Bolognese', option: 'Tagliatelle', quantity: 1},
-        { name: '5Kitchens Salade', option: '', quantity: 1},
-        { name: 'Sprite', option: '', quantity: 1},
-        { name: 'Spa blauw', option: '', quantity: 1},
+        { name: 'Pizza Tonno', quantity: 1},
+        { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1},
+        { name: '5Kitchens Salade', quantity: 1},
+        { name: 'Sprite', quantity: 1},
+        { name: 'Spa blauw', quantity: 1},
       ]
     },
   ];
@@ -105,8 +105,8 @@ export class PickupComponent {
       type: 'Restaurant',
       prepared: false,
       dishes: [
-        { name: 'Pasta Bolognese', option: 'Penne', quantity: 1},
-        { name: 'Pepsi Regular', option: '', quantity: 1},
+        { name: 'Pasta Bolognese', option: ['Penne'], quantity: 1},
+        { name: 'Pepsi Regular', quantity: 1},
       ]
     },
     {
@@ -114,11 +114,8 @@ export class PickupComponent {
       type: 'Restaurant',
       prepared: false,
       dishes: [
-        { name: "Oma's Chili", option: 'Zonder tomaat', quantity: 1},
-        { name: 'Fanta', option: '', quantity: 1},  
-        { name: 'Fanta', option: '', quantity: 1},        
-        { name: 'Fanta', option: '', quantity: 1},        
-
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1},
+        { name: 'Fanta', quantity: 1},
       ]
     }
   ];
