@@ -20,9 +20,8 @@
       <div class="totalOrders">
         <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
         <p>Total orders 15 / Last week 50</p>
-        <app-svgicons [selectedSvg]="'filter'" [fillColor]="'#fff'"></app-svgicons>
       </div>
-      <div class="filterRestaurant">
+      <div class="filterRestaurant" (click)="restaurantOrders()">
         <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
         <p>Restaurant</p>
         <p>2</p>
@@ -65,8 +64,8 @@
           <div class="orderheader">
             <div class="headerrow">
               <div class="ordertype">
-                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
-                  svgWidth="24px">
+                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                  [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
                 </app-svgicons>
                 <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
                 </app-svgicons>
@@ -100,7 +99,7 @@
                   <p>{{ dish.quantity }}x</p>
                   <div class="dishnameoption">
                     <p>{{ dish.name }}</p>
-                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                    <span *ngFor="let option of dish.option">- {{ option }}</span>
                   </div>
                   <div class="overlay"
                     [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
@@ -140,8 +139,8 @@
           <div class="orderheader">
             <div class="headerrow">
               <div class="ordertype">
-                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
-                  svgWidth="24px">
+                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                  [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
                 </app-svgicons>
                 <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
                 </app-svgicons>
@@ -175,7 +174,7 @@
                   <p>{{ dish.quantity }}x</p>
                   <div class="dishnameoption">
                     <p>{{ dish.name }}</p>
-                    <span *ngIf="dish.option">- {{ dish.option }}</span>
+                    <span *ngFor="let option of dish.option">- {{ option }}</span>
                   </div>
                   <div class="overlay"
                     [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
@@ -214,8 +213,8 @@
           <div class="orderheader transs">
             <div class="headerrow">
               <div class="ordertype">
-                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
-                  svgWidth="24px">
+                <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                  [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
                 </app-svgicons>
                 <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
                 </app-svgicons>

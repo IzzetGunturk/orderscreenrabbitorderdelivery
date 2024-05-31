@@ -156,7 +156,7 @@ export class FloormanagerComponent {
       address: 'Oud Ravensteinseweg 7, 6602 AC Wijchen',
       dishes: [
         { name: 'Rijst', option: ['Penne'], quantity: 1 },
-        { name: 'Steak', option: ['Medium rare', '2 Rode Wijnsaus'], quantity: 1 },
+        { name: 'Steak', option: ['Medium rare', 'Medium rare','Medium rare','2 Rode Wijnsaus'], quantity: 1 },
       ]
     },
     {
@@ -228,6 +228,11 @@ export class FloormanagerComponent {
 
   closeModal() {
     this.modalVisible = null;
+  }
+
+  // filter
+  restaurantOrders() {
+    return this.inpreparationorders.filter(order => order.type == 'Restaurant');
   }
 
   // recover button
