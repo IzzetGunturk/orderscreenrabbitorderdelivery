@@ -138,7 +138,7 @@ export class FloormanagerComponent {
       address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
       dishes: [
         { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
-        { name: 'Sprite', quantity: 1 }
+        { name: 'Sprite', quantity: 1 },
       ]
     }
   ];
@@ -164,6 +164,7 @@ export class FloormanagerComponent {
       id: 1235,
       type: 'Delivery',
       comment: '',
+      address: 'Cunerahof 13, 6601 AE Wijchen',
       prepared: false,
       namecustomer: 'Emma Jones',
       pickuptime: '17:10',
@@ -172,7 +173,43 @@ export class FloormanagerComponent {
         { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
         { name: 'Fanta', quantity: 1 }
       ]
-    }
+    },
+    {
+      deliverycompanyicon: 'thuisbezorgd',
+      id: 1234,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
+      namecustomer: 'Emma Jones',
+      address: 'Tunnelweg 18, 6601 CW Wijchen',
+      pickuptime: '17:05',
+      returntime: '17:16',
+      dishes: [
+        { name: 'Gelakte Spareribs', option: ['BBQ Sauce'], quantity: 1 },
+        { name: 'Chili Sin Carne', quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: 'ubereats',
+      id: 1233,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
+      namecustomer: 'Emma Jones',
+      address: 'Karekietstraat 1, 6601 DS Wijchen',
+      pickuptime: '16:50',
+      returntime: '17:05',
+      dishes: [
+        { name: 'Gelakte Spareribs', option: ['BBQ Sauce'], quantity: 1 },
+        { name: 'Chili Sin Carne', quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
   ];
 
   // date time
