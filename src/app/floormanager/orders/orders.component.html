@@ -1,0 +1,173 @@
+  <!-- In preparation and Ready for pick up -->
+  <div class="orders-container">
+    <div class="orders" *ngFor="let order of orders | slice:0:6">
+      <div class="order"
+        [ngClass]="{'delivery-order': order.type === 'Delivery', 'restaurant-order': order.type === 'Restaurant', 'pickup-order': order.type === 'Pick up'}">
+        <div class="orderheader">
+          <div class="headerrow">
+            <div class="ordertype">
+              <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                [fillColor]="'#000'" svgHeight="24px" svgWidth="24px"></app-svgicons>
+              <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
+              </app-svgicons>
+              <p *ngIf="order.type !== 'Restaurant'">{{ order.type }}</p>
+              <p>{{ order.tablenumber }}</p>
+            </div>
+            <p>#{{ order.id }}</p>
+          </div>
+          <div class="headerrow">
+            <div class="ordertype">
+              <p class="namecustomer" *ngIf="order.type !== 'Delivery'">{{ order.namecustomer }}</p>
+              <p *ngIf="order.address" class="address">{{ order.address }}</p>
+            </div>
+            <p class="pickuptime"
+              [ngClass]="{'pickuptime-delivery': order.type === 'Delivery', 'pickuptime-restaurant': order.type === 'Restaurant', 'pickuptime-pickup': order.type === 'Pick up'}">
+              Pick up: {{ order.pickuptime }}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="orderbody">
+          <div class="commentandorderinformation">
+            <div class="comment" *ngIf="order.comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'">
+              </app-svgicons>
+              <p>{{ order.comment }}</p>
+            </div>
+            <div class="dishes"
+              *ngFor="let dish of (order.dishes.length > 0) && !order.comment ? order.dishes.slice(0, 4) : order.dishes.slice(0, 3)">
+              <div class="amountdishes">
+                <p>{{ dish.quantity }}x</p>
+                <div class="dishnameoption">
+                  <p>{{ dish.name }}</p>
+                  <span *ngFor="let option of dish.option">- {{ option }}</span>
+                </div>
+                <div class="overlay"
+                  [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
+                  *ngIf="order.dishes.length > 3"></div>
+              </div>
+              <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttonsOrder" [ngClass]="{'align-end' : !showRecoverButton}">
+          <div class="buttonRecover" *ngIf="showRecoverButton">
+            <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
+            <p>Recover</p>
+          </div>
+          <div class="buttonViewMore" *ngIf="order.type !== 'Restaurant'" (click)="openModal(order)">
+            <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+            <p>View more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- In transit -->
+  <div class="orders-container">
+    <div class="orders" *ngFor="let order of intransitorders | slice:0:6">
+      <div class="order transit">
+        <div class="orderheader transs">
+          <div class="headerrow">
+            <div class="ordertype">
+              <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
+              </app-svgicons>
+              <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
+              </app-svgicons>
+              <p *ngIf="order.type == 'Delivery'">{{ order.type }}</p>
+            </div>
+            <p>#{{ order.id }}</p>
+          </div>
+          <div class="headerrow">
+            <div class="ordertype">
+              <p *ngIf="order.address" class="address transit">{{ order.address }}</p>
+            </div>
+          </div>
+          <div class="headerrow">
+            <p class="pickuptime transit">
+              Pick up: {{ order.pickuptime }}
+            </p>
+            <p class="returntime transit">
+              Return time: {{ order.pickuptime }}
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="orderbody">
+          <div class="commentandorderinformation">
+            <div class="comment" *ngIf="order.comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" [svgHeight]="'16px'" [svgWidth]="'16px'">
+              </app-svgicons>
+              <p>{{ order.comment }}</p>
+            </div>
+            <div class="dishes"
+              *ngFor="let dish of (order.dishes.length > 0) && !order.comment ? order.dishes.slice(0, 4) : order.dishes.slice(0, 3)">
+              <div class="amountdishes">
+                <p>{{ dish.quantity }}x</p>
+                <div class="dishnameoption">
+                  <p>{{ dish.name }}</p>
+                  <span *ngFor="let option of dish.option">- {{ option }}</span>
+                </div>
+                <div class="overlay"
+                  [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
+                  *ngIf="order.dishes.length > 3"></div>
+              </div>
+              <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttonsOrder">
+          <div class="buttonRecover">
+            <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
+            <p>Recover</p>
+          </div>
+          <div class="buttonViewMore" *ngIf="order.type !== 'Restaurant'" (click)="openModal(order)">
+            <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+            <p>View more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @if (modalVisible != null) {
+  <!-- Modal -->
+  <div class="modal">
+    <div class="modalcontent">
+      <div class="buttonclose">
+        <app-svgicons [selectedSvg]="'close'" [fillColor]="'#FAA419'" [svgHeight]="'24px'" [svgWidth]="'24px'"
+          (click)="closeModal()" class="closeIcon">
+        </app-svgicons>
+      </div>
+      <div class="modalheader">
+        <p *ngIf="modalVisible.id">#{{ modalVisible.id }}</p>
+        <p class="namecustomer" *ngIf="modalVisible.namecustomer">{{ modalVisible.namecustomer }}</p>
+        <div class="table-number" *ngIf="modalVisible.tablenumber">
+          <app-svgicons [selectedSvg]="'table'" [fillColor]="'#000'" [svgHeight]="'30px'" [svgWidth]="'30px'">
+          </app-svgicons>
+          <p>{{ modalVisible.tablenumber}}</p>
+        </div>
+      </div>
+      <hr>
+      <div class="modalbody">
+        <div class="commentandorderinformation">
+          <div class="comment" *ngIf="modalVisible.comment">
+            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'">
+            </app-svgicons>
+            <p>{{ modalVisible.comment }}</p>
+          </div>
+          <div class="dishes" *ngFor="let dish of modalVisible.dishes">
+            <div class="amountdishes">
+              <p>{{ dish.quantity }}x</p>
+              <div class="dishnameoption">
+                <p>{{ dish.name }}</p>
+                <span *ngIf="dish.option">- {{ dish.option }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }

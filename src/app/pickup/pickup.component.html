@@ -143,7 +143,7 @@
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
                       <p>{{ dish.name }}</p>
-                      <span *ngIf="dish.option">- {{ dish.option }}</span>
+                      <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
                   <div class="overlay ready" *ngIf="order.dishes.length > 3"></div>
@@ -186,7 +186,7 @@
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
                       <p>{{ dish.name }}</p>
-                      <span *ngIf="dish.option">- {{ dish.option }}</span>
+                      <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
                   <div class="overlay" *ngIf="order.dishes.length > 3"></div>
@@ -244,7 +244,7 @@
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
                       <p>{{ dish.name }}</p>
-                      <span *ngIf="dish.option">- {{ dish.option }}</span>
+                      <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
                 </div>
@@ -286,7 +286,7 @@
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
                       <p>{{ dish.name }}</p>
-                      <span *ngIf="dish.option">- {{ dish.option }}</span>
+                      <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
                   <div class="overlay" *ngIf="order.dishes.length > 3"></div>

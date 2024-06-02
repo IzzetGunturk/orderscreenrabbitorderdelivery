@@ -25,6 +25,7 @@ interface Dish {
   templateUrl: './floormanager.component.html',
   styleUrls: ['./floormanager.component.scss']
 })
+
 export class FloormanagerComponent {
   inpreparationorders: Order[] = [
     {
@@ -156,7 +157,8 @@ export class FloormanagerComponent {
       address: 'Oud Ravensteinseweg 7, 6602 AC Wijchen',
       dishes: [
         { name: 'Rijst', option: ['Penne'], quantity: 1 },
-        { name: 'Steak', option: ['Medium rare', 'Medium rare','Medium rare','2 Rode Wijnsaus'], quantity: 1 },
+        { name: 'Steak', option: ['Medium rare','2 Rode Wijnsaus'], quantity: 1 },
+        { name: 'Crispy Fries', quantity: 1 },
       ]
     },
     {
@@ -203,11 +205,8 @@ export class FloormanagerComponent {
       pickuptime: '16:50',
       returntime: '17:05',
       dishes: [
-        { name: 'Gelakte Spareribs', option: ['BBQ Sauce'], quantity: 1 },
-        { name: 'Chili Sin Carne', quantity: 1 },
-        { name: '5Kitchens Salade', quantity: 1 },
-        { name: 'Fanta', quantity: 1 },
-        { name: 'Pepsi', quantity: 1 },
+        { name: 'Wrap Crispy Chicken', quantity: 3 },
+        { name: 'Sprite', quantity: 3 },
       ]
     },
   ];

@@ -8,6 +8,7 @@ import { FloormanagerComponent } from './floormanager/floormanager.component';
 import { KitchenstaffComponent } from './kitchenstaff/kitchenstaff.component';
 import { PickupComponent } from './pickup/pickup.component';
 import { SvgiconsComponent } from './svgicons/svgicons.component';
+import { OrdersComponent } from './floormanager/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SvgiconsComponent } from './svgicons/svgicons.component';
     KitchenstaffComponent,
     PickupComponent,
     SvgiconsComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
