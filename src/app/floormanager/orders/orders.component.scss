@@ -63,36 +63,36 @@ $warning-border: #FF5722;
       justify-content: space-between;
       font-size: 14px;
       font-weight: 500;
-  
+
       &.transit {
         height: 52px;
       }
-  
+
       .ordertype {
         display: flex;
         flex-direction: row;
         gap: 6px;
         align-items: center;
-        
+
         .orderfirstrow {
           display: flex;
           flex-direction: row;
           gap: 5px;
           flex: 1;
-  
+
           .ordertype-id {
             display: flex;
             flex-direction: row;
             gap: 5px;
           }
         }
-  
+
         .namecustomer {
           font-size: 11px;
           color: $secondary-300;
           font-weight: normal;
         }
-  
+
         .address {
           font-size: 11px;
           color: $secondary-300;
@@ -106,7 +106,7 @@ $warning-border: #FF5722;
             width: 100%;
           }
         }
-      } 
+      }
 
       .returntime {
         font-size: 11px;
@@ -137,15 +137,15 @@ $warning-border: #FF5722;
       .pickuptime-delivery {
         background-color: $delivery;
       }
-      
+
       .pickuptime-pickup {
         background-color: $pickup;
       }
-      
+
       .pickuptime-restaurant {
         background-color: $restaurant;
       }
-      
+
       .table-number {
         display: flex;
         flex-direction: row;
@@ -153,7 +153,7 @@ $warning-border: #FF5722;
       }
     }
   }
-  
+
   .orderbody {
     display: flex;
     flex-direction: column;
@@ -282,7 +282,8 @@ $warning-border: #FF5722;
   flex-direction: row;
   justify-content: space-between;
 
-  .buttonRecover, .buttonViewMore {
+  .buttonRecover,
+  .buttonViewMore {
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -311,6 +312,10 @@ $warning-border: #FF5722;
   animation: fadeOut 2s forwards;
 }
 
+.align-end {
+  justify-content: flex-end;
+}
+
 @keyframes fadeOut {
   to {
     opacity: 0;
@@ -336,17 +341,72 @@ $warning-border: #FF5722;
     display: flex;
     flex-direction: column;
     padding: 32px 24px 32px 24px;
-    background-color: $white;
-    border: 1px solid $primary-500;
     border-radius: 10px;
     width: 40%;
     font-size: 18px;
     gap: 12px;
 
-    hr {
-      width: 100%;
-      border: none;
-      border-top: 1px solid $primary-500;
+    .modalheader {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .modalheaderrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 24px;
+        font-weight: 500;
+
+        .modalordertype {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          font-size: 24px;
+        }
+      }
+
+      .modalheadersecondrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .orderedtime {
+          color: $secondary-300;
+          font-size: 16px;
+        }
+
+        .pickuptime {
+          font-size: 16px;
+          color: $white;
+          padding: 2px 6px;
+          border-radius: 15px;
+          background-color: $delivery;
+          font-weight: 500;
+        }
+  
+        .pickuptime-delivery {
+          background-color: $delivery;
+        }
+  
+        .pickuptime-pickup {
+          background-color: $pickup;
+        }
+  
+        .pickuptime-restaurant {
+          background-color: $restaurant;
+        }
+      }
+
+      .modalheaderthirdrow {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: $secondary-300;
+        font-size: 16px;
+        gap: 4px;
+      }
     }
 
     .table-number {
@@ -397,11 +457,12 @@ $warning-border: #FF5722;
         border-radius: 5px;
         padding: 7px;
         color: $white;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;
         display: flex;
         flex-direction: row;
         gap: 5px;
+        padding: 10px 6px;
       }
 
       .deliveryinformation {
@@ -437,5 +498,35 @@ $warning-border: #FF5722;
         }
       }
     }
+  }
+}
+
+.modal-delivery-order {
+  background-color: #F5EEFD;
+  border: 1px solid $delivery;
+
+  hr {
+    border: none;
+    border-top: 1px solid $delivery
+  }
+}
+
+.modal-pickup-order {
+  background-color: #FDF9E7;
+  border: 1px solid $pickup;
+
+  hr {
+    border: none;
+    border-top: 1px solid $pickup;
+  }
+}
+
+.modal-restaurant-order {
+  background-color: #EFF9FC;
+  border: 1px solid $restaurant;
+
+  hr {
+    border: none;
+    border-top: 1px solid $restaurant;
   }
 }

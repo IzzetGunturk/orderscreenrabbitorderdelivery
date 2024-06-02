@@ -9,6 +9,9 @@ interface Order {
   namecustomer?: string;
   address?: string;
   tablenumber?: number;
+  email?: string;
+  phonenumber?: string;
+  orderedtime?: string;
   pickuptime: string;
   returntime?: string;
   dishes: Dish[];
@@ -35,7 +38,10 @@ export class FloormanagerComponent {
       comment: '',
       prepared: true,
       namecustomer: 'Emma Jones',
+      orderedtime: '13:00',
       pickuptime: '17:30',
+      email: 'emmajones@hotmail.com',
+      phonenumber: '+31 6 21529854',
       dishes: [
         { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1 },
         { name: '5Kitchens Salade', quantity: 1 },
@@ -74,7 +80,10 @@ export class FloormanagerComponent {
       type: 'Pick up',
       comment: 'Pizza niet snijden',
       prepared: false,
+      orderedtime: '15:10',
       pickuptime: '18:30',
+      email: 'maxvandermeer@hotmail.com',
+      phonenumber: '+31 6 54324944',
       namecustomer: 'Max van der Meer',
       dishes: [
         { name: 'Pizza Tonno', quantity: 1 },
@@ -89,8 +98,12 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: 'Graag rietjes erbij',
       prepared: false,
+      orderedtime: '17:45',
       pickuptime: '18:45',
+      email: 'sophiapatel12@hotmail.com',
       address: 'Aalsburg 3102, 6602 WS Wijchen',
+      phonenumber: '+31 6 21529854',
+      namecustomer: 'Sophia Patel',
       dishes: [
         { name: 'Zalmfilet', option: ['Witte Wijnsaus'], quantity: 1 },
         { name: '5Kitchens Salade', quantity: 1 },
@@ -104,8 +117,12 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: 'Graag rietjes erbij',
       prepared: false,
+      orderedtime: '14:45',
       pickuptime: '18:45',
+      email: 'johanklaasen@hotmail.com',
       address: 'Diepvoorde 1051, 6605 EA Wijchen',
+      phonenumber: '+31 6 21529854',
+      namecustomer: 'Johan Klaasen',
       dishes: [
         { name: 'Wrap Crispy Chicken', quantity: 1 },
         { name: '5Kitchens Salade', quantity: 1 },
@@ -117,7 +134,10 @@ export class FloormanagerComponent {
       type: 'Pick up',
       comment: '',
       prepared: false,
+      orderedtime: '13:00',
       pickuptime: '18:50',
+      email: 'isabellarodriguez4@hotmail.com',
+      phonenumber: '+31 6 21529854',
       namecustomer: 'Isabella Rodriguez',
       dishes: [
         { name: 'Pizza Tonno', quantity: 1 },
@@ -134,9 +154,12 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: 'Geen uien',
       prepared: false,
-      namecustomer: 'Emma Jones',
+      namecustomer: 'Isabel John',
+      orderedtime: '16:00',
       pickuptime: '17:30',
       address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
+      phonenumber: '+31 6 21529854',
+      email: 'isabeljohn@hotmail.com',
       dishes: [
         { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
         { name: 'Sprite', quantity: 1 },
@@ -151,10 +174,13 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: '',
       prepared: false,
-      namecustomer: 'Emma Jones',
+      namecustomer: 'John Doe',
+      orderedtime: '14:23',
       pickuptime: '17:15',
       returntime: '17:30',
       address: 'Oud Ravensteinseweg 7, 6602 AC Wijchen',
+      email: 'johndoe5@hotmail.com',
+      phonenumber: '+31 6 21529854',
       dishes: [
         { name: 'Rijst', option: ['Penne'], quantity: 1 },
         { name: 'Steak', option: ['Medium rare','2 Rode Wijnsaus'], quantity: 1 },
@@ -168,7 +194,10 @@ export class FloormanagerComponent {
       comment: '',
       address: 'Cunerahof 13, 6601 AE Wijchen',
       prepared: false,
-      namecustomer: 'Emma Jones',
+      namecustomer: 'Alejandro Gomez',
+      email: 'alejandrogomez@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      orderedtime: '12:00',
       pickuptime: '17:10',
       returntime: '17:20',
       dishes: [
@@ -182,8 +211,11 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: '',
       prepared: false,
-      namecustomer: 'Emma Jones',
+      namecustomer: 'Thijs de Vries',
+      email: 'thijsdv3@live.nl',
       address: 'Tunnelweg 18, 6601 CW Wijchen',
+      phonenumber: '+31 6 21529854',
+      orderedtime: '13:24',
       pickuptime: '17:05',
       returntime: '17:16',
       dishes: [
@@ -200,8 +232,11 @@ export class FloormanagerComponent {
       type: 'Delivery',
       comment: '',
       prepared: false,
-      namecustomer: 'Emma Jones',
+      namecustomer: 'Luca Ferrari',
+      email: 'lucaferrari@hotmail.com',
       address: 'Karekietstraat 1, 6601 DS Wijchen',
+      phonenumber: '+31 6 21529854',
+      orderedtime: '15:00',
       pickuptime: '16:50',
       returntime: '17:05',
       dishes: [
