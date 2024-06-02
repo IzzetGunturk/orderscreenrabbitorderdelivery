@@ -218,17 +218,6 @@ export class FloormanagerComponent {
     this.currentDateTime = new Date();
   }
 
-  // modal
-  modalVisible: any = null;
-
-  openModal(order: any) {
-    this.modalVisible = order;
-  }
-
-  closeModal() {
-    this.modalVisible = null;
-  }
-
   // filter
   restaurantOrders() {
     return this.inpreparationorders.filter(order => order.type == 'Restaurant');
@@ -236,20 +225,4 @@ export class FloormanagerComponent {
 
   // recover button
   showRecoverButton: boolean = false;
-
-  // icon
-  getIcon(type: string) {
-    if (type === 'Delivery') {
-      return 'delivery';
-    }
-    if (type === 'Pick up') {
-      return 'pickup';
-    }
-    if (type === 'Restaurant') {
-      return 'table';
-    }
-    else {
-      return 'default-icon';
-    }
-  }
 }

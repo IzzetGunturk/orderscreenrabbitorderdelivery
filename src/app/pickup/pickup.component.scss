@@ -161,6 +161,7 @@ header {
     flex-grow: 1;
     gap: 12px;
     position: relative;
+    overflow: hidden;
 
     .commentandorderinformation {
       display: flex;

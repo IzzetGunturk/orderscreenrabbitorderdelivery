@@ -32,6 +32,7 @@ export class OrdersComponent {
   @Input() inpreparationorders: Order[] = [];
   @Input() readyforpickuporders: Order[] = [];
 
+  // icon
   getIcon(type: string) {
     if (type === 'Delivery') {
       return 'delivery';
@@ -46,6 +47,7 @@ export class OrdersComponent {
     }
   }
 
+  // modal
   modalVisible: any = null;
 
   openModal(order: Order) {
