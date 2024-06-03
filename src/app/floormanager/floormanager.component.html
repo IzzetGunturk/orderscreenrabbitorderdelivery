@@ -21,23 +21,23 @@
         <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
         <p>Total orders 15 / Last week 50</p>
       </div>
-      <div class="filterRestaurant" (click)="restaurantOrders()">
+      <div class="filterRestaurant" (click)="toggleFilter('Restaurant')">
         <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
         <p>Restaurant</p>
         <p>2</p>
-        <app-svgicons [selectedSvg]="'filter'" [fillColor]="'#fff'"></app-svgicons>
+        <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
       </div>
-      <div class="filterPickup">
+      <div class="filterPickup" (click)="toggleFilter('Pick up')">
         <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#fff'"></app-svgicons>
         <p>Pick up</p>
         <p>3</p>
-        <app-svgicons [selectedSvg]="'filter'" [fillColor]="'#fff'"></app-svgicons>
+        <app-svgicons [selectedSvg]="isFilterPickupActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
       </div>
-      <div class="filterDelivery">
+      <div class="filterDelivery" (click)="toggleFilter('Delivery')">
         <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
         <p>Delivery</p>
         <p>7</p>
-        <app-svgicons [selectedSvg]="'filter'" [fillColor]="'#fff'"></app-svgicons>
+        <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
       </div>
     </div>
     <div class="weathertime">
@@ -57,7 +57,7 @@
       <p>In preparation</p>
       <hr>
     </div>
-    <app-orders [orders]="inpreparationorders" [showRecoverButton]="false">
+    <app-orders [orders]="getFilteredOrders(inpreparationorders)" [showRecoverButton]="false">
     </app-orders>
   </div>
 
@@ -69,7 +69,7 @@
       <p>Ready for pick up</p>
       <hr>
     </div>
-    <app-orders [orders]="readyforpickuporders" [showRecoverButton]="true">
+    <app-orders [orders]="getFilteredOrders(readyforpickuporders)" [showRecoverButton]="true">
     </app-orders>
   </div>
 
@@ -81,7 +81,7 @@
       <p>In transit</p>
       <hr>
     </div>
-    <app-orders [orders]="intransitorders" [showRecoverButton]="true">
+    <app-orders [orders]="getFilteredOrders(intransitorders)" [showRecoverButton]="true">
     </app-orders>
   </div>
 </body>

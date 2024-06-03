@@ -164,7 +164,8 @@ export class FloormanagerComponent {
         { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
         { name: 'Sprite', quantity: 1 },
       ]
-    }
+    },
+   
   ];
 
   intransitorders: Order[] = [
@@ -253,11 +254,58 @@ export class FloormanagerComponent {
     this.currentDateTime = new Date();
   }
 
-  // filter
-  restaurantOrders() {
-    return this.inpreparationorders.filter(order => order.type == 'Restaurant');
-  }
-
   // recover button
   showRecoverButton: boolean = false;
+
+  // filter
+  filterType: any = null;
+  isFilterRestaurantActive: boolean = false;
+  isFilterPickupActive: boolean = false;
+  isFilterDeliveryActive: boolean = false;
+
+
+  setFilter(type: string) {
+    this.filterType = type;
+  }
+
+  toggleFilter(type: string) {
+    if (this.filterType === type) {
+      this.filterType = null;
+      if (type == 'Restaurant') {
+        this.isFilterRestaurantActive = false;
+      }
+      else if (type == 'Pick up') {
+        this.isFilterPickupActive = false;
+      }
+      else if (type == 'Delivery') {
+        this.isFilterDeliveryActive = false;
+      }
+    } else {
+      this.filterType = type;
+      if (type == 'Restaurant') {
+        this.isFilterRestaurantActive = true;
+        this.isFilterPickupActive = false;
+        this.isFilterDeliveryActive = false;
+      }
+      else if (type == 'Pick up') {
+        this.isFilterRestaurantActive = false;
+        this.isFilterPickupActive = true;
+        this.isFilterDeliveryActive = false;
+      }
+      else if (type == 'Delivery') {
+        this.isFilterRestaurantActive = false;
+        this.isFilterPickupActive = false;
+        this.isFilterDeliveryActive = true;
+      }
+    }
+  }
+
+  getFilteredOrders(orders: Order[]) {
+    if (!this.filterType) {
+      return orders;
+    }
+    else {
+      return orders.filter(order => order.type === this.filterType)
+    }
+  }
 }
