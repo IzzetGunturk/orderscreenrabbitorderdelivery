@@ -130,7 +130,7 @@ export class FloormanagerComponent {
     },
     {
       deliverycompanyicon: '',
-      id: 1241,
+      id: 1244,
       type: 'Pick up',
       comment: '',
       prepared: false,
@@ -289,17 +289,18 @@ export class FloormanagerComponent {
   }
 
   getFilteredOrders(orders: Order[]) {
-
     if (!this.filterType && !this.searchValue) {
       return orders;
-    }
-    else { 
-      return orders.filter(order => order.type === this.filterType || 
-      order.id.toString().includes(this.searchValue) ||
+    } 
+    else {
+      return orders.filter(order => 
+      (!this.filterType || order.type == this.filterType) &&
+      (!this.searchValue || order.id.toString().includes(this.searchValue) ||
       order.namecustomer?.toLowerCase().includes(this.searchValue.toLowerCase()) || 
-      order.address?.toLowerCase().includes(this.searchValue));
+      order.address?.toLowerCase().includes(this.searchValue)));
     }
-  }
+  } 
+
 
   // search
   searchValue: string = '';
