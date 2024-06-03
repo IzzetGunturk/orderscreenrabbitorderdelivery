@@ -62,7 +62,7 @@ $warning-border: #FF5722;
       flex-direction: row;
       justify-content: space-between;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: normal;
 
       &.transit {
         height: 52px;
@@ -355,7 +355,7 @@ $warning-border: #FF5722;
         flex-direction: row;
         justify-content: space-between;
         font-size: 24px;
-        font-weight: 500;
+        font-weight: normal;
 
         .modalordertype {
           display: flex;

@@ -15,7 +15,7 @@
         <p>Couriers</p>
       </div>
     </div>
-    <input type="search" class="searchbar" placeholder="Search...">
+    <input type="search" class="searchbar" placeholder="Search..." (input)="handleInputSearch($any($event.target).value)">
     <div class="buttonsFilter">
       <div class="totalOrders">
         <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>

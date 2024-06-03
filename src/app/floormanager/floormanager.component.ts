@@ -71,7 +71,7 @@ export class FloormanagerComponent {
       pickuptime: 'ZSM',
       dishes: [
         { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
-        { name: 'Fanta', quantity: 1 }
+        { name: 'Fanta', quantity: 1 },
       ]
     },
     {
@@ -247,16 +247,9 @@ export class FloormanagerComponent {
     },
   ];
 
-  // date time
-  currentDateTime: Date;
-  
-  constructor() {
-    this.currentDateTime = new Date();
-  }
-
   // recover button
   showRecoverButton: boolean = false;
-
+  
   // filter
   filterType: any = null;
   isFilterRestaurantActive: boolean = false;
@@ -296,11 +289,47 @@ export class FloormanagerComponent {
   }
 
   getFilteredOrders(orders: Order[]) {
-    if (!this.filterType) {
+
+    if (!this.filterType && !this.searchValue) {
       return orders;
     }
-    else {
-      return orders.filter(order => order.type === this.filterType)
+    else { 
+      return orders.filter(order => order.type === this.filterType || 
+      order.id.toString().includes(this.searchValue) ||
+      order.namecustomer?.toLowerCase().includes(this.searchValue.toLowerCase()) || 
+      order.address?.toLowerCase().includes(this.searchValue));
     }
+  }
+
+  // search
+  searchValue: string = '';
+
+  handleInputSearch(searchValue: string) {
+    this.searchValue = searchValue;
+    const searchResults = this.showSearchOrders([
+      ...this.inpreparationorders,
+      ...this.readyforpickuporders,
+      ...this.intransitorders
+    ]);
+
+    console.log(searchResults);
+  }
+
+  showSearchOrders(orders: Order[]) {
+    if (!this.searchValue) {
+      return orders;
+    } else {
+      return orders.filter(order => 
+      order.id.toString().includes(this.searchValue) ||
+      order.namecustomer?.toLowerCase().includes(this.searchValue.toLowerCase()) || 
+      order.address?.toLowerCase().includes(this.searchValue));
+    }
+  }
+
+  // date time
+  currentDateTime: Date;
+  
+  constructor() {
+    this.currentDateTime = new Date();
   }
 }
