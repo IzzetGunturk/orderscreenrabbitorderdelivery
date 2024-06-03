@@ -161,7 +161,6 @@ header {
     flex-grow: 1;
     gap: 12px;
     position: relative;
-    overflow: hidden;
 
     .commentandorderinformation {
       display: flex;
@@ -194,7 +193,6 @@ header {
         display: flex;
         flex-direction: column;
         font-size: 13px;
-        gap: 6px;
       }
 
       .dishes {

@@ -173,7 +173,7 @@ export class FloormanagerComponent {
       deliverycompanyicon: '',
       id: 1236,
       type: 'Delivery',
-      comment: '',
+      comment: 'Graag de steaks apart verpakken',
       prepared: false,
       namecustomer: 'John Doe',
       orderedtime: '14:23',
@@ -183,9 +183,10 @@ export class FloormanagerComponent {
       email: 'johndoe5@hotmail.com',
       phonenumber: '+31 6 21529854',
       dishes: [
-        { name: 'Rijst', option: ['Penne'], quantity: 1 },
-        { name: 'Steak', option: ['Medium rare','2 Rode Wijnsaus'], quantity: 1 },
-        { name: 'Crispy Fries', quantity: 1 },
+        { name: 'Rijst', quantity: 1 },
+        { name: 'Steak', option: ['2 Rode Wijnsaus'], quantity: 1 },
+        { name: 'Crispy Fries', quantity: 2 },
+        { name: 'Fanta', quantity: 2 },
       ]
     },
     {
@@ -300,7 +301,6 @@ export class FloormanagerComponent {
       order.address?.toLowerCase().includes(this.searchValue)));
     }
   } 
-
 
   // search
   searchValue: string = '';
