@@ -263,11 +263,6 @@ export class FloormanagerComponent {
   isFilterPickupActive: boolean = false;
   isFilterDeliveryActive: boolean = false;
 
-
-  setFilter(type: string) {
-    this.filterType = type;
-  }
-
   toggleFilter(type: string) {
     if (this.filterType === type) {
       this.filterType = null;
