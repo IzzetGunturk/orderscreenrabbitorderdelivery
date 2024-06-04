@@ -57,4 +57,11 @@ export class OrdersComponent {
   closeModal() {
     this.modalVisible = null;
   }
+
+  // date time
+  currentDateTime: Date;
+  
+  constructor() {
+    this.currentDateTime = new Date();
+  }
 }

@@ -155,7 +155,7 @@
         </div>
         <div class="modalheadersecondrow">
           <p class="orderedtime" *ngIf="modalVisible.orderedtime && modalVisible.orderedtime !== 'Restaurant'">
-            Ordered: {{ modalVisible.orderedtime }}
+            Ordered: {{ currentDateTime | date:"d-M-yyyy" }} {{ modalVisible.orderedtime }}
           </p>
           <p class="pickuptime" [ngClass]="{'pickuptime-delivery': modalVisible.type === 'Delivery', 'pickuptime-restaurant': modalVisible.type === 'Restaurant', 'pickuptime-pickup': modalVisible.type === 'Pick up'}">
             Pick up: {{ modalVisible.pickuptime }}
