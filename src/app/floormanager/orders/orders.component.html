@@ -158,10 +158,11 @@
             Ordered: {{ currentDateTime | date:"d-M-yyyy" }} {{ modalVisible.orderedtime }}
           </p>
           <p class="pickuptime" [ngClass]="{'pickuptime-delivery': modalVisible.type === 'Delivery', 'pickuptime-restaurant': modalVisible.type === 'Restaurant', 'pickuptime-pickup': modalVisible.type === 'Pick up'}">
-            Pick up: {{ modalVisible.pickuptime }}
+            {{ modalVisible.returntime ? 'Return time' : 'Pick up' }}: {{ modalVisible.pickuptime }}
           </p>
         </div>
         <div class="modalheaderthirdrow">
+          <p *ngIf="modalVisible.returntime">Pick up: {{modalVisible.pickuptime}}</p>
           <p *ngIf="modalVisible.address">Adres: {{ modalVisible.address }}</p>
           <p *ngIf="modalVisible.namecustomer">Naam: {{ modalVisible.namecustomer }}</p>
           <p *ngIf="modalVisible.namecustomer">E-mail: {{ modalVisible.email }}</p>
