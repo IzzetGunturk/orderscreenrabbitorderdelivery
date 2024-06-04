@@ -2,11 +2,11 @@
     <header>
       <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
       <div class="buttonsNavbar">
-        <div class="buttonCurrent active">
+        <div class="buttonCurrent">
           <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
           <p>Current</p>
         </div>
-        <div class="buttonHistory">
+        <div class="buttonHistory active">
           <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
           <p>History</p>
         </div>
@@ -50,7 +50,7 @@
     </header>
   
     <div class="orders-container">
-      <div class="orders" *ngFor="let order of orders | slice:0:6">
+      <div class="orders" *ngFor="let order of orders">
         <div class="order"
           [ngClass]="{'delivery-order': order.type === 'Delivery', 'restaurant-order': order.type === 'Restaurant', 'pickup-order': order.type === 'Pick up'}">
           <div class="orderheader">
@@ -99,6 +99,7 @@
               </div>
             </div>
           </div>
+          <hr>
           <div class="buttonsOrder" [ngClass]="{'align-end' : !showRecoverButton}">
             <div class="buttonRecover" *ngIf="showRecoverButton">
               <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>

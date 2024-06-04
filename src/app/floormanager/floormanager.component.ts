@@ -145,6 +145,23 @@ export class FloormanagerComponent {
         { name: 'Pepsi', quantity: 1 },
       ]
     },
+    {
+      deliverycompanyicon: '',
+      id: 1245,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
+      orderedtime: '13:00',
+      pickuptime: '18:50',
+      email: 'isabellarodriguez4@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      namecustomer: 'Isabella Rodriguez',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 1 },
+        { name: 'Visburger Ravigotte', option: ['Tagliatelle'], quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
   ];
 
   readyforpickuporders: Order[] = [

@@ -33,21 +33,39 @@ export class FloormanagerhistoryComponent {
   orders: Order[] = [
     {
       deliverycompanyicon: '',
-      id: 1238,
-      type: 'Pick up',
+      id: 1232,
+      type: 'Delivery',
       comment: '',
       prepared: true,
-      namecustomer: 'Emma Jones',
-      orderedtime: '13:00',
-      pickuptime: '17:30',
-      email: 'emmajones@hotmail.com',
+      namecustomer: 'Evelien Naar',
+      orderedtime: 'Ordered: 2-4-2024 13:40',
+      pickuptime: '17:00',
+      email: 'evelien3@hotmail.com',
       phonenumber: '+31 6 21529854',
+      address: 'Bergstraat 57, 6215 AA Wijchen',
       dishes: [
-        { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 1 },
         { name: '5Kitchens Salade', quantity: 1 },
-        { name: 'Fanta', quantity: 1 },
       ]
-    }
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1231,
+      type: 'Delivery',
+      comment: '',
+      prepared: true,
+      namecustomer: 'David Jones',
+      orderedtime: 'Ordered: 2-4-2024 13:04',
+      pickuptime: '17:00',
+      email: 'davidjones@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Bergstraat 17, 6215 AA Wijchen',
+      dishes: [
+        { name: 'Chili Sin Carne', option: [''], quantity: 1 },
+        { name: 'Pepsi Regular', quantity: 1 },
+      ]
+    },
+    
   ]
 
   // icon

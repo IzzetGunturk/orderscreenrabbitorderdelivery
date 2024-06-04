@@ -114,61 +114,13 @@ header {
   }
 }
 
-.orderscheme {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  height: 307px;
-
-  .titletypeorder {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    font-size: 25px;
-    width: 100%;
-  }
-
-  .titletypeorder hr {
-    flex-grow: 1;
-    border: none;
-    border-top: 2px dotted $primary-500;
-    margin: 0;
-  }
-}
-
-.fade-out {
-  animation: fadeOut 2s forwards;
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
-}
-
-$primary-500: #FAA419;
-$secondary-500: #54565A;
-$secondary-300: #87898C;
-$success-border: #4CAF50;
-$info-border: #2196F3;
-$white: #fff;
-$dark-500: #1C1B20;
-$order-ready: #4caf4f36;
-$greynavbar: #EBEBEB;
-$restaurant: #16A9D7;
-$pickup: #EBC500;
-$delivery: #8A2BE2;
-$warning-border: #FF5722;
-
 .orders-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   gap: 16px;
 
   .orders {
     display: flex;
-    flex-direction: row;
     gap: 16px;
 
     .orderstatus {
@@ -182,7 +134,7 @@ $warning-border: #FF5722;
 
 .order {
   width: 290px;
-  height: 260px;
+  height: 450px;
   padding: 16px;
   border-radius: 10px;
   display: flex;

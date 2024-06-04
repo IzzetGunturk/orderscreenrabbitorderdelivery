@@ -1,6 +1,6 @@
   <!-- In preparation and Ready for pick up -->
   <div class="orders-container">
-    <div class="orders" *ngFor="let order of orders | slice:0:6">
+    <div class="orders" *ngFor="let order of orders">
       <div class="order"
         [ngClass]="{'delivery-order': order.type === 'Delivery', 'restaurant-order': order.type === 'Restaurant', 'pickup-order': order.type === 'Pick up'}">
         <div class="orderheader">
@@ -65,7 +65,7 @@
 
   <!-- In transit -->
   <div class="orders-container">
-    <div class="orders" *ngFor="let order of intransitorders | slice:0:6">
+    <div class="orders" *ngFor="let order of intransitorders">
       <div class="order transit">
         <div class="orderheader transit">
           <div class="headerrow">
