@@ -10,6 +10,7 @@ import { PickupComponent } from './pickup/pickup.component';
 import { SvgiconsComponent } from './svgicons/svgicons.component';
 import { OrdersComponent } from './floormanager/orders/orders.component';
 import { FloormanagerhistoryComponent } from './floormanagerhistory/floormanagerhistory.component';
+import { OrdershistoryComponent } from './floormanagerhistory/ordershistory/ordershistory.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FloormanagerhistoryComponent } from './floormanagerhistory/floormanager
     SvgiconsComponent,
     OrdersComponent,
     FloormanagerhistoryComponent,
+    OrdershistoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,69 @@
+<div class="orders-container">
+    <div class="orders" *ngFor="let order of orders">
+      <div class="order"
+        [ngClass]="{'delivery-order': order.type === 'Delivery', 'restaurant-order': order.type === 'Restaurant', 'pickup-order': order.type === 'Pick up'}">
+        <div class="orderheader">
+          <div class="headerrow">
+            <div class="ordertype">
+              <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
+                [fillColor]="'#000'" svgHeight="24px" svgWidth="24px"></app-svgicons>
+              <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
+              </app-svgicons>
+              <p *ngIf="order.type !== 'Restaurant'">{{ order.type }}</p>
+              <p>{{ order.tablenumber }}</p>
+            </div>
+            <p>#{{ order.id }}</p>
+          </div>
+          <div class="headerrow">
+            <div class="ordertype">
+              <p class="orderedtime">{{ order.orderedtime }}</p>
+            </div>
+          </div>
+          <div class="headerrow">
+            <div class="ordertype">
+              <p class="namecustomer" *ngIf="order.type !== 'Delivery' && order.type !== 'Restaurant'">{{ order.namecustomer }}</p>
+              <p *ngIf="order.address" class="address">{{ order.address }}</p>
+            </div>
+            <p class="pickuptime" *ngIf="order.type !== 'Restaurant'"
+              [ngClass]="{'pickuptime-delivery': order.type === 'Delivery', 'pickuptime-restaurant': order.type === 'Restaurant', 'pickuptime-pickup': order.type === 'Pick up'}">
+              Pick up: {{ order.pickuptime }}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="orderbody">
+          <div class="commentandorderinformation">
+            <div class="comment" *ngIf="order.comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="16px" svgWidth="16px">
+              </app-svgicons>
+              <p>{{ order.comment }}</p>
+            </div>
+            <div class="dishes"
+              *ngFor="let dish of (order.dishes.length > 0) && !order.comment ? order.dishes.slice(0, 8) : order.dishes.slice(0, 9)">
+              <div class="amountdishes">
+                <p>{{ dish.quantity }}x</p>
+                <div class="dishnameoption">
+                  <p>{{ dish.name }}</p>
+                  <span *ngFor="let option of dish.option">- {{ option }}</span>
+                </div>
+                <div class="overlay"
+                  [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
+                  *ngIf="order.dishes.length > 10"></div>
+              </div>
+              <p class="ellipses" *ngIf="order.dishes.length > 10">...</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="buttonsOrder">
+          <div class="buttonRecover">
+            <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
+            <p>Recover</p>
+          </div>
+          <div class="buttonViewMore" *ngIf="order.type != 'Restaurant' || (order.type == 'Restaurant' && order.dishes.length > 3)" (click)="openModal(order)">
+            <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
+            <p>View more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

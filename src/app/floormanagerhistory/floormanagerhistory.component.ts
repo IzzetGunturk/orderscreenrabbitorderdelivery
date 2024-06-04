@@ -5,7 +5,6 @@ interface Order {
   id: number;
   type: string;
   comment: string;
-  prepared: boolean;
   namecustomer?: string;
   address?: string;
   tablenumber?: number;
@@ -36,7 +35,6 @@ export class FloormanagerhistoryComponent {
       id: 1232,
       type: 'Delivery',
       comment: '',
-      prepared: true,
       namecustomer: 'Evelien Naar',
       orderedtime: 'Ordered: 2-4-2024 13:40',
       pickuptime: '17:00',
@@ -53,19 +51,180 @@ export class FloormanagerhistoryComponent {
       id: 1231,
       type: 'Delivery',
       comment: '',
-      prepared: true,
       namecustomer: 'David Jones',
       orderedtime: 'Ordered: 2-4-2024 13:04',
-      pickuptime: '17:00',
+      pickuptime: '16:50',
       email: 'davidjones@hotmail.com',
       phonenumber: '+31 6 21529854',
       address: 'Bergstraat 17, 6215 AA Wijchen',
       dishes: [
-        { name: 'Chili Sin Carne', option: [''], quantity: 1 },
+        { name: 'Chili Sin Carne', quantity: 1 },
         { name: 'Pepsi Regular', quantity: 1 },
       ]
     },
-    
+    {
+      deliverycompanyicon: '',
+      id: 1230,
+      type: 'Restaurant',
+      tablenumber: 6,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 13:04',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Zeebaarsfilet', option: ['Hollandaisesaus'], quantity: 1 },
+        { name: 'Pepsi Regular', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1229,
+      type: 'Restaurant',
+      tablenumber: 6,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 14:13',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1228,
+      type: 'Delivery',
+      comment: 'Salade zonder tomaat graag',
+      namecustomer: 'Andre Samuel',
+      orderedtime: 'Ordered: 2-4-2024 15:04',
+      pickuptime: '16:45',
+      email: 'Andree2@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Burchtstraat 8, 6241 CR Wijchen',
+      dishes: [
+        { name: 'Crazy Pulled Pork Burger', quantity: 1 },
+        { name: 'Visburger Ravigotte', quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: ' Chili Sin Carne', quantity: 2 },
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+        { name: 'Pepsi Regular', quantity: 1 },
+        { name: 'Pepsi Regular', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1227,
+      type: 'Delivery',
+      comment: '',
+      namecustomer: 'Kadir Senturk',
+      orderedtime: 'Ordered: 2-4-2024 13:04',
+      pickuptime: '16:30',
+      email: 'Andree2@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Nieuweweg 93, 6603 BK Wijchen',
+      dishes: [
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: '5Kitchens Salade', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1226,
+      type: 'Pick up',
+      comment: '',
+      namecustomer: "Ethan O'Connor",
+      orderedtime: 'Ordered: 2-4-2024 15:04',
+      pickuptime: '16:20',
+      email: 'ethan7@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      dishes: [
+        { name: 'Gelakte Spareribs', option: ['BBQ Sauce'], quantity: 2 },
+        { name: 'Crispy fries', quantity: 2 },
+        { name: 'Pepsi Regular', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1225,
+      type: 'Pick up',
+      comment: '',
+      namecustomer: "Charlotte Lee",
+      orderedtime: 'Ordered: 1-4-2024 12:00',
+      pickuptime: '16:20',
+      email: 'charlottelee@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      dishes: [
+        { name: 'Crazy Pulled Pork Burger', quantity: 1 },
+        { name: 'Visburger Ravigotte', quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+      ]
+    },
+    {
+      deliverycompanyicon: 'thuisbezorgd',
+      id: 1224,
+      type: 'Delivery',
+      comment: 'Extra servetjes',
+      namecustomer: 'Thomas Laar',
+      orderedtime: 'Ordered: 1-4-2024 13:04',
+      pickuptime: '16:15',
+      email: 'thomasje@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Spoorstraat 16A , 6602 AZ Wijchen',
+      dishes: [
+        { name: 'Wrap Crispy Chicken', quantity: 1 },
+        { name: 'Sweet Pork Wrap', quantity: 1 },
+        { name: 'Wrap Spicy Chicken', quantity: 1 },
+        { name: "Wrap Smokin' Hot Beef", quantity: 1 },
+        { name: "Sprite", quantity: 3 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1223,
+      type: 'Restaurant',
+      tablenumber: 5,
+      comment: '',
+      orderedtime: 'Ordered: 1-4-2024 13:11',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: "Indische Saté", option: ['Varkenshaassaté'], quantity: 1 },
+        { name: "Salade Caesar Crispy Chick'n", quantity: 1 },
+        { name: 'Spa blauw', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1222,
+      type: 'Restaurant',
+      tablenumber: 6,
+      comment: '',
+      orderedtime: 'Ordered: 1-4-2024 13:10',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Chili Sin Carne', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1224,
+      type: 'Delivery',
+      comment: '',
+      namecustomer: 'Abdel Hamid',
+      orderedtime: 'Ordered: 1-4-2024 13:04',
+      pickuptime: '16:15',
+      email: 'Abdel@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Rietgorsstraat 19, 6601 EA Wijchen',
+      dishes: [
+        { name: 'Wrap Crispy Chicken', quantity: 1 },
+        { name: "Sprite", quantity: 3 },
+      ]
+    },
   ]
 
   // icon
