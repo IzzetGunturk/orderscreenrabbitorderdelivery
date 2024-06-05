@@ -2,15 +2,15 @@
   <header>
     <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
     <div class="buttonsNavbar">
-      <div class="buttonCurrent">
+      <div routerLink="/floormanager" class="buttonCurrent">
         <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
         <p>Current</p>
       </div>
-      <div class="buttonHistory active">
-        <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
+      <div routerLink="/floormanager/history" class="buttonHistory active">
+        <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
         <p>History</p>
       </div>
-      <div class="buttonCouriers">
+      <div routerLink="" class="buttonCouriers">
         <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
         <p>Couriers</p>
       </div>

@@ -44,6 +44,7 @@ header {
       font-weight: 500;
       border-radius: 10px;
       align-items: center;
+      cursor: pointer;
 
       &.active {
         background-color: $primary-500;
