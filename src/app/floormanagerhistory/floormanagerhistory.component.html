@@ -1,18 +1,20 @@
 <body>
   <header>
-    <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
-    <div class="buttonsNavbar">
-      <div routerLink="/floormanager" class="buttonCurrent">
-        <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
-        <p>Current</p>
-      </div>
-      <div routerLink="/floormanager/history" class="buttonHistory active">
-        <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
-        <p>History</p>
-      </div>
-      <div routerLink="" class="buttonCouriers">
-        <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
-        <p>Couriers</p>
+    <div class="navbarLeft">
+      <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
+      <div class="buttonsNavbar">
+        <div routerLink="/floormanager" class="buttonCurrent">
+          <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>Current</p>
+        </div>
+        <div routerLink="/floormanager/history" class="buttonHistory active">
+          <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
+          <p>History</p>
+        </div>
+        <div routerLink="/floormanager/couriers" class="buttonCouriers">
+          <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>Couriers</p>
+        </div>
       </div>
     </div>
     <input type="search" class="searchbar" placeholder="Search..."

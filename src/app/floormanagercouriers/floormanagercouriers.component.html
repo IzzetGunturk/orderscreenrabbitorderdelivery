@@ -1,0 +1,74 @@
+<body>
+  <header>
+    <div class="navbarLeft">
+      <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
+      <div class="buttonsNavbar">
+        <div routerLink="/floormanager" class="buttonCurrent">
+          <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>Current</p>
+        </div>
+        <div routerLink="/floormanager/history" class="buttonHistory">
+          <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>History</p>
+        </div>
+        <div routerLink="/floormanager/couriers" class="buttonCouriers active">
+          <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
+          <p>Couriers</p>
+        </div>
+      </div>
+    </div>
+    <div class="weathertime">
+      <div class="weather">
+        <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
+        <p>12°C</p>
+      </div>
+      <div class="datetime">{{ currentDateTime | date:"d-M-yyyy HH:mm" }}</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="deliverypeople">
+      <div class="card">
+        <div class="header">
+          <div class="headerleft">
+            <img class="picture" src="../../assets/person1.jpg">
+            <p>Hassan Razzouki</p>
+            <app-svgicons [selectedSvg]="'ubereats'" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
+            </app-svgicons>
+            <p>#1233</p>
+          </div>
+          <div class="headerright">
+            <div class="returnbar">
+              <div class="icons">
+                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                </app-svgicons>
+                <app-svgicons [selectedSvg]="'home'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                </app-svgicons>
+                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                </app-svgicons>
+              </div>
+              <div class="processbar"></div>
+            </div>
+            <div class="returntime">
+              <p>17:05</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="body">
+          <p class="address">Karekietstraat 1, 6601 DS Wijchen</p>
+          <div class="comment">
+            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="16px" svgWidth="16px">
+            </app-svgicons>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map">
+      <iframe width="450" height="250" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/MAP_MODE?key=YOUR_API_KEY&PARAMETERS" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</body>

@@ -1,21 +1,24 @@
 <body>
   <header>
-    <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
-    <div class="buttonsNavbar">
-      <div routerLink="/floormanager" class="buttonCurrent active">
-        <app-svgicons [selectedSvg]="'current'" [fillColor]="'#fff'"></app-svgicons>
-        <p>Current</p>
-      </div>
-      <div routerLink="/floormanager/history" class="buttonHistory">
-        <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
-        <p>History</p>
-      </div>
-      <div routerLink="" class="buttonCouriers">
-        <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
-        <p>Couriers</p>
+    <div class="navbarLeft">
+      <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
+      <div class="buttonsNavbar">
+        <div routerLink="/floormanager" class="buttonCurrent active">
+          <app-svgicons [selectedSvg]="'current'" [fillColor]="'#fff'"></app-svgicons>
+          <p>Current</p>
+        </div>
+        <div routerLink="/floormanager/history" class="buttonHistory">
+          <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>History</p>
+        </div>
+        <div routerLink="/floormanager/couriers" class="buttonCouriers">
+          <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
+          <p>Couriers</p>
+        </div>
       </div>
     </div>
-    <input type="search" class="searchbar" placeholder="Search..." (input)="handleInputSearch($any($event.target).value)">
+    <input type="search" class="searchbar" placeholder="Search..."
+      (input)="handleInputSearch($any($event.target).value)">
     <div class="buttonsFilter">
       <div class="totalOrders">
         <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
@@ -25,7 +28,8 @@
         <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
         <p>Restaurant</p>
         <p>2</p>
-        <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
+        <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
+        </app-svgicons>
       </div>
       <div class="filterPickup" (click)="toggleFilter('Pick up')">
         <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#fff'"></app-svgicons>
@@ -37,7 +41,8 @@
         <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
         <p>Delivery</p>
         <p>7</p>
-        <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
+        <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
+        </app-svgicons>
       </div>
     </div>
     <div class="weathertime">

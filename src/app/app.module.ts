@@ -11,6 +11,7 @@ import { SvgiconsComponent } from './svgicons/svgicons.component';
 import { OrdersComponent } from './floormanager/orders/orders.component';
 import { FloormanagerhistoryComponent } from './floormanagerhistory/floormanagerhistory.component';
 import { OrdershistoryComponent } from './floormanagerhistory/ordershistory/ordershistory.component';
+import { FloormanagercouriersComponent } from './floormanagercouriers/floormanagercouriers.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OrdershistoryComponent } from './floormanagerhistory/ordershistory/orde
     OrdersComponent,
     FloormanagerhistoryComponent,
     OrdershistoryComponent,
+    FloormanagercouriersComponent,
   ],
   imports: [
     BrowserModule,

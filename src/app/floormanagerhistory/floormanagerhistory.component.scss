@@ -23,8 +23,14 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  gap: auto;
+  gap: 40px;
   align-items: center;
+
+  .navbarLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
 
   .buttonsNavbar {
     display: flex;

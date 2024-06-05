@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FloormanagerComponent } from './floormanager/floormanager.component';
 import { FloormanagerhistoryComponent } from './floormanagerhistory/floormanagerhistory.component';
+import { FloormanagercouriersComponent } from './floormanagercouriers/floormanagercouriers.component';
 import { KitchenstaffComponent } from './kitchenstaff/kitchenstaff.component';
 import { PickupComponent } from './pickup/pickup.component';
 
 const routes: Routes = [
   { path: 'floormanager', component: FloormanagerComponent },
   { path: 'floormanager/history', component: FloormanagerhistoryComponent },
+  { path: 'floormanager/couriers', component: FloormanagercouriersComponent },
   { path: 'kitchenstaff', component: KitchenstaffComponent },
   { path: 'pickup', component: PickupComponent },
 
