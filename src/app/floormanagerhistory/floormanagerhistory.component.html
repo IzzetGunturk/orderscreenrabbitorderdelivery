@@ -1,54 +1,71 @@
 <body>
-    <header>
-      <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
-      <div class="buttonsNavbar">
-        <div class="buttonCurrent">
-          <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
-          <p>Current</p>
-        </div>
-        <div class="buttonHistory active">
-          <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
-          <p>History</p>
-        </div>
-        <div class="buttonCouriers">
-          <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
-          <p>Couriers</p>
-        </div>
+  <header>
+    <img src="../../assets/icon/rabbiticon.svg" alt="Icon" width="104">
+    <div class="buttonsNavbar">
+      <div class="buttonCurrent">
+        <app-svgicons [selectedSvg]="'current'" [fillColor]="'#FAA419'"></app-svgicons>
+        <p>Current</p>
       </div>
-      <input type="search" class="searchbar" placeholder="Search..." (input)="handleInputSearch($any($event.target).value)">
-      <div class="buttonsFilter">
-        <div class="totalOrders">
-          <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
-          <p>Total orders 15 / Last week 50</p>
-        </div>
-        <div class="filterRestaurant" (click)="toggleFilter('Restaurant')">
-          <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
-          <p>Restaurant</p>
-          <p>2</p>
-          <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
-        </div>
-        <div class="filterPickup" (click)="toggleFilter('Pick up')">
-          <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#fff'"></app-svgicons>
-          <p>Pick up</p>
-          <p>3</p>
-          <app-svgicons [selectedSvg]="isFilterPickupActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
-        </div>
-        <div class="filterDelivery" (click)="toggleFilter('Delivery')">
-          <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
-          <p>Delivery</p>
-          <p>7</p>
-          <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
-        </div>
+      <div class="buttonHistory active">
+        <app-svgicons [selectedSvg]="'history'" [fillColor]="'#FAA419'"></app-svgicons>
+        <p>History</p>
       </div>
-      <div class="weathertime">
-        <div class="weather">
-          <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
-          <p>12°C</p>
-        </div>
-        <div class="datetime">{{ currentDateTime | date:"d-M-yyyy HH:mm" }}</div>
+      <div class="buttonCouriers">
+        <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#FAA419'"></app-svgicons>
+        <p>Couriers</p>
       </div>
-    </header>
-  
-    <app-ordershistory [orders]="getFilteredOrders(orders)"></app-ordershistory>
-  </body>
-  
+    </div>
+    <input type="search" class="searchbar" placeholder="Search..."
+      (input)="handleInputSearch($any($event.target).value)">
+    <div class="buttonsFilter">
+      <div class="totalOrders">
+        <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
+        <p>Total orders 15 / Last week 50</p>
+      </div>
+      <div class="filterRestaurant" (click)="toggleFilter('Restaurant')">
+        <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
+        <p>Restaurant</p>
+        <p>2</p>
+        <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
+        </app-svgicons>
+      </div>
+      <div class="filterPickup" (click)="toggleFilter('Pick up')">
+        <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#fff'"></app-svgicons>
+        <p>Pick up</p>
+        <p>3</p>
+        <app-svgicons [selectedSvg]="isFilterPickupActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
+      </div>
+      <div class="filterDelivery" (click)="toggleFilter('Delivery')">
+        <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
+        <p>Delivery</p>
+        <p>7</p>
+        <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
+        </app-svgicons>
+      </div>
+    </div>
+    <div class="weathertime">
+      <div class="weather">
+        <app-svgicons [selectedSvg]="'weather'" [fillColor]="'#54565A'"></app-svgicons>
+        <p>12°C</p>
+      </div>
+      <div class="datetime">{{ currentDateTime | date:"d-M-yyyy HH:mm" }}</div>
+    </div>
+  </header>
+
+  <app-ordershistory [orders]="getFilteredOrders(orders)"></app-ordershistory>
+
+  <div class="pagination">
+    <a href="#">
+      <app-svgicons [selectedSvg]="'arrowleft'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px"></app-svgicons>
+    </a>
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">...</a>
+    <a href="#">9</a>
+    <a href="#">10</a>
+    <a href="#">
+      <app-svgicons [selectedSvg]="'arrowright'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px">
+      </app-svgicons>
+    </a>
+  </div>
+</body>

@@ -27,6 +27,7 @@ interface Dish {
   templateUrl: './floormanagerhistory.component.html',
   styleUrl: './floormanagerhistory.component.scss'
 })
+
 export class FloormanagerhistoryComponent {
 
   orders: Order[] = [
