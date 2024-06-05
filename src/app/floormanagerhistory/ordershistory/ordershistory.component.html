@@ -6,7 +6,7 @@
         <div class="headerrow">
           <div class="ordertype">
             <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon"
-              [fillColor]="'#000'" svgHeight="24px" svgWidth="24px"></app-svgicons>
+              [fillColor]="'#000'" svgHeight="30px" svgWidth="30px"></app-svgicons>
             <app-svgicons [selectedSvg]="getIcon(order.type)" [fillColor]="'#000'" [svgHeight]="'18px'">
             </app-svgicons>
             <p *ngIf="order.type !== 'Restaurant'">{{ order.type }}</p>

@@ -28,14 +28,14 @@
 
   <div class="container">
     <div class="deliverypeople">
-      <div class="card">
+      <div class="card" *ngFor="let order of deliveryorders">
         <div class="header">
           <div class="headerleft">
-            <img class="picture" src="../../assets/person1.jpg">
-            <p>Hassan Razzouki</p>
-            <app-svgicons [selectedSvg]="'ubereats'" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
+            <img class="picture" [src]="order.picture">
+            <p>{{ order.name }}</p>
+            <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
             </app-svgicons>
-            <p>#1233</p>
+            <p># {{ order.id }}</p>
           </div>
           <div class="headerright">
             <div class="returnbar">
@@ -50,17 +50,17 @@
               <div class="processbar"></div>
             </div>
             <div class="returntime">
-              <p>17:05</p>
+              <p>{{ order.returntime}}</p>
             </div>
           </div>
         </div>
         <hr>
         <div class="body">
           <p class="address">Karekietstraat 1, 6601 DS Wijchen</p>
-          <div class="comment">
+          <div class="comment" *ngIf="order.comment">
             <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="16px" svgWidth="16px">
             </app-svgicons>
-            <p></p>
+            <p>{{ order.comment }}</p>
           </div>
         </div>
       </div>
