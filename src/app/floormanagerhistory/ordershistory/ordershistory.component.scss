@@ -41,6 +41,8 @@ $warning-border: #FF5722;
   color: $dark-500;
   border: 1px solid $delivery;
   background-color: #892be215;
+  overflow: hidden;
+  position: relative;
 
   &.transit {
     gap: 8px;
@@ -166,21 +168,14 @@ $warning-border: #FF5722;
     flex-grow: 1;
     gap: 12px;
     position: relative;
+    position: relative;
+    overflow: hidden;
 
     .commentandorderinformation {
       display: flex;
       flex-direction: column;
       gap: 6px;
       position: relative;
-
-      .ellipses {
-        position: absolute;
-        top: 250px;
-        left: 119px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-      }
 
       .comment {
         background-color: $info-border;
@@ -207,27 +202,6 @@ $warning-border: #FF5722;
         gap: 10px;
         font-weight: 500;
         align-items: flex-start;
-
-        .overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 12%;
-          pointer-events: none;
-        }
-
-        .overlay-delivery {
-          background: linear-gradient(to top, #f5eefdbb, rgba(255, 255, 255, 0));
-        }
-
-        .overlay-pickup {
-          background: linear-gradient(to top, #fdf9e7b8, rgba(255, 255, 255, 0));
-        }
-
-        .overlay-restaurant {
-          background: linear-gradient(to top, #EFF9FC, rgba(255, 255, 255, 0));
-        }
 
         .amountdishes {
           display: flex;
@@ -278,6 +252,35 @@ $warning-border: #FF5722;
     border: none;
     border-top: 1px solid $restaurant;
   }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  right: 0;
+  height: 11%;
+  pointer-events: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.overlay-delivery {
+  background: linear-gradient(to bottom, #f5eefdc4, #f5eefd);
+}
+
+.overlay-pickup {
+  background: linear-gradient(to bottom, #fdf9e7b3, #FDF9E7);
+}
+
+.overlay-restaurant {
+  background: linear-gradient(to bottom, #eff9fcbb, #EFF9FC);
+}
+
+.ellipsis {
+  display: none;
 }
 
 .buttonsOrder {
@@ -439,15 +442,6 @@ $warning-border: #FF5722;
       flex-direction: column;
       gap: 16px;
       position: relative;
-
-      .ellipses {
-        position: absolute;
-        top: 119px;
-        left: 119px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-      }
 
       .comment {
         background-color: $info-border;

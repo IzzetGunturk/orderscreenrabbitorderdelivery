@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
+import Swiper from 'swiper';
 
 interface Order {
   deliverycompanyicon: string;
@@ -25,7 +26,7 @@ interface Dish {
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.scss']
 })
-export class OrdersComponent {
+export class OrdersComponent implements AfterViewInit {
   @Input() orders: Order[] = [];
   @Input() showRecoverButton: boolean = false;
   @Input() intransitorders: Order[] = [];
@@ -63,5 +64,43 @@ export class OrdersComponent {
   
   constructor() {
     this.currentDateTime = new Date();
+  }
+
+  ngAfterViewInit() {
+    const buttonViewMore = document.querySelectorAll('.buttonViewMore') as NodeListOf<HTMLElement>;
+    const orders = document.querySelectorAll('.commentandorderinformation') as NodeListOf<HTMLElement>;
+    const ellipsis = document.querySelectorAll('.ellipsis') as NodeListOf<HTMLElement>;
+  
+    orders.forEach((order, index) => {
+      const button = buttonViewMore[index];
+      const orderType = button.getAttribute('data-order-type');
+      const ellipsisOverlay = ellipsis[index];
+
+      if (orderType == 'Restaurant') {
+        if (order.offsetHeight > 90) {
+          button.style.display = 'flex';
+          ellipsisOverlay.style.display = 'block';
+        } else {
+          button.style.display = 'none';
+          ellipsisOverlay.style.display = 'none';
+        }
+      } 
+      else if (order.offsetHeight > 90) {
+        button.style.display = 'flex';
+        ellipsisOverlay.style.display = 'block';
+      }
+      else {
+        ellipsisOverlay.style.display = 'none';
+      }
+    });
+    
+    this.initSwiper();
+  }
+  
+  initSwiper() {
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      grabCursor: true
+    });
   }
 }

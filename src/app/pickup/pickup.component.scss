@@ -97,6 +97,8 @@ header {
   flex-direction: column;
   gap: 10px;
   color: $dark-500;
+  overflow: hidden;
+  position: relative;
 
   &.ready-order {
     background-color: $order-ready;
@@ -161,21 +163,13 @@ header {
     flex-grow: 1;
     gap: 12px;
     position: relative;
+    overflow: hidden;
 
     .commentandorderinformation {
       display: flex;
       flex-direction: column;
       gap: 6px;
       position: relative;
-
-      .ellipses {
-        position: absolute;
-        top: 115px;
-        left: 119px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-      }
 
       .comment {
         background-color: $info-border;
@@ -202,20 +196,6 @@ header {
         font-weight: 500;
         align-items: flex-start;
 
-        .overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 12%;
-          background: linear-gradient(to top, rgba(255, 255, 255, 0.678), rgba(255, 255, 255, 0));
-          pointer-events: none;
-
-          &.ready {
-            background: linear-gradient(to top, #d9eedab3, rgba(255, 255, 255, 0));
-          }
-        }
-
         .amountdishes {
           display: flex;
           flex-direction: row;
@@ -238,6 +218,25 @@ header {
   }
 }
 
+.overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  height: 11%;
+  pointer-events: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background: linear-gradient(to bottom, #ffffff9c, #FFFFFF);
+  pointer-events: none;
+
+  &.ready {
+    background: linear-gradient(to bottom, #d9eedaa5, #D9EEDA);
+  }
+}
+
 .buttonRoute,
 .buttonViewMore {
   background-color: $primary-500;
@@ -253,10 +252,6 @@ header {
   align-items: center;
   justify-content: center;
   gap: 3px;
-}
-
-.strikethrough {
-  text-decoration: line-through;
 }
 
 .fade-out {
@@ -328,15 +323,6 @@ header {
       flex-direction: column;
       gap: 16px;
       position: relative;
-
-      .ellipses {
-        position: absolute;
-        top: 119px;
-        left: 119px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
-      }
 
       .comment {
         background-color: $info-border;

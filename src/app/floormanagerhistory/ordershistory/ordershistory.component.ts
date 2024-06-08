@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 
 interface Order {
   deliverycompanyicon: string;
@@ -28,7 +28,7 @@ interface Dish {
   styleUrl: './ordershistory.component.scss'
 })
 
-export class OrdershistoryComponent {
+export class OrdershistoryComponent implements AfterViewInit {
   @Input() orders: Order[] = [];
   @Input() showRecoverButton: boolean = false;
   @Input() intransitorders: Order[] = [];
@@ -66,5 +66,18 @@ export class OrdershistoryComponent {
   
   constructor() {
     this.currentDateTime = new Date();
+  }
+
+  ngAfterViewInit() {
+    const orders = document.querySelectorAll('.commentandorderinformation') as NodeListOf<HTMLElement>;
+    const ellipsis = document.querySelectorAll('.ellipsis') as NodeListOf<HTMLElement>;
+  
+    orders.forEach((order, index) => {
+      if (order.offsetHeight > 285) {
+        ellipsis[index].style.display = 'block';
+      } else {
+        ellipsis[index].style.display = 'none';
+      }
+    });
   }
 }

@@ -38,21 +38,20 @@
             </app-svgicons>
             <p>{{ order.comment }}</p>
           </div>
-          <div class="dishes"
-            *ngFor="let dish of (order.dishes.length > 0) && !order.comment ? order.dishes.slice(0, 8) : order.dishes.slice(0, 9)">
+          <div class="dishes" *ngFor="let dish of order.dishes">
             <div class="amountdishes">
               <p>{{ dish.quantity }}x</p>
               <div class="dishnameoption">
                 <p>{{ dish.name }}</p>
                 <span *ngFor="let option of dish.option">- {{ option }}</span>
               </div>
-              <div class="overlay"
-                [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }"
-                *ngIf="order.dishes.length > 10"></div>
             </div>
-            <p class="ellipses" *ngIf="order.dishes.length > 10">...</p>
           </div>
         </div>
+      </div>
+      <div class="overlay"
+        [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }">
+        <p class="ellipsis">...</p>
       </div>
       <hr>
       <div class="buttonsOrder">

@@ -140,7 +140,7 @@
                   </app-svgicons>
                   <p>{{ order.comment }}</p>
                 </div>
-                <div class="dishes" *ngFor="let dish of order.dishes | slice:0:3">
+                <div class="dishes" *ngFor="let dish of order.dishes">
                   <div class="amountdishes">
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
@@ -148,10 +148,11 @@
                       <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
-                  <div class="overlay ready" *ngIf="order.dishes.length > 3"></div>
                 </div>
-                <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
+            </div>
+            <div class="overlay ready">
+              <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
             </div>
             <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
@@ -183,7 +184,7 @@
                   </app-svgicons>
                   <p>{{ order.comment }}</p>
                 </div>
-                <div class="dishes" *ngFor="let dish of order.dishes | slice:0:3">
+                <div class="dishes" *ngFor="let dish of order.dishes">
                   <div class="amountdishes">
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
@@ -191,10 +192,11 @@
                       <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
-                  <div class="overlay" *ngIf="order.dishes.length > 3"></div>
                 </div>
-                <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
+            </div>
+            <div class="overlay">
+              <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
             </div>
             <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
@@ -242,7 +244,7 @@
                   </app-svgicons>
                   <p>{{ order.comment }}</p>
                 </div>
-                <div class="dishes" *ngFor="let dish of order.dishes | slice:0:3">
+                <div class="dishes" *ngFor="let dish of order.dishes">
                   <div class="amountdishes">
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
@@ -252,6 +254,9 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="overlay">
+              <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
             </div>
             <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
@@ -284,7 +289,7 @@
                   <p>{{ order.comment }}</p>
                 </div>
                 <div class="dishes"
-                  *ngFor="let dish of (order.dishes.length > 0 && !order.comment ? order.dishes.slice(0, 4) : order.dishes.slice(0, 3))">
+                  *ngFor="let dish of order.dishes">
                   <div class="amountdishes">
                     <p>{{ dish.quantity }}x </p>
                     <div class="dishnameoption">
@@ -292,10 +297,11 @@
                       <span *ngFor="let option of dish.option">- {{ option }}</span>
                     </div>
                   </div>
-                  <div class="overlay" *ngIf="order.dishes.length > 3"></div>
                 </div>
-                <p class="ellipses" *ngIf="order.dishes.length > 3">...</p>
               </div>
+            </div>
+            <div class="overlay">
+              <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
             </div>
             <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
               <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>

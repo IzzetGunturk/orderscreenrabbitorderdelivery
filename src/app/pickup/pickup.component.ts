@@ -97,6 +97,20 @@ export class PickupComponent {
         { name: 'Spa blauw', quantity: 1},
       ]
     },
+    {
+      id: 1241,
+      type: 'Pick up',
+      comment: 'Pizza niet snijden',
+      prepared: true,
+      namecustomer: 'Max van der Meer',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 1},
+        { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1},
+        { name: '5Kitchens Salade', quantity: 1},
+        { name: 'Sprite', quantity: 1},
+        { name: 'Spa blauw', quantity: 1},
+      ]
+    },
   ];
 
   restaurantorders: RestaurantOrder[] = [
