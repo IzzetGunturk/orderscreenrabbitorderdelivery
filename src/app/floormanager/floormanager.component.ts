@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 interface Order {
   deliverycompanyicon: string;
@@ -350,4 +350,29 @@ export class FloormanagerComponent {
   constructor() {
     this.currentDateTime = new Date();
   }
+
+  amountOrders(type: string) {
+    const inTransitDeliveryCount = this.intransitorders.filter(order => order.type === type).length;
+    const inPreparationDeliveryCount = this.inpreparationorders.filter(order => order.type === type).length;
+    const readyForPickupDeliveryCount = this.readyforpickuporders.filter(order => order.type === type).length;
+    
+    return inTransitDeliveryCount + inPreparationDeliveryCount + readyForPickupDeliveryCount;
+  }
+
+  amountDeliveryOrders() {
+    return this.amountOrders('Delivery');
+  }
+
+  amountPickupOrders() {
+    return this.amountOrders('Pick up')
+  }
+
+  amountRestaurantOrders() {
+    return this.amountOrders('Restaurant')
+  }
+
+  amountTotalOrders() {
+    return this.amountOrders('Delivery') + this.amountOrders('Pick up') + this.amountOrders('Restaurant');
+  }
+
 }
