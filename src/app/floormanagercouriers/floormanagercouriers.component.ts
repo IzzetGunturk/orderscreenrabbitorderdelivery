@@ -72,15 +72,15 @@ export class FloormanagercouriersComponent implements OnInit {
  loadMap() {
   const mapProperties = {
     center: new google.maps.LatLng(51.807098610817185, 5.725634425673384),
-    zoom: 15,
+    zoom: 17,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   const map = new google.maps.Map(document.getElementById('map') as HTMLElement, mapProperties);
 
   const centerOfMap = map.getCenter();
 
-  const marker = new google.maps.Marker({
-    position: centerOfMap,
+  const deliveryguy1 = new google.maps.Marker({
+    position: new google.maps.LatLng(51.80870196273554, 5.723867434221573),
     map: map,
     icon: {
       url: "../../assets/couriers/courier4.jpg",
@@ -91,21 +91,24 @@ export class FloormanagercouriersComponent implements OnInit {
     },
   });
 
-  const marker2 = new google.maps.Marker({
-    position: { lat: centerOfMap.lat() + 0.001, lng: centerOfMap.lng() + 0.001 },
+  const deliveryguy2 = new google.maps.Marker({
+    position: new google.maps.LatLng(51.806544596389024, 5.728441013200699),
     map: map,
     icon: {
-      url: "../../assets/couriers/courier4.jpg",
+      url: "../../assets/couriers/courier1.jpg",
       scaledSize: new google.maps.Size(50, 50),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(50, 50), 
+      borderRadius: '50%', 
     },
   });
 
-  const marker3 = new google.maps.Marker({
+  const restaurant = new google.maps.Marker({
     position: new google.maps.LatLng(51.806978528043444, 5.725604918402152),
     map: map,
     icon: {
-      url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="orange" /></svg>'),
-      scaledSize: new google.maps.Size(24, 24)
+      url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FAA419"><path d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"/></svg>'),
+      scaledSize: new google.maps.Size(50, 50)
     },
   });
   }
