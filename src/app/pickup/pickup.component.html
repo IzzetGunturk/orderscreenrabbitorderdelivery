@@ -229,7 +229,7 @@
             <div class="orderheader">
               <div class="table-number">
                 <app-svgicons [selectedSvg]="'table'" [fillColor]="'#000'"></app-svgicons>
-                <p>#{{ order.tablenumber }}</p>
+                <p>{{ order.tablenumber }}</p>
               </div>
               <div class="buttonHandle" (click)="handleOrderRestaurant(i)">
                 <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
@@ -255,7 +255,7 @@
                 </div>
               </div>
             </div>
-            <div class="overlay">
+            <div class="overlay ready">
               <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
             </div>
             <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
@@ -335,7 +335,7 @@
       <div class="modalbody">
         <div class="commentandorderinformation">
           <div class="comment" *ngIf="modalVisible.comment">
-            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'">
+            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgWidth="24px" svgHeight="24px">
             </app-svgicons>
             <p>{{ modalVisible.comment }}</p>
           </div>

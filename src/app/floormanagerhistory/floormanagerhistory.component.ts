@@ -111,7 +111,6 @@ export class FloormanagerhistoryComponent {
         { name: ' Chili Sin Carne', quantity: 2 },
         { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
         { name: 'Pepsi Regular', quantity: 1 },
-        { name: 'Pepsi Regular', quantity: 1 },
       ]
     },
     {
@@ -212,7 +211,7 @@ export class FloormanagerhistoryComponent {
     },
     {
       deliverycompanyicon: '',
-      id: 1224,
+      id: 1221,
       type: 'Delivery',
       comment: '',
       namecustomer: 'Abdel Hamid',
@@ -224,6 +223,67 @@ export class FloormanagerhistoryComponent {
       dishes: [
         { name: 'Wrap Crispy Chicken', quantity: 1 },
         { name: "Sprite", quantity: 3 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1220,
+      type: 'Delivery',
+      comment: '',
+      namecustomer: 'Kees Bakker',
+      orderedtime: 'Ordered: 1-4-2024 13:04',
+      pickuptime: '16:10',
+      email: 'Abdel@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      address: 'Ringlaan 162, 6602 EE Wijchen',
+      dishes: [
+        { name: 'Wrap Crispy Chicken', quantity: 1 },
+        { name: "Sprite", quantity: 3 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1119,
+      type: 'Pick up',
+      comment: '',
+      namecustomer: "Sarah Olivia",
+      orderedtime: 'Ordered: 1-4-2024 16:00',
+      pickuptime: '16:10',
+      email: 'charlottelee@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      dishes: [
+        { name: 'Crazy Pulled Pork Burger', quantity: 1 },
+        { name: 'Fanta', quantity: 4 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1118,
+      type: 'Restaurant',
+      tablenumber: 9,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:13',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+        { name: 'Crazy Pulled Pork Burger', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
       ]
     },
   ]
@@ -296,17 +356,22 @@ export class FloormanagerhistoryComponent {
   }
 
   getFilteredOrders(orders: Order[]) {
+  
     if (!this.filterType && !this.searchValue) {
       return orders;
     } 
-    else {
-      return orders.filter(order => 
-      (!this.filterType || order.type == this.filterType) &&
-      (!this.searchValue || order.id.toString().includes(this.searchValue) ||
-      order.namecustomer?.toLowerCase().includes(this.searchValue.toLowerCase()) || 
-      order.address?.toLowerCase().includes(this.searchValue)));
-    }
-  } 
+  
+    return orders.filter(order => {
+      const matchesFilterType = !this.filterType || order.type === this.filterType;
+      const matchesSearchValue = !this.searchValue || 
+        order.id.toString().includes(this.searchValue) ||
+        (order.namecustomer && order.namecustomer.toLowerCase().includes(this.searchValue.toLowerCase())) || 
+        (order.orderedtime && order.orderedtime.toLowerCase().includes(this.searchValue.toLowerCase())) ||
+        (order.address && order.address.toLowerCase().includes(this.searchValue.toLowerCase()));
+      
+      return matchesFilterType && matchesSearchValue;
+    });
+  }
 
   // search
   searchValue: string = '';
@@ -327,7 +392,8 @@ export class FloormanagerhistoryComponent {
       return orders.filter(order => 
       order.id.toString().includes(this.searchValue) ||
       order.namecustomer?.toLowerCase().includes(this.searchValue.toLowerCase()) || 
-      order.address?.toLowerCase().includes(this.searchValue));
+      order.address?.toLowerCase().includes(this.searchValue) || 
+      order.orderedtime?.includes(this.searchValue))
     }
   }
 

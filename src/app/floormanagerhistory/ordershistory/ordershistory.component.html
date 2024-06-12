@@ -60,7 +60,7 @@
           <p>Recover</p>
         </div>
         <div class="buttonViewMore"
-          *ngIf="order.type != 'Restaurant' || (order.type == 'Restaurant' && order.dishes.length > 3)"
+          [attr.data-order-type]="order.type"
           (click)="openModal(order)">
           <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
           <p>View more</p>

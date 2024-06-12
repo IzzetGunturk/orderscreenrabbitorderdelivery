@@ -69,14 +69,30 @@ export class OrdershistoryComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    const buttonViewMore = document.querySelectorAll('.buttonViewMore') as NodeListOf<HTMLElement>;
     const orders = document.querySelectorAll('.commentandorderinformation') as NodeListOf<HTMLElement>;
     const ellipsis = document.querySelectorAll('.ellipsis') as NodeListOf<HTMLElement>;
   
     orders.forEach((order, index) => {
-      if (order.offsetHeight > 285) {
-        ellipsis[index].style.display = 'block';
-      } else {
-        ellipsis[index].style.display = 'none';
+      const button = buttonViewMore[index];
+      const orderType = button.getAttribute('data-order-type');
+      const ellipsisOverlay = ellipsis[index];
+
+      if (orderType == 'Restaurant') {
+        if (order.offsetHeight > 300) {
+          button.style.display = 'flex';
+          ellipsisOverlay.style.display = 'block';
+        } else {
+          button.style.display = 'none';
+          ellipsisOverlay.style.display = 'none';
+        }
+      } 
+      else if (order.offsetHeight > 265) {
+        button.style.display = 'flex';
+        ellipsisOverlay.style.display = 'block';
+      }
+      else {
+        ellipsisOverlay.style.display = 'none';
       }
     });
   }

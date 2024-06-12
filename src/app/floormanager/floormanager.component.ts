@@ -57,7 +57,7 @@ export class FloormanagerComponent {
       pickuptime: 'ZSM',
       tablenumber: 3,
       dishes: [
-        { name: 'Pasta Bolognese', option: ['Penne','Penne','Penne','Penne','Penne','Penne','Penne',], quantity: 1 },
+        { name: 'Pasta Bolognese', option: ['Penne'], quantity: 1 },
         { name: 'Pepsi Regular', quantity: 1 }
       ]
     },
@@ -115,7 +115,7 @@ export class FloormanagerComponent {
       deliverycompanyicon: '',
       id: 1243,
       type: 'Delivery',
-      comment: 'Graag rietjes erbij',
+      comment: '',
       prepared: false,
       orderedtime: '14:45',
       pickuptime: '18:45',
@@ -152,13 +152,50 @@ export class FloormanagerComponent {
       comment: '',
       prepared: false,
       orderedtime: '13:00',
-      pickuptime: '18:50',
-      email: 'isabellarodriguez4@hotmail.com',
+      pickuptime: '19:00',
+      email: 'vinny7@hotmail.com',
+      address: 'Ringlaan 78, 6602 EB Wijchen',
       phonenumber: '+31 6 21529854',
-      namecustomer: 'Isabella Rodriguez',
+      namecustomer: 'Vinicius Silva',
       dishes: [
         { name: 'Pizza Tonno', quantity: 1 },
-        { name: 'Visburger Ravigotte', option: ['Tagliatelle'], quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: 'thuisbezorgd',
+      id: 1246,
+      type: 'Delivery',
+      comment: '',
+      prepared: false,
+      orderedtime: '18:00',
+      pickuptime: '19:15',
+      email: 'fleurhenken@hotmail.com',
+      address: 'Bergweg 13A, 6602 ET Wijchen',
+      phonenumber: '+31 6 21529854',
+      namecustomer: 'Fleur Henken',
+      dishes: [
+        { name: 'Cheesy BBQ Burger', quantity: 1 },
+        { name: 'Classic Burger', quantity: 1 },
+        { name: 'Crispy Fries', quantity: 1 },
+        { name: 'Pepsi', quantity: 1 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1247,
+      type: 'Pick up',
+      comment: 'Extra servetjes',
+      prepared: false,
+      orderedtime: '13:00',
+      pickuptime: '18:50',
+      email: 'ivoklaassen@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      namecustomer: 'Ivo Klaassen',
+      dishes: [
+        { name: 'Wrap Spicy Chicken', quantity: 1 },
+        { name: 'Aardappel Wedges Cajun', quantity: 1 },
+        { name: 'Mayonaise', quantity: 1 },
         { name: 'Pepsi', quantity: 1 },
       ]
     },
@@ -167,7 +204,7 @@ export class FloormanagerComponent {
   readyforpickuporders: Order[] = [
     {
       deliverycompanyicon: 'thuisbezorgd',
-      id: 1246,
+      id: 1237,
       type: 'Delivery',
       comment: 'Geen uien',
       prepared: false,

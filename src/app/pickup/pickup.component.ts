@@ -97,30 +97,19 @@ export class PickupComponent {
         { name: 'Spa blauw', quantity: 1},
       ]
     },
-    {
-      id: 1241,
-      type: 'Pick up',
-      comment: 'Pizza niet snijden',
-      prepared: true,
-      namecustomer: 'Max van der Meer',
-      dishes: [
-        { name: 'Pizza Tonno', quantity: 1},
-        { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1},
-        { name: '5Kitchens Salade', quantity: 1},
-        { name: 'Sprite', quantity: 1},
-        { name: 'Spa blauw', quantity: 1},
-      ]
-    },
   ];
 
   restaurantorders: RestaurantOrder[] = [
     {
       tablenumber: 3,
       type: 'Restaurant',
-      prepared: false,
+      prepared: true,
       dishes: [
         { name: 'Pasta Bolognese', option: ['Penne'], quantity: 1},
+        { name: 'Pizza Tonno', quantity: 3 },
         { name: 'Pepsi Regular', quantity: 1},
+        { name: 'Fanta', quantity: 1},
+        { name: 'Sprite', quantity: 2},
       ]
     },
     {
@@ -128,10 +117,10 @@ export class PickupComponent {
       type: 'Restaurant',
       prepared: false,
       dishes: [
-        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1},
+        { name: "Oma's Chili", option: ['Zonder tomaat',], quantity: 1},
         { name: 'Fanta', quantity: 1},
       ]
-    }
+    },
   ];
 
   // filter orders
@@ -192,7 +181,7 @@ export class PickupComponent {
   // mark order done
   handleOrderDelivery(index: number) {
     if (index < this.deliveryorders.length) {
-      const order = document.querySelectorAll('.order-delivery')[index];
+      const order = document.getElementsByClassName('order-delivery')[index];
   
       if (order) {
         order.classList.add('fade-out');
@@ -206,7 +195,7 @@ export class PickupComponent {
 
   handleOrderPickup(index: number) {
     if (index < this.pickuporders.length) {
-      const order = document.querySelectorAll('.order-pickup')[index];
+      const order = document.getElementsByClassName('order-pickup')[index];
   
       if (order) {
         order.classList.add('fade-out');
@@ -220,7 +209,7 @@ export class PickupComponent {
 
   handleOrderRestaurant(index: number) {
     if (index < this.restaurantorders.length) {
-      const order = document.querySelectorAll('.order.restaurant')[index];
+      const order = document.getElementsByClassName('order-restaurant')[index];
   
       if (order) {
         order.classList.add('fade-out');
