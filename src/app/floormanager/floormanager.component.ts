@@ -351,6 +351,7 @@ export class FloormanagerComponent {
     this.currentDateTime = new Date();
   }
 
+  // amount orders
   amountOrders(type: string) {
     const inTransitDeliveryCount = this.intransitorders.filter(order => order.type === type).length;
     const inPreparationDeliveryCount = this.inpreparationorders.filter(order => order.type === type).length;
@@ -359,19 +360,19 @@ export class FloormanagerComponent {
     return inTransitDeliveryCount + inPreparationDeliveryCount + readyForPickupDeliveryCount;
   }
 
-  amountDeliveryOrders() {
+  get amountDeliveryOrders() {
     return this.amountOrders('Delivery');
   }
 
-  amountPickupOrders() {
+  get amountPickupOrders() {
     return this.amountOrders('Pick up')
   }
 
-  amountRestaurantOrders() {
+  get amountRestaurantOrders() {
     return this.amountOrders('Restaurant')
   }
 
-  amountTotalOrders() {
+  get amountTotalOrders() {
     return this.amountOrders('Delivery') + this.amountOrders('Pick up') + this.amountOrders('Restaurant');
   }
 

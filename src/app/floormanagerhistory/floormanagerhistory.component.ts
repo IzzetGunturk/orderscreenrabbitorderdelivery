@@ -337,4 +337,24 @@ export class FloormanagerhistoryComponent {
   constructor() {
     this.currentDateTime = new Date();
   }
+
+  get amountTotalOrders(): number {
+    return this.orders.length;
+  }
+
+  amountOrders(type: string) {
+    return this.orders.filter(order => order.type == type).length;
+  }
+
+  get amountDeliveryOrders(): number {
+    return this.amountOrders('Delivery');
+  }
+
+  get amountPickupOrders(): number {
+    return this.amountOrders('Pick up')
+  }
+
+  get amountRestaurantOrders(): number {
+    return this.amountOrders('Restaurant')
+  }
 }

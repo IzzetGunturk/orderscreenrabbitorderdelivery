@@ -22,25 +22,25 @@
     <div class="buttonsFilter">
       <div class="totalOrders">
         <app-svgicons [selectedSvg]="'total'" [fillColor]="'#fff'"></app-svgicons>
-        <p>Total orders 15 / Last week 50</p>
+        <p>Total orders {{ amountTotalOrders }}</p>
       </div>
       <div class="filterRestaurant" (click)="toggleFilter('Restaurant')">
         <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#fff'"></app-svgicons>
         <p>Restaurant</p>
-        <p>2</p>
+        <p>{{ amountRestaurantOrders }}</p>
         <app-svgicons [selectedSvg]="isFilterRestaurantActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
         </app-svgicons>
       </div>
       <div class="filterPickup" (click)="toggleFilter('Pick up')">
         <app-svgicons [selectedSvg]="'pickup'" [fillColor]="'#fff'"></app-svgicons>
         <p>Pick up</p>
-        <p>3</p>
+        <p>{{ amountPickupOrders }}</p>
         <app-svgicons [selectedSvg]="isFilterPickupActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'"></app-svgicons>
       </div>
       <div class="filterDelivery" (click)="toggleFilter('Delivery')">
         <app-svgicons [selectedSvg]="'delivery'" [fillColor]="'#fff'"></app-svgicons>
         <p>Delivery</p>
-        <p>7</p>
+        <p>{{ amountDeliveryOrders }}</p>
         <app-svgicons [selectedSvg]="isFilterDeliveryActive ? 'filter' : 'filteroff'" [fillColor]="'#fff'">
         </app-svgicons>
       </div>
