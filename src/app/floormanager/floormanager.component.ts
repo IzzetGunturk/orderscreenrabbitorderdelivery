@@ -197,6 +197,7 @@ export class FloormanagerComponent {
         { name: 'Aardappel Wedges Cajun', quantity: 1 },
         { name: 'Mayonaise', quantity: 1 },
         { name: 'Pepsi', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
       ]
     },
   ];
