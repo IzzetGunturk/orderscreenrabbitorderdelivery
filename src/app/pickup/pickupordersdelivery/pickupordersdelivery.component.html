@@ -1,0 +1,84 @@
+<div class="orders-container">
+
+  <!-- Ready -->
+  <div class="ordersready">
+    <div class="orderstatus">
+      <app-svgicons [selectedSvg]="'check'" [fillColor]="'#FAA419'"></app-svgicons>
+      <p>Ready for pick up</p>
+    </div>
+    <div class="orders">
+      <div class="order-delivery card ready-order" *ngFor="let order of deliveryOrdersReady(); let i = index">
+        <div class="orderheader">
+          <div class="orderid">
+            <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
+              svgWidth="24px">
+            </app-svgicons>
+            <p>#{{ order.id }}</p>
+          </div>
+          <div class="buttonHandle" (click)="handleOrderDelivery(i)">
+            <app-svgicons [selectedSvg]="'check'" [fillColor]="'#fff'"></app-svgicons>
+            <p>Handle</p>
+          </div>
+        </div>
+        <hr>
+        <div class="orderbody">
+          <div class="commentandorderinformation">
+            <div class="comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="17px" svgWidth="17px">
+              </app-svgicons>
+              <p>{{ order.comment }}</p>
+            </div>
+            <div class="deliveryinformation">
+              <p>{{ order.address }}</p>
+              <p>{{ order.deliverytime }}</p>
+              <p>{{ order.deliveryduration }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttonRoute">
+          <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
+          <p>Route</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preparation -->
+  <div class="orderspreparation">
+    <div class="orderstatus">
+      <app-svgicons [selectedSvg]="'hourglass'" [fillColor]="'#FAA419'"></app-svgicons>
+      <p>In preparation</p>
+    </div>
+    <div class="orders">
+      <div class="order-delivery card" *ngFor="let order of deliveryOrdersPreparation(); let i = index">
+        <div class="orderheader">
+          <div class="orderid">
+            <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px"
+              svgWidth="24px">
+            </app-svgicons>
+            <p>#{{ order.id }}</p>
+          </div>
+        </div>
+        <hr>
+        <div class="orderbody">
+          <div class="commentandorderinformation">
+            <div class="comment" *ngIf="order.comment">
+              <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="17px" svgWidth="17px">
+              </app-svgicons>
+              <p>{{ order.comment }}</p>
+            </div>
+            <div class="deliveryinformation">
+              <p>{{ order.address }}</p>
+              <p>{{ order.deliverytime }}</p>
+              <p>{{ order.deliveryduration }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="buttonRoute">
+          <app-svgicons [selectedSvg]="'map'" [fillColor]="'#fff'"></app-svgicons>
+          <p>Route</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

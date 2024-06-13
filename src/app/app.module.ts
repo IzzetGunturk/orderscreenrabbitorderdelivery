@@ -12,6 +12,9 @@ import { OrdersComponent } from './floormanager/orders/orders.component';
 import { FloormanagerhistoryComponent } from './floormanagerhistory/floormanagerhistory.component';
 import { OrdershistoryComponent } from './floormanagerhistory/ordershistory/ordershistory.component';
 import { FloormanagercouriersComponent } from './floormanagercouriers/floormanagercouriers.component';
+import { PickupordersdeliveryComponent } from './pickup/pickupordersdelivery/pickupordersdelivery.component';
+import { PickupordersComponent } from './pickup/pickuporders/pickuporders.component';
+import { PickupordersrestaurantComponent } from './pickup/pickupordersrestaurant/pickupordersrestaurant.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { FloormanagercouriersComponent } from './floormanagercouriers/floormanag
     FloormanagerhistoryComponent,
     OrdershistoryComponent,
     FloormanagercouriersComponent,
+    PickupordersdeliveryComponent,
+    PickupordersComponent,
+    PickupordersrestaurantComponent,
   ],
   imports: [
     BrowserModule,

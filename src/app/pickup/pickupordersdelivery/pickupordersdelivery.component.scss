@@ -1,0 +1,211 @@
+$primary-500: #FAA419;
+$secondary-500: #54565A;
+$secondary-300: #87898C;
+$success-border: #4CAF50;
+$info-border: #2196F3;
+$white: #fff;
+$dark-500: #1C1B20;
+$order-ready: #4caf4f36;
+
+.orders-container {
+  display: flex;
+  flex-direction: row;
+  gap: 290px;
+
+  .ordersready,
+  .orderspreparation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .orderstatus {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+      gap: 5px;
+    }
+
+    .orders {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+}
+
+.order-delivery {
+  width: 290px;
+  height: 235px;
+  padding: 12px 16px;
+  border: 1px solid $primary-500;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: $dark-500;
+  overflow: hidden;
+  position: relative;
+
+  &.ready-order {
+    background-color: $order-ready;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-500;
+  }
+
+  .orderheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: normal;
+    align-items: center;
+    height: 30px;
+
+    .orderid {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    .id-name {
+      display: flex;
+      flex-direction: column;
+
+      .namecustomer {
+        font-size: 11px;
+        color: $secondary-300;
+      }
+    }
+
+    .table-number {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .buttonHandle {
+      background-color: $success-border;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 7px 5px 7px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+  }
+
+  .orderbody {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    flex-grow: 1;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+
+    .commentandorderinformation {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+
+      .comment {
+        background-color: $info-border;
+        border-radius: 5px;
+        padding: 7px;
+        color: $white;
+        font-size: 13px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+
+      .deliveryinformation {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+      }
+
+      .dishes {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-weight: 500;
+        align-items: flex-start;
+
+        .amountdishes {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+
+          .dishnameoption {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            span {
+              font-size: 13px;
+              font-weight: normal;
+              color: $secondary-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  height: 11%;
+  pointer-events: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  background: linear-gradient(to bottom, #ffffff9c, #FFFFFF);
+  pointer-events: none;
+
+  &.ready {
+    background: linear-gradient(to bottom, #d9eedaa5, #D9EEDA);
+  }
+}
+
+.buttonRoute,
+.buttonViewMore {
+  background-color: $primary-500;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 7px 5px 7px;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.fade-out {
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}

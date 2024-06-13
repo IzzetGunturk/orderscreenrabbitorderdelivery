@@ -122,102 +122,11 @@ export class PickupComponent {
       ]
     },
   ];
-
-  // filter orders
-  deliveryOrders(prepared: boolean) {
-    return this.deliveryorders.filter(order => order.type === 'Delivery' && order.prepared == prepared)
-  }
-
-  deliveryOrdersReady() {
-    return this.deliveryOrders(true);
-  }
-
-  deliveryOrdersPreparation() {
-    return this.deliveryOrders(false);
-  }
-
-  pickupOrders(prepared: boolean) {
-    return this.pickuporders.filter(order => order.type == 'Pick up' && order.prepared == prepared)
-  }
-
-  pickupOrdersReady() {
-    return this.pickupOrders(true);
-  }
-
-  pickupOrdersPreparation() {
-    return this.pickupOrders(false);
-  }
-
-  restaurantOrders(prepared: boolean) {
-    return this.restaurantorders.filter(order => order.type == 'Restaurant' && order.prepared == prepared)
-  }
-
-  restaurantOrdersReady() {
-    return this.restaurantOrders(true);
-  }
-
-  restaurantOrdersPreparation() {
-    return this.restaurantOrders(false);
-  }
   
   // date time
   currentDateTime: Date;
 
   constructor() {
     this.currentDateTime = new Date();
-  }
-
-  // modal
-  modalVisible: any = null;
-
-  openModal(order: any) {
-    this.modalVisible = order;
-  }
-
-  closeModal() {
-    this.modalVisible = null;
-  }
-
-  // mark order done
-  handleOrderDelivery(index: number) {
-    if (index < this.deliveryorders.length) {
-      const order = document.getElementsByClassName('order-delivery')[index];
-  
-      if (order) {
-        order.classList.add('fade-out');
-      }
-  
-      setTimeout(() => {
-        this.deliveryorders.splice(index, 1);
-      }, 2000);
-    }
-  }
-
-  handleOrderPickup(index: number) {
-    if (index < this.pickuporders.length) {
-      const order = document.getElementsByClassName('order-pickup')[index];
-  
-      if (order) {
-        order.classList.add('fade-out');
-      }
-  
-      setTimeout(() => {
-        this.pickuporders.splice(index, 1);
-      }, 2000);
-    }
-  }
-
-  handleOrderRestaurant(index: number) {
-    if (index < this.restaurantorders.length) {
-      const order = document.getElementsByClassName('order-restaurant')[index];
-  
-      if (order) {
-        order.classList.add('fade-out');
-      }
-  
-      setTimeout(() => {
-        this.restaurantorders.splice(index, 1);
-      }, 2000);
-    }
   }
 }
