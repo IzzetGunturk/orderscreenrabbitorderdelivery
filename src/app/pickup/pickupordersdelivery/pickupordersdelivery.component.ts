@@ -9,6 +9,7 @@ interface DeliveryOrder {
   address: string;
   deliverytime: string;
   deliveryduration: string;
+  routeaddress: string;
 }
 
 @Component({

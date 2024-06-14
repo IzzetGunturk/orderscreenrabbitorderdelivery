@@ -9,6 +9,7 @@ interface DeliveryOrder {
   address: string;
   deliverytime: string;
   deliveryduration: string;
+  routeaddress: string;
 }
 
 interface PickupOrder {
@@ -51,6 +52,7 @@ export class PickupComponent implements AfterViewInit {
       address: 'Pieter Zeemanstraat 53, 6603 AV Wijchen',
       deliverytime: 'Delivery time: 17:52',
       deliveryduration: 'Delivery duration: 00:07',
+      routeaddress: 'https://www.google.nl/maps/dir/5Kitchens,+Markt,+Wijchen/Pieter+Zeemanstraat+53,+6603+AV+Wijchen/@51.8084557,5.7246526,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c707a9268f0997:0x1884e14e47145bfc!2m2!1d5.7256237!2d51.8070124!1m5!1m1!1s0x47c70697ca849c39:0xf2fbb64bdf34b382!2m2!1d5.7442809!2d51.8098708!3e1?hl=nl&entry=ttu',
     },
     {
       deliverycompanyicon: 'ubereats',
@@ -60,6 +62,8 @@ export class PickupComponent implements AfterViewInit {
       address: 'Aalsburg 3102, 6602 WS Wijchen',
       deliverytime: 'Delivery time: 18:45',
       deliveryduration: 'Delivery duration: 00:05',
+      routeaddress: 'https://www.google.nl/maps/dir/5Kitchens,+Markt,+Wijchen/Aalsburg+3102,+6602+WS+Wijchen/@51.8068945,5.7198425,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c707a9268f0997:0x1884e14e47145bfc!2m2!1d5.7256237!2d51.8070124!1m5!1m1!1s0x47c706ad6545dbcf:0x602484a7a4dee70f!2m2!1d5.7183789!2d51.8080319!3e1?hl=nl&entry=ttu',
+
     },
     {
       deliverycompanyicon: '',
@@ -69,6 +73,7 @@ export class PickupComponent implements AfterViewInit {
       address: 'Diepvoorde 1051, 6605 EA Wijchen',
       deliverytime: 'Delivery time: 18:45',
       deliveryduration: 'Delivery duration: 00:15',
+      routeaddress: 'https://www.google.nl/maps/dir/5Kitchens,+Markt,+Wijchen/Diepvoorde+1051,+6605+EA+Wijchen/@51.804999,5.7217513,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c707a9268f0997:0x1884e14e47145bfc!2m2!1d5.7256237!2d51.8070124!1m5!1m1!1s0x47c706a94d853bc7:0xa7f456256d164683!2m2!1d5.722236!2d51.8029314!3e1?hl=nl&entry=ttu',
     },
   ]
 
