@@ -38,9 +38,9 @@
           </div>
         </div>
         <div class="overlay ready">
-          <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
+          <p class="ellipsis">...</p>
         </div>
-        <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+        <div class="buttonViewMore" (click)="openModal(order)">
           <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
           <p>View more</p>
         </div>
@@ -82,9 +82,9 @@
           </div>
         </div>
         <div class="overlay">
-          <p class="ellipsis" *ngIf="order.dishes.length > 3">...</p>
+          <p class="ellipsis">...</p>
         </div>
-        <div class="buttonViewMore" *ngIf="order.dishes.length > 3" (click)="openModal(order)">
+        <div class="buttonViewMore" (click)="openModal(order)">
           <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
           <p>View more</p>
         </div>

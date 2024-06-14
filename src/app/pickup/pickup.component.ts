@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 interface DeliveryOrder {
   deliverycompanyicon: string;
@@ -40,7 +40,7 @@ interface Dish {
   styleUrls: ['./pickup.component.scss']
 })
 
-export class PickupComponent {
+export class PickupComponent implements AfterViewInit {
   deliveryorders: DeliveryOrder[] =[
     {
       deliverycompanyicon: 'thuisbezorgd',
@@ -128,5 +128,26 @@ export class PickupComponent {
 
   constructor() {
     this.currentDateTime = new Date();
+  }
+
+  ngAfterViewInit() {
+    const buttonViewMore = document.querySelectorAll('.buttonViewMore') as NodeListOf<HTMLElement>;
+    const orders = document.querySelectorAll('.commentandorderinformation') as NodeListOf<HTMLElement>;
+    const ellipsis = document.querySelectorAll('.ellipsis') as NodeListOf<HTMLElement>;
+  
+    orders.forEach((order, index) => {
+      const button = buttonViewMore[index];
+      const ellipsisOverlay = ellipsis[index];
+
+      if (order.offsetHeight > 70) {
+        button.style.display = 'flex';
+        ellipsisOverlay.style.display = 'block';
+      }
+      else {
+        button.style.display = 'none';
+        ellipsisOverlay.style.display = 'none';
+      }
+    });
+    
   }
 }
