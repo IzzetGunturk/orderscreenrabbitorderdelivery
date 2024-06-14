@@ -72,7 +72,7 @@ export class PickupComponent implements AfterViewInit {
       prepared: false,
       address: 'Diepvoorde 1051, 6605 EA Wijchen',
       deliverytime: 'Delivery time: 18:45',
-      deliveryduration: 'Delivery duration: 00:15',
+      deliveryduration: 'Delivery duration: 00:05',
       routeaddress: 'https://www.google.nl/maps/dir/5Kitchens,+Markt,+Wijchen/Diepvoorde+1051,+6605+EA+Wijchen/@51.804999,5.7217513,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c707a9268f0997:0x1884e14e47145bfc!2m2!1d5.7256237!2d51.8070124!1m5!1m1!1s0x47c706a94d853bc7:0xa7f456256d164683!2m2!1d5.722236!2d51.8029314!3e1?hl=nl&entry=ttu',
     },
   ]
