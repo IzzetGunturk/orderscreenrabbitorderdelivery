@@ -249,7 +249,7 @@ export class FloormanagerhistoryComponent {
       namecustomer: "Sarah Olivia",
       orderedtime: 'Ordered: 1-4-2024 16:00',
       pickuptime: '16:10',
-      email: 'charlottelee@hotmail.com',
+      email: 'saraholivia96@hotmail.com',
       phonenumber: '+31 6 21529854',
       dishes: [
         { name: 'Crazy Pulled Pork Burger', quantity: 1 },
