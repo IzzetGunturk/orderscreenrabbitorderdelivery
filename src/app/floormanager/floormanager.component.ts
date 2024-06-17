@@ -239,7 +239,7 @@ export class FloormanagerComponent {
       phonenumber: '+31 6 21529854',
       dishes: [
         { name: 'Rijst', quantity: 1 },
-        { name: 'Steak', option: ['2 Rode Wijnsaus', 'test', 'test'], quantity: 1 },
+        { name: 'Steak', option: ['2 Rode Wijnsaus'], quantity: 1 },
         { name: 'Crispy Fries', quantity: 2 },
         { name: 'Fanta', quantity: 2 },
       ]
