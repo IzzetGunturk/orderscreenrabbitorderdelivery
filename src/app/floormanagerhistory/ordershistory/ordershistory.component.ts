@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit} from '@angular/core';
 
 interface Order {
   deliverycompanyicon: string;
@@ -28,7 +28,7 @@ interface Dish {
   styleUrl: './ordershistory.component.scss'
 })
 
-export class OrdershistoryComponent {
+export class OrdershistoryComponent implements AfterViewInit {
   @Input() orders: Order[] = [];
   @Input() showRecoverButton: boolean = false;
   @Input() intransitorders: Order[] = [];
@@ -103,10 +103,9 @@ export class OrdershistoryComponent {
           ellipsisOverlay.style.display = 'block';
         }
         else {
-          button.style.display = 'none';
           ellipsisOverlay.style.display = 'none';
         }
-    });
-  }, 0);
+      });
+    }, 0);
   }
 }

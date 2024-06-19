@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Order {
   deliverycompanyicon: string;
@@ -58,7 +58,7 @@ export class FloormanagerComponent {
       tablenumber: 3,
       dishes: [
         { name: 'Pasta Bolognese', option: ['Penne'], quantity: 1 },
-        { name: 'Pepsi Regular', quantity: 1 }
+        { name: 'Pepsi Regular', quantity: 1 },
       ]
     },
     {
