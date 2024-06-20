@@ -1,25 +1,6 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
 import Swiper from 'swiper';
-
-interface Order {
-  deliverycompanyicon: string;
-  id: number;
-  type: string;
-  comment: string;
-  prepared: boolean;
-  namecustomer?: string;
-  address?: string;
-  tablenumber?: number;
-  pickuptime: string;
-  returntime?: string;
-  dishes: Dish[];
-}
-
-interface Dish {
-  name: string;
-  option?: string[];
-  quantity: number;
-}
+import { Order } from '../interfaces/order.interfaces';
 
 @Component({
   selector: 'app-orders',

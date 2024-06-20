@@ -1,20 +1,6 @@
 // kitchenstaff.component.ts
 import { Component } from '@angular/core';
-
-interface Order {
-  icon: string;
-  id: number;
-  type: string;
-  comment?: string;
-  dishes: Dish[];
-}
-
-interface Dish {
-  name: string;
-  option: string;
-  quantity: number;
-  prepared: boolean;
-}
+import { Order, Dish } from './interfaces/kitchenstaff.interfaces';
 
 @Component({
   selector: 'app-kitchenstaff',

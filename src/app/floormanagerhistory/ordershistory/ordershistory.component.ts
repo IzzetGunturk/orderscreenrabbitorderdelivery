@@ -1,26 +1,5 @@
 import { Component, Input, AfterViewInit} from '@angular/core';
-
-interface Order {
-  deliverycompanyicon: string;
-  id: number;
-  type: string;
-  comment: string;
-  namecustomer?: string;
-  address?: string;
-  tablenumber?: number;
-  email?: string;
-  phonenumber?: string;
-  orderedtime?: string;
-  pickuptime: string;
-  returntime?: string;
-  dishes: Dish[];
-}
-
-interface Dish {
-  name: string;
-  option?: string[];
-  quantity: number;
-}
+import { Order } from '../interfaces/floormanagerhistory.interfaces';
 
 @Component({
   selector: 'app-ordershistory',

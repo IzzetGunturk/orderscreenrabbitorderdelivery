@@ -1,18 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface RestaurantOrder {
-  tablenumber: number;
-  type: string;
-  comment?: string;
-  prepared: boolean;
-  dishes: Dish[];
-}
-
-interface Dish {
-  name: string;
-  option?: string[];
-  quantity: number;
-}
+import { RestaurantOrder } from '../interfaces/pickup.interfaces';
 
 @Component({
   selector: 'app-pickupordersrestaurant',

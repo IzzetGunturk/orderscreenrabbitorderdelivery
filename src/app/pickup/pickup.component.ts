@@ -1,39 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-
-interface DeliveryOrder {
-  deliverycompanyicon: string;
-  id: number;
-  type: string;
-  comment?: string;
-  prepared: boolean;
-  address: string;
-  deliverytime: string;
-  deliveryduration: string;
-  routeaddress: string;
-}
-
-interface PickupOrder {
-  id: number;
-  type: string;
-  comment?: string;
-  prepared: boolean;
-  namecustomer: string;
-  dishes: Dish[];
-}
-
-interface RestaurantOrder {
-  tablenumber: number;
-  type: string;
-  comment?: string;
-  prepared: boolean;
-  dishes: Dish[];
-}
-
-interface Dish {
-  name: string;
-  option?: string[];
-  quantity: number;
-}
+import { DeliveryOrder, PickupOrder, RestaurantOrder } from './interfaces/pickup.interfaces';
 
 @Component({
   selector: 'app-pickup',

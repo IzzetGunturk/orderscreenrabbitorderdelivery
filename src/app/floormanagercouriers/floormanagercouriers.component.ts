@@ -1,14 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
+import { DeliveryInformation } from './interfaces/floormanagercouriers.interfaces';
 declare var google: any;
-interface DeliveryInformation {
-  picture: any,
-  name: string,
-  deliverycompanyicon: string,
-  id: number,
-  returntime: string,
-  address: string,
-  comment: string,
-}
 
 @Component({
   selector: 'app-floormanagercouriers',
