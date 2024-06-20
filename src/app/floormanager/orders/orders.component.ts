@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { Component, Input, AfterViewInit, AfterViewChecked, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import Swiper from 'swiper';
 import { Order } from '../interfaces/order.interfaces';
 
@@ -7,12 +7,17 @@ import { Order } from '../interfaces/order.interfaces';
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.scss']
 })
-export class OrdersComponent implements AfterViewInit {
+
+export class OrdersComponent implements AfterViewInit, AfterViewChecked {
   @Input() orders: Order[] = [];
   @Input() showRecoverButton: boolean = false;
   @Input() intransitorders: Order[] = [];
   @Input() inpreparationorders: Order[] = [];
   @Input() readyforpickuporders: Order[] = [];
+
+  @ViewChildren('commentandorderinformation') commentandorderinformation!: QueryList<ElementRef>;
+  @ViewChildren('buttonViewMore') buttonViewMore!: QueryList<ElementRef>;
+  @ViewChildren('ellipsis') ellipsis!: QueryList<ElementRef>;
 
   // icon
   getIcon(type: string) {
@@ -47,18 +52,26 @@ export class OrdersComponent implements AfterViewInit {
     this.currentDateTime = new Date();
   }
 
-  ngAfterViewInit() {
-    const buttonViewMore = document.querySelectorAll('.buttonViewMore') as NodeListOf<HTMLElement>;
-    const orders = document.querySelectorAll('.commentandorderinformation') as NodeListOf<HTMLElement>;
-    const ellipsis = document.querySelectorAll('.ellipsis') as NodeListOf<HTMLElement>;
+  ngAfterViewInit(): void {
+    this.initSwiper();
+  }
+
+  ngAfterViewChecked(): void {
+    this.updateButtonAndEllipsis();
+  }
+
+  updateButtonAndEllipsis() {
+    const buttonViewMore = this.buttonViewMore.toArray();
+    const orders = this.commentandorderinformation.toArray();
+    const ellipsis = this.ellipsis.toArray();
   
     orders.forEach((order, index) => {
-      const button = buttonViewMore[index];
+      const button = buttonViewMore[index].nativeElement;
       const orderType = button.getAttribute('data-order-type');
-      const ellipsisOverlay = ellipsis[index];
+      const ellipsisOverlay = ellipsis[index].nativeElement;
 
       if (orderType == 'Restaurant') {
-        if (order.offsetHeight > 90) {
+        if (order.nativeElement.offsetHeight > 90) {
           button.style.display = 'flex';
           ellipsisOverlay.style.display = 'block';
         } else {
@@ -66,7 +79,7 @@ export class OrdersComponent implements AfterViewInit {
           ellipsisOverlay.style.display = 'none';
         }
       } 
-      else if (order.offsetHeight > 90) {
+      else if (order.nativeElement.offsetHeight > 90) {
         button.style.display = 'flex';
         ellipsisOverlay.style.display = 'block';
       }
@@ -74,8 +87,6 @@ export class OrdersComponent implements AfterViewInit {
         ellipsisOverlay.style.display = 'none';
       }
     });
-    
-    this.initSwiper();
   }
   
   initSwiper() {

@@ -27,7 +27,7 @@
       </div>
       <hr>
       <div class="orderbody">
-        <div class="commentandorderinformation">
+        <div class="commentandorderinformation" #commentandorderinformation>
           <div class="comment" *ngIf="order.comment">
             <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="16px" svgWidth="16px">
             </app-svgicons>
@@ -46,14 +46,14 @@
       </div>
       <div class="overlay"
         [ngClass]="{'overlay-delivery' : order.type === 'Delivery', 'overlay-pickup' : order.type === 'Pick up', 'overlay-restaurant' : order.type === 'Restaurant' }">
-        <p class="ellipsis">...</p>
+        <p class="ellipsis" #ellipsis>...</p>
       </div>
       <div class="buttonsOrder" [ngClass]="{'align-end' : !showRecoverButton}">
         <div class="buttonRecover" *ngIf="showRecoverButton">
           <app-svgicons [selectedSvg]="'history'" [fillColor]="'#fff'"></app-svgicons>
           <p>Recover</p>
         </div>
-        <div class="buttonViewMore" [attr.data-order-type]="order.type" (click)="openModal(order)">
+        <div class="buttonViewMore" #buttonViewMore [attr.data-order-type]="order.type" (click)="openModal(order)">
           <app-svgicons [selectedSvg]="'information'" [fillColor]="'#fff'"></app-svgicons>
           <p>View more</p>
         </div>
