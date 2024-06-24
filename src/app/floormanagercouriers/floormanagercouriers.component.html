@@ -56,7 +56,7 @@
         </div>
         <hr>
         <div class="body">
-          <p class="address">Karekietstraat 1, 6601 DS Wijchen</p>
+          <p class="address">{{ order.address }}</p>
           <div class="comment" *ngIf="order.comment">
             <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="18px" svgWidth="18px">
             </app-svgicons>

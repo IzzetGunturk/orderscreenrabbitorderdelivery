@@ -21,12 +21,12 @@ export class FloormanagercouriersComponent implements OnInit {
       comment: '',
     },
     {
-      picture: "../../assets/couriers/courier2.jpg",
+      picture: "../../assets/couriers/courier4.jpg",
       name: 'Joey Leenden',
       deliverycompanyicon: 'thuisbezorgd',
       id: 1234,
-      returntime: '17:05',
-      address: 'Karekietstraat 1, 6601 DS Wijchen',
+      returntime: '17:16',
+      address: 'Tunnelweg 18, 6601 CW Wijchen',
       comment: '',
     },
     {
@@ -39,7 +39,7 @@ export class FloormanagercouriersComponent implements OnInit {
       comment: '',
     },
     {
-      picture: "../../assets/couriers/courier4.jpg",
+      picture: "../../assets/couriers/courier2.jpg",
       name: 'Klaas Bakker',
       deliverycompanyicon: 'thuisbezorgd',
       id: 1236,
@@ -64,7 +64,7 @@ export class FloormanagercouriersComponent implements OnInit {
  loadMap() {
   const mapProperties = {
     center: new google.maps.LatLng(51.807098610817185, 5.725634425673384),
-    zoom: 17,
+    zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   const map = new google.maps.Map(document.getElementById('map') as HTMLElement, mapProperties);
@@ -84,7 +84,7 @@ export class FloormanagercouriersComponent implements OnInit {
   });
 
   const deliveryguy2 = new google.maps.Marker({
-    position: new google.maps.LatLng(51.806544596389024, 5.728441013200699),
+    position: new google.maps.LatLng(51.811392, 5.724674),
     map: map,
     icon: {
       url: "../../assets/couriers/courier1.jpg",
@@ -100,6 +100,32 @@ export class FloormanagercouriersComponent implements OnInit {
     map: map,
     icon: {
       url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FAA419"><path d="M280-80v-366q-51-14-85.5-56T160-600v-280h80v280h40v-280h80v280h40v-280h80v280q0 56-34.5 98T360-446v366h-80Zm400 0v-320H560v-280q0-83 58.5-141.5T760-880v800h-80Z"/></svg>'),
+      scaledSize: new google.maps.Size(50, 50)
+    },
+  });
+
+  const homeIconSvg = `
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FAA419">
+    <path d="M200-160v-366L88-440l-48-64 440-336 160 122v-82h120v174l160 122-48 64-112-86v366H560v-240H400v240H200Zm200-399h160q0-32-24-52.5T480-632q-32 0-56 20.5T400-559Z"/>
+  </svg>
+  `;
+
+  const encodedHomeIconSvg = encodeURIComponent(homeIconSvg);
+
+  const location = new google.maps.Marker({
+    position: new google.maps.LatLng(51.8141768591351, 5.730497725673824),
+    map: map,
+    icon: {
+      url: 'data:image/svg+xml;charset=UTF-8,' + encodedHomeIconSvg,
+      scaledSize: new google.maps.Size(50, 50)
+    },
+  });
+
+  const location2 = new google.maps.Marker({
+    position: new google.maps.LatLng(51.81285243029767, 5.727734039165563),
+    map: map,
+    icon: {
+      url: 'data:image/svg+xml;charset=UTF-8,' + encodedHomeIconSvg,
       scaledSize: new google.maps.Size(50, 50)
     },
   });
