@@ -1,5 +1,6 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DeliveryInformation } from './interfaces/floormanagercouriers.interfaces';
+import { timer } from 'rxjs';
 declare var google: any;
 
 @Component({
@@ -51,22 +52,27 @@ export class FloormanagercouriersComponent implements OnInit {
 
   // date time
   currentDateTime: Date;
-  
-  constructor() {
-    this.currentDateTime = new Date();
-  }
 
-  // map
   ngOnInit(): void {
+    timer(0, 1000).subscribe(() => {
+      this.currentDateTime = new Date();
+    })
+    
+    //map
     this.loadMap();
   }
 
- loadMap() {
-  const mapProperties = {
-    center: new google.maps.LatLng(51.807098610817185, 5.725634425673384),
-    zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  constructor() {
+    this.currentDateTime = new Date()
+  }
+
+  loadMap() {
+    const mapProperties = {
+      center: new google.maps.LatLng(51.807098610817185, 5.725634425673384),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
   const map = new google.maps.Map(document.getElementById('map') as HTMLElement, mapProperties);
 
   const centerOfMap = map.getCenter();

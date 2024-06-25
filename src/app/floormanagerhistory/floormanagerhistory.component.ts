@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { Order } from '../floormanagerhistory/interfaces/floormanagerhistory.interfaces';
 
 @Component({
@@ -7,7 +8,7 @@ import { Order } from '../floormanagerhistory/interfaces/floormanagerhistory.int
   styleUrl: './floormanagerhistory.component.scss'
 })
 
-export class FloormanagerhistoryComponent {
+export class FloormanagerhistoryComponent implements OnInit {
 
   orders: Order[] = [
     {
@@ -378,9 +379,15 @@ export class FloormanagerhistoryComponent {
 
   // date time
   currentDateTime: Date;
-  
+
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(() => {
+      this.currentDateTime = new Date();
+    })
+  }
+
   constructor() {
-    this.currentDateTime = new Date();
+    this.currentDateTime = new Date()
   }
 
   get amountTotalOrders(): number {

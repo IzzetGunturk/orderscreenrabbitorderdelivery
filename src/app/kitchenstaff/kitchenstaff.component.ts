@@ -1,13 +1,15 @@
 // kitchenstaff.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Order, Dish } from './interfaces/kitchenstaff.interfaces';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-kitchenstaff',
   templateUrl: './kitchenstaff.component.html',
   styleUrls: ['./kitchenstaff.component.scss']
 })
-export class KitchenstaffComponent {
+
+export class KitchenstaffComponent implements OnInit {
   orders: Order[] = [
     {
       icon: 'pickup',
@@ -89,8 +91,14 @@ export class KitchenstaffComponent {
 
   // date time
   currentDateTime: Date;
-  
+
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(() => {
+      this.currentDateTime = new Date();
+    })
+  }
+
   constructor() {
-    this.currentDateTime = new Date();
+    this.currentDateTime = new Date()
   }
 }

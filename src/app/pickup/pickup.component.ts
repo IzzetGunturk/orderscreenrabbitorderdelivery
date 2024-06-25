@@ -1,4 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { DeliveryOrder, PickupOrder, RestaurantOrder } from './interfaces/pickup.interfaces';
 
 @Component({
@@ -7,7 +8,7 @@ import { DeliveryOrder, PickupOrder, RestaurantOrder } from './interfaces/pickup
   styleUrls: ['./pickup.component.scss']
 })
 
-export class PickupComponent implements AfterViewInit {
+export class PickupComponent implements AfterViewInit, OnInit {
   deliveryorders: DeliveryOrder[] =[
     {
       deliverycompanyicon: 'thuisbezorgd',
@@ -97,8 +98,14 @@ export class PickupComponent implements AfterViewInit {
   // date time
   currentDateTime: Date;
 
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(() => {
+      this.currentDateTime = new Date();
+    })
+  }
+
   constructor() {
-    this.currentDateTime = new Date();
+    this.currentDateTime = new Date()
   }
 
   ngAfterViewInit() {

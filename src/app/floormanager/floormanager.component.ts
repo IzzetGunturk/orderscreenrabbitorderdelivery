@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Order } from './interfaces/order.interfaces';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-floormanager',
@@ -7,7 +8,7 @@ import { Order } from './interfaces/order.interfaces';
   styleUrls: ['./floormanager.component.scss']
 })
 
-export class FloormanagerComponent {
+export class FloormanagerComponent implements OnInit {
   inpreparationorders: Order[] = [
     {
       deliverycompanyicon: '',
@@ -362,9 +363,15 @@ export class FloormanagerComponent {
 
   // date time
   currentDateTime: Date;
-  
+
+  ngOnInit(): void {
+    timer(0, 1000).subscribe(() => {
+      this.currentDateTime = new Date();
+    })
+  }
+
   constructor() {
-    this.currentDateTime = new Date();
+    this.currentDateTime = new Date()
   }
 
   // amount orders
