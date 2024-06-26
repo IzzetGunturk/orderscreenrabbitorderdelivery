@@ -33,7 +33,7 @@ export class FloormanagercouriersComponent implements OnInit {
     {
       picture: "../../assets/couriers/courier3.jpg",
       name: 'Mike van den Broek',
-      deliverycompanyicon: 'thuisbezorgd',
+      deliverycompanyicon: '',
       id: 1235,
       returntime: '17:20',
       address: 'Cunerahof 13, 6601 AE Wijchen',
@@ -42,7 +42,7 @@ export class FloormanagercouriersComponent implements OnInit {
     {
       picture: "../../assets/couriers/courier2.jpg",
       name: 'Klaas Bakker',
-      deliverycompanyicon: 'thuisbezorgd',
+      deliverycompanyicon: '',
       id: 1236,
       returntime: '17:30',
       address: 'Oud Ravensteinseweg 7, 6602 AC Wijchen',

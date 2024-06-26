@@ -33,7 +33,7 @@
           <div class="headerleft">
             <img class="picture" [src]="order.picture">
             <p>{{ order.name }}</p>
-            <app-svgicons [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
+            <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
             </app-svgicons>
             <p># {{ order.id }}</p>
           </div>
