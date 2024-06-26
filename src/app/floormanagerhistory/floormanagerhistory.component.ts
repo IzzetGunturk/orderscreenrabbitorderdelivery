@@ -236,36 +236,36 @@ export class FloormanagerhistoryComponent implements OnInit {
         { name: 'Fanta', quantity: 4 },
       ]
     },
-    {
-      deliverycompanyicon: '',
-      id: 1118,
-      type: 'Restaurant',
-      tablenumber: 9,
-      comment: '',
-      orderedtime: 'Ordered: 2-4-2024 12:13',
-      pickuptime: 'ZSM',
-      dishes: [
-        { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
-        { name: 'Crazy Pulled Pork Burger', quantity: 1 },
-        { name: 'Fanta', quantity: 1 },
-      ]
-    },
-    {
-      deliverycompanyicon: '',
-      id: 1117,
-      type: 'Restaurant',
-      tablenumber: 3,
-      comment: '',
-      orderedtime: 'Ordered: 2-4-2024 12:00',
-      pickuptime: 'ZSM',
-      dishes: [
-        { name: 'Pizza Tonno', quantity: 3 },
-        { name: 'Fanta', quantity: 4 },
-        { name: 'Carpaccio Salade', quantity: 1 },
-        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
-        { name: 'Chili Sin Carne', quantity: 2 },
-      ]
-    },
+    // {
+    //   deliverycompanyicon: '',
+    //   id: 1118,
+    //   type: 'Restaurant',
+    //   tablenumber: 9,
+    //   comment: '',
+    //   orderedtime: 'Ordered: 2-4-2024 12:13',
+    //   pickuptime: 'ZSM',
+    //   dishes: [
+    //     { name: "Oma's Chili", option: ['Zonder tomaat'], quantity: 1 },
+    //     { name: 'Crazy Pulled Pork Burger', quantity: 1 },
+    //     { name: 'Fanta', quantity: 1 },
+    //   ]
+    // },
+    // {
+    //   deliverycompanyicon: '',
+    //   id: 1117,
+    //   type: 'Restaurant',
+    //   tablenumber: 3,
+    //   comment: '',
+    //   orderedtime: 'Ordered: 2-4-2024 12:00',
+    //   pickuptime: 'ZSM',
+    //   dishes: [
+    //     { name: 'Pizza Tonno', quantity: 3 },
+    //     { name: 'Fanta', quantity: 4 },
+    //     { name: 'Carpaccio Salade', quantity: 1 },
+    //     { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+    //     { name: 'Chili Sin Carne', quantity: 2 },
+    //   ]
+    // },
   ]
 
   // icon

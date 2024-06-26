@@ -196,6 +196,7 @@ export class FloormanagerComponent implements OnInit {
       email: 'isabeljohn@hotmail.com',
       dishes: [
         { name: 'Pasta Bolognese', option: ['Tagliatelle'], quantity: 1 },
+        { name: 'Wrap Spicy Chicken', quantity: 1 },
         { name: 'Sprite', quantity: 1 },
       ]
     },

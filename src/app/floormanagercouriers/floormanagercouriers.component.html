@@ -32,19 +32,19 @@
         <div class="header">
           <div class="headerleft">
             <img class="picture" [src]="order.picture">
-            <p>{{ order.name }}</p>
-            <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="24px" svgWidth="24px">
+            <p class="name">{{ order.name }}</p>
+            <app-svgicons *ngIf="order.deliverycompanyicon" [selectedSvg]="order.deliverycompanyicon" [fillColor]="'#000'" svgHeight="28px" svgWidth="28px">
             </app-svgicons>
-            <p># {{ order.id }}</p>
+            <p class="orderid"># {{ order.id }}</p>
           </div>
           <div class="headerright">
             <div class="returnbar">
               <div class="icons">
-                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="22px" svgWidth="22px">
                 </app-svgicons>
-                <app-svgicons [selectedSvg]="'home'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                <app-svgicons [selectedSvg]="'home'" [fillColor]="'#000'" svgHeight="22px" svgWidth="22px">
                 </app-svgicons>
-                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="20px" svgWidth="20px">
+                <app-svgicons [selectedSvg]="'restaurant'" [fillColor]="'#000'" svgHeight="22px" svgWidth="22px">
                 </app-svgicons>
               </div>
               <div class="processbar"></div>
@@ -58,7 +58,7 @@
         <div class="body">
           <p class="address">{{ order.address }}</p>
           <div class="comment" *ngIf="order.comment">
-            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="18px" svgWidth="18px">
+            <app-svgicons [selectedSvg]="'comment'" [fillColor]="'#fff'" svgHeight="20px" svgWidth="20px">
             </app-svgicons>
             <p>{{ order.comment }}</p>
           </div>

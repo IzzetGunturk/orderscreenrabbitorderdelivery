@@ -84,6 +84,7 @@ $order-ready: #4caf4f36;
       display: flex;
       flex-direction: row;
       gap: 10px;
+      font-size: 16px;
     }
 
     .buttonHandle {
@@ -151,9 +152,10 @@ $order-ready: #4caf4f36;
             display: flex;
             flex-direction: column;
             gap: 6px;
+            font-size: 14px;
 
             span {
-              font-size: 13px;
+              font-size: 14px;
               font-weight: normal;
               color: $secondary-300;
             }

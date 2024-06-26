@@ -59,7 +59,7 @@ $order-ready: #4caf4f36;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     align-items: center;
     height: 30px;
@@ -75,7 +75,7 @@ $order-ready: #4caf4f36;
       flex-direction: column;
 
       .namecustomer {
-        font-size: 11px;
+        font-size: 13px;
         color: $secondary-300;
       }
     }
@@ -105,7 +105,7 @@ $order-ready: #4caf4f36;
   .orderbody {
     display: flex;
     flex-direction: column;
-    font-size: 13px;
+    font-size: 14px;
     flex-grow: 1;
     gap: 12px;
     position: relative;
@@ -122,7 +122,7 @@ $order-ready: #4caf4f36;
         border-radius: 5px;
         padding: 7px;
         color: $white;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 400;
         display: flex;
         flex-direction: row;
@@ -153,7 +153,7 @@ $order-ready: #4caf4f36;
             gap: 6px;
 
             span {
-              font-size: 13px;
+              font-size: 14px;
               font-weight: normal;
               color: $secondary-300;
             }
@@ -169,7 +169,7 @@ $order-ready: #4caf4f36;
   bottom: 50px;
   left: 0;
   right: 0;
-  height: 11%;
+  height: 13%;
   pointer-events: none;
   align-items: center;
   display: flex;
