@@ -64,28 +64,6 @@ $order-ready: #4caf4f36;
     align-items: center;
     height: 30px;
 
-    .orderid {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-    }
-
-    .id-name {
-      display: flex;
-      flex-direction: column;
-
-      .namecustomer {
-        font-size: 11px;
-        color: $secondary-300;
-      }
-    }
-
-    .table-number {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
     .buttonHandle {
       background-color: $success-border;
       color: #fff;
@@ -134,32 +112,6 @@ $order-ready: #4caf4f36;
         flex-direction: column;
         font-size: 13px;
       }
-
-      .dishes {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        font-weight: 500;
-        align-items: flex-start;
-
-        .amountdishes {
-          display: flex;
-          flex-direction: row;
-          gap: 10px;
-
-          .dishnameoption {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-
-            span {
-              font-size: 13px;
-              font-weight: normal;
-              color: $secondary-300;
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -183,8 +135,7 @@ $order-ready: #4caf4f36;
   }
 }
 
-.buttonRoute,
-.buttonViewMore {
+.buttonRoute {
   background-color: $primary-500;
   color: $white;
   border: none;

@@ -60,61 +60,6 @@ header {
     }
   }
 
-  .searchbar {
-    background-color: $greynavbar;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    width: 325px;
-    font-size: 16px;
-
-    &::placeholder {
-      font-size: 16px;
-    }
-  }
-
-  .buttonsFilter {
-    display: flex;
-    flex-direction: row;
-    gap: 14px;
-    color: $white;
-
-    .totalOrders,
-    .filterRestaurant,
-    .filterPickup,
-    .filterDelivery {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      align-items: center;
-      padding: 8px 10px;
-      font-size: 16px;
-      font-weight: 500;
-      border-radius: 30px;
-      cursor: pointer;
-
-      &.totalOrders {
-        cursor: auto;
-      }
-    }
-
-    .totalOrders {
-      background-color: $success-border;
-    }
-
-    .filterRestaurant {
-      background-color: $restaurant;
-    }
-
-    .filterPickup {
-      background-color: $pickup;
-    }
-
-    .filterDelivery {
-      background-color: $delivery;
-    }
-  }
-
   .weathertime {
     display: flex;
     flex-direction: row;

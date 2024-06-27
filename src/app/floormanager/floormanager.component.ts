@@ -167,7 +167,7 @@ export class FloormanagerComponent implements OnInit {
       comment: 'Extra servetjes',
       prepared: false,
       orderedtime: '13:00',
-      pickuptime: '18:50',
+      pickuptime: '19:20',
       email: 'ivoklaassen@hotmail.com',
       phonenumber: '+31 6 21529854',
       namecustomer: 'Ivo Klaassen',

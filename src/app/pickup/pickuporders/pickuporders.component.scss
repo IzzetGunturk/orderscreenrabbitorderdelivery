@@ -80,12 +80,6 @@ $order-ready: #4caf4f36;
       }
     }
 
-    .table-number {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
     .buttonHandle {
       background-color: $success-border;
       color: #fff;
@@ -183,7 +177,6 @@ $order-ready: #4caf4f36;
   }
 }
 
-.buttonRoute,
 .buttonViewMore {
   background-color: $primary-500;
   color: $white;

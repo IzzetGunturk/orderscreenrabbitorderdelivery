@@ -1,5 +1,5 @@
 <div class="orders-container">
-  <div class="orders" *ngFor="let order of orders">
+  <div class="orders" *ngFor="let order of orders | slice:0:14">
     <div class="order"
       [ngClass]="{'delivery-order': order.type === 'Delivery', 'restaurant-order': order.type === 'Restaurant', 'pickup-order': order.type === 'Pick up'}">
       <div class="orderheader">
