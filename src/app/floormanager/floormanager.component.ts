@@ -12,23 +12,6 @@ export class FloormanagerComponent implements OnInit {
   inpreparationorders: Order[] = [
     {
       deliverycompanyicon: '',
-      id: 1238,
-      type: 'Pick up',
-      comment: '',
-      prepared: true,
-      namecustomer: 'Emma Jones',
-      orderedtime: '13:00',
-      pickuptime: '17:30',
-      email: 'emmajones@hotmail.com',
-      phonenumber: '+31 6 21529854',
-      dishes: [
-        { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1 },
-        { name: '5Kitchens Salade', quantity: 1 },
-        { name: 'Fanta', quantity: 1 },
-      ]
-    },
-    {
-      deliverycompanyicon: '',
       id: 1239,
       type: 'Restaurant',
       comment: '',
@@ -200,7 +183,23 @@ export class FloormanagerComponent implements OnInit {
         { name: 'Sprite', quantity: 1 },
       ]
     },
-   
+   {
+      deliverycompanyicon: '',
+      id: 1238,
+      type: 'Pick up',
+      comment: '',
+      prepared: true,
+      namecustomer: 'Emma Jones',
+      orderedtime: '13:00',
+      pickuptime: '17:30',
+      email: 'emmajones@hotmail.com',
+      phonenumber: '+31 6 21529854',
+      dishes: [
+        { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1 },
+        { name: '5Kitchens Salade', quantity: 1 },
+        { name: 'Fanta', quantity: 1 },
+      ]
+    },
   ];
 
   intransitorders: Order[] = [

@@ -64,6 +64,12 @@ $order-ready: #4caf4f36;
     align-items: center;
     height: 30px;
 
+    .orderid {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
+
     .buttonHandle {
       background-color: $success-border;
       color: #fff;

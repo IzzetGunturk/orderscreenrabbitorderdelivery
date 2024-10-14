@@ -48,7 +48,7 @@ export class PickupComponent implements AfterViewInit, OnInit {
     {
       id: 1238,
       type: 'Pick up',
-      prepared: false,
+      prepared: true,
       namecustomer: 'Emma Jones',
       dishes: [
         { name: 'Wrap Crispy Chicken', option: ['Witte Wijnsaus'], quantity: 1},
