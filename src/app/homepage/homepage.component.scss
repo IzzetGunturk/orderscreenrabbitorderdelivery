@@ -1,0 +1,33 @@
+$primary-500: #FAA419;
+$white: #fff;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 30px;
+    gap: 40px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    text-decoration: none;
+    background-color: $primary-500;
+    color: $white;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #faa419b1;
+        transition-duration: 200ms;
+    }
+}

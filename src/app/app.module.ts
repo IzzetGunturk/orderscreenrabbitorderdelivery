@@ -15,6 +15,7 @@ import { FloormanagercouriersComponent } from './floormanagercouriers/floormanag
 import { PickupordersdeliveryComponent } from './pickup/pickupordersdelivery/pickupordersdelivery.component';
 import { PickupordersComponent } from './pickup/pickuporders/pickuporders.component';
 import { PickupordersrestaurantComponent } from './pickup/pickupordersrestaurant/pickupordersrestaurant.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PickupordersrestaurantComponent } from './pickup/pickupordersrestaurant
     PickupordersdeliveryComponent,
     PickupordersComponent,
     PickupordersrestaurantComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
