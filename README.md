@@ -2,6 +2,8 @@
 
 I have programmed the orderscreens for Rabbit Order & Delivery with mock data.
 
+<img src="src/assets/icon/rabbiticon.svg" width="500"/>
+
 ## 🛠️ Technologies
 
 - Angular
