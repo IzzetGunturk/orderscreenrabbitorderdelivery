@@ -54,20 +54,24 @@
     </div>
   </header>
 
-  <app-ordershistory [orders]="getFilteredOrders(orders)"></app-ordershistory>
+  <div class="ordersAndPagination">
+    <div>
+      <app-ordershistory [orders]="paginatedOrders"></app-ordershistory>
+    </div>
 
-  <div class="pagination">
-    <a href="#">
-      <app-svgicons [selectedSvg]="'arrowleft'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px"></app-svgicons>
-    </a>
-    <a href="#" class="active">1</a>
-    <a href="#">2</a>
-    <a href="#">...</a>
-    <a href="#">9</a>
-    <a href="#">10</a>
-    <a href="#">
-      <app-svgicons [selectedSvg]="'arrowright'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px">
-      </app-svgicons>
-    </a>
+    <div>
+      <div class="pagination">
+        <div class="previousButton" (click)="previousButton()">
+          <app-svgicons [selectedSvg]="'arrowleft'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px"></app-svgicons>
+        </div>
+        <div class="pageNumber">
+          {{currentPage}} / {{totalPages}}
+        </div>
+        <div class="nextButton" (click)="nextButton()">
+          <app-svgicons [selectedSvg]="'arrowright'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px">
+          </app-svgicons>
+        </div>
+      </div>
+    </div>
   </div>
 </body>

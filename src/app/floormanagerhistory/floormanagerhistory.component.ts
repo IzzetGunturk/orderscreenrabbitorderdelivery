@@ -390,6 +390,7 @@ export class FloormanagerhistoryComponent implements OnInit {
     this.currentDateTime = new Date()
   }
 
+  // amount orders
   get amountTotalOrders(): number {
     return this.orders.length;
   }
@@ -408,5 +409,32 @@ export class FloormanagerhistoryComponent implements OnInit {
 
   get amountRestaurantOrders(): number {
     return this.amountOrders('Restaurant')
+  }
+
+  //pagination
+  currentPage = 1;
+  ordersPerPage = 14;
+
+  get paginatedOrders() {
+    const startIndex = (this.currentPage - 1) * this.ordersPerPage;
+    const endIndex = startIndex + this.ordersPerPage;
+    return this.getFilteredOrders(this.orders).slice(startIndex, endIndex);
+  }
+
+  get totalPages() {
+    const filteredOrdersPages = this.getFilteredOrders(this.orders).length;
+    return Math.ceil(filteredOrdersPages / this.ordersPerPage);
+  }
+
+  previousButton() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+
+  nextButton() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
   }
 }
