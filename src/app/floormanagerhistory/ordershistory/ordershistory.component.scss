@@ -44,6 +44,10 @@ $warning-border: #FF5722;
   overflow: hidden;
   position: relative;
 
+  @media only screen and (max-width: 1920px) {
+    width: 295px;
+  }
+
   &.transit {
     gap: 8px;
 
