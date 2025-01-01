@@ -266,6 +266,243 @@ export class FloormanagerhistoryComponent implements OnInit {
         { name: 'Chili Sin Carne', quantity: 2 },
       ]
     },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
+    {
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },{
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },{
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },{
+      deliverycompanyicon: '',
+      id: 1117,
+      type: 'Restaurant',
+      tablenumber: 3,
+      comment: '',
+      orderedtime: 'Ordered: 2-4-2024 12:00',
+      pickuptime: 'ZSM',
+      dishes: [
+        { name: 'Pizza Tonno', quantity: 3 },
+        { name: 'Fanta', quantity: 4 },
+        { name: 'Carpaccio Salade', quantity: 1 },
+        { name: 'Zalmfilet', option: ['Vissaus'], quantity: 2 },
+        { name: 'Chili Sin Carne', quantity: 2 },
+      ]
+    },
   ]
 
   // icon
@@ -388,6 +625,7 @@ export class FloormanagerhistoryComponent implements OnInit {
 
   constructor() {
     this.currentDateTime = new Date()
+    console.log(this.allPages);
   }
 
   // amount orders
@@ -419,6 +657,21 @@ export class FloormanagerhistoryComponent implements OnInit {
     const startIndex = (this.currentPage - 1) * this.ordersPerPage;
     const endIndex = startIndex + this.ordersPerPage;
     return this.getFilteredOrders(this.orders).slice(startIndex, endIndex);
+  }
+
+  get allPages () {
+    const pagesNumbers: number[] = [];
+    for (let i = 1; i <= this.totalPages; i++) {
+      pagesNumbers.push(i);  
+    }
+
+    return pagesNumbers;
+  }
+
+  goToPages(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+    }
   }
 
   get totalPages() {

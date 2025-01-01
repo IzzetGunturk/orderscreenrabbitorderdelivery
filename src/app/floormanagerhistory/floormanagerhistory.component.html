@@ -64,8 +64,8 @@
         <div class="previousButton" (click)="previousButton()">
           <app-svgicons [selectedSvg]="'arrowleft'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px"></app-svgicons>
         </div>
-        <div class="pageNumber">
-          {{currentPage}} / {{totalPages}}
+        <div *ngFor="let page of allPages" (click)="goToPages(page)" class="pageNumber"  [class.active]="page === currentPage">
+          {{page}}
         </div>
         <div class="nextButton" (click)="nextButton()">
           <app-svgicons [selectedSvg]="'arrowright'" [fillColor]="'#54565A'" svgHeight="26px" svgWidth="26px">

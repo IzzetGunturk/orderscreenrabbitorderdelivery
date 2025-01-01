@@ -154,5 +154,10 @@ header {
   .pageNumber {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 }
